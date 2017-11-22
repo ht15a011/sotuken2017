@@ -1,0 +1,38 @@
+<<<<<<< HEAD
+<launch>
+	<arg name="model" default="$(find sotuken2017)/robot/khr-3hv_urdf.xacro"/>
+	
+  	<param name="use_sim_time" value="true" />
+ 	<param name="robot_description" command="$(find xacro)/xacro.py '$(arg model)'"/>
+	
+  	<include file="$(find choreonoid_ros)/launch/choreonoid.launch">
+    	<arg name="PROJECT_FILE" default="$(find sotuken2017)/launch/khr-3hv_test_02.cnoid" />
+  	</include>
+	
+  	<node pkg="robot_state_publisher" type="robot_state_publisher" name="khr_state_publisher" >
+    	<remap from="joint_states" to="/khr/joint_states" />
+  	</node>
+	
+  <node name="jvrc_1_rviz" pkg="rviz" type="rviz" respawn="true"
+        args="-sync -d $(find sotuken2017)/launch/config/khr-3hv.rviz" />
+  <!--node name="map_root_frame_id" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /map /PELVIS_S 33" /-->
+=======
+<launch>
+	<arg name="model" default="$(find sotuken2017)/robot/khr-3hv_urdf.xacro"/>
+	
+  	<param name="use_sim_time" value="true" />
+ 	<param name="robot_description" command="$(find xacro)/xacro.py '$(arg model)'"/>
+	
+  	<include file="$(find choreonoid_ros)/launch/choreonoid.launch">
+    	<arg name="PROJECT_FILE" default="$(find sotuken2017)/launch/khr-3hv_test_02.cnoid" />
+  	</include>
+	
+  	<node pkg="robot_state_publisher" type="robot_state_publisher" name="khr_state_publisher" >
+    	<remap from="joint_states" to="/khr/joint_states" />
+  	</node>
+	
+  <node name="jvrc_1_rviz" pkg="rviz" type="rviz" respawn="true"
+        args="-sync -d $(find sotuken2017)/launch/config/khr-3hv.rviz" />
+  <!--node name="map_root_frame_id" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /map /PELVIS_S 33" /-->
+>>>>>>> 42ca683593df3d34624e90336fab16e0fade033c
+</launch>

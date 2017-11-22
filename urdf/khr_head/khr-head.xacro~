@@ -1,0 +1,79 @@
+<<<<<<< HEAD
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<xacro:include filename="$(find sotuken2017)/urdf/common.xacro"/>
+
+  <property name="wheel_radius" value="0.20316"/>
+  <property name="wheel_length" value="0.032"/>
+  <property name="wheel_mass" value="2.0"/>
+
+  <!--head-->
+   <xacro:macro name="make_head" params="parent">
+     <joint name="${parent}_to_head" type="revolute">
+       <parent link="${parent}"/>
+       <child link="head"/>
+       <origin xyz="0 0 0.031" rpy="0 0 0"/>
+       <axis xyz="0 0 1"/>
+       <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+     </joint>
+
+     <link name="head">
+       <visual>
+         <origin xyz="0 0 0.0175" rpy="0 0 0"/>
+       <geometry>
+         <box size="0.052 0.031 0.033"/>
+       </geometry>
+       <material name="green"/>
+       </visual>
+
+       <collision>
+	<origin xyz="0 0 0.0175" rpy="0 0 0"/>
+	<geometry>
+		<box size="0.052 0.031 0.028"/>
+	</geometry>
+       </collision>
+     </link>
+   </xacro:macro>
+
+</robot>
+=======
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<xacro:include filename="$(find sotuken2017)/urdf/common.xacro"/>
+
+  <property name="wheel_radius" value="0.20316"/>
+  <property name="wheel_length" value="0.032"/>
+  <property name="wheel_mass" value="2.0"/>
+
+  <!--head-->
+   <xacro:macro name="make_head" params="parent">
+     <joint name="${parent}_to_head" type="revolute">
+       <parent link="${parent}"/>
+       <child link="head"/>
+       <origin xyz="0 0 0.031" rpy="0 0 0"/>
+       <axis xyz="0 0 1"/>
+       <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+     </joint>
+
+     <link name="head">
+       <visual>
+         <origin xyz="0 0 0.0175" rpy="0 0 0"/>
+       <geometry>
+         <box size="0.052 0.031 0.033"/>
+       </geometry>
+       <material name="green"/>
+       </visual>
+
+       <collision>
+	<origin xyz="0 0 0.0175" rpy="0 0 0"/>
+	<geometry>
+		<box size="0.052 0.031 0.028"/>
+	</geometry>
+       </collision>
+     </link>
+   </xacro:macro>
+
+</robot>
+>>>>>>> 42ca683593df3d34624e90336fab16e0fade033c

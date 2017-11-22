@@ -1,0 +1,21 @@
+<<<<<<< HEAD
+<launch>
+    <arg name="model" default="$(find sotuken2017)/urdf/khr-3hv_urdf" />
+    <arg name="gui" default="true" />
+    <param name="robot_description" textfile="$(arg model)" />
+    <param name="use_gui" value="$(arg gui)"/>
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find sotuken2017)/urdf.rviz" required="true" />
+</launch>
+=======
+<launch>
+    <arg name="model" default="$(find sotuken2017)/urdf/khr-3hv_urdf" />
+    <arg name="gui" default="true" />
+    <param name="robot_description" textfile="$(arg model)" />
+    <param name="use_gui" value="$(arg gui)"/>
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find sotuken2017)/urdf.rviz" required="true" />
+</launch>
+>>>>>>> 42ca683593df3d34624e90336fab16e0fade033c

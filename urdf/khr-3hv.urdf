@@ -1,0 +1,781 @@
+<<<<<<< HEAD
+<?xml version="1.0"?>
+<robot name="khr-3hv">
+
+ <material name="green">
+  <color rgba="0 1 0 1"/>
+ </material>
+
+ <!--head-->
+ <joint name="body_to_head" type="revolute">
+  <parent link="body"/>
+  <child link="head"/>
+  <origin xyz="0 0 0.031" rpy="0 0 0"/>
+  <axis xyz="0 0 1"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="head">
+  <visual>
+   <origin xyz="0 0 0.0175" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.052 0.031 0.033"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <!--body-->
+ <!--body link is base_link-->
+ <link name="body">
+  <visual>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.129 0.105 0.062"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="body_to_body_2" type="revolute">
+  <parent link="body"/>
+  <child link="body_2"/>
+  <origin xyz="0 0 -0.0525" rpy="0 0 0"/>
+  <axis xyz="0 0 1"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="body_2">
+  <visual>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.057 0.08 0.041"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <!--left arm-->
+
+ <joint name="body_to_Lshoulder" type="revolute">
+  <parent link="body"/>
+  <child link="Lshoulder"/>
+  <origin xyz="0 0.0525 0.018" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="Lshoulder">
+  <visual>
+   <origin xyz="0 0.023 0" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.026 0.026 0.036"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Lshoulder_to_Lupper_arm" type="revolute">
+  <parent link="Lshoulder"/>
+  <child link="Lupper_arm"/>
+  <origin xyz="0 0.023 0" rpy="0 0 0"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="Lupper_arm">
+  <visual>
+   <origin xyz="0 0 -0.079" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.026 0.026 0.082"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Lupper_arm_to_Llower_arm" type="revolute">
+  <parent link="Lupper_arm"/>
+  <child link="Llower_arm"/>
+  <origin xyz="0.013 0 -0.125" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-3.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="Llower_arm">
+  <visual>
+   <origin xyz="-0.013 0 -0.033" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.026 0.026 0.056"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <!--right arm-->
+
+ <joint name="body_to_Rshoulder" type="revolute">
+  <parent link="body"/>
+  <child link="Rshoulder"/>
+  <origin xyz="0 -0.0525 0.018" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="Rshoulder">
+  <visual>
+   <origin xyz="0 -0.023 0" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.026 0.026 0.036"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Rshoulder_to_Rupper_arm" type="revolute">
+  <parent link="Rshoulder"/>
+  <child link="Rupper_arm"/>
+  <origin xyz="0 -0.023 0" rpy="0 0 0"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="Rupper_arm">
+  <visual>
+   <origin xyz="0 0 -0.079" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.026 0.026 0.082"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Rupper_arm_to_Rlower_arm" type="revolute">
+  <parent link="Rupper_arm"/>
+  <child link="Rlower_arm"/>
+  <origin xyz="0.013 0 -0.125" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="Rlower_arm">
+  <visual>
+   <origin xyz="-0.013 0 -0.033" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.026 0.026 0.056"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <!--left foot-->
+
+ <joint name="body_2_to_Lhips" type="revolute">
+  <parent link="body_2"/>
+  <child link="left_hips"/>
+  <origin xyz="0 0.023 -0.0255" rpy="0 0 0"/>
+  <axis xyz="0 0 1"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_hips">
+  <visual>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.03 0.03 0.0057"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Lhips_to_Lthigh" type="revolute">
+  <parent link="left_hips"/>
+  <child link="left_thigh"/>
+  <origin xyz="0 0 -0.030" rpy="0 0 0"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_thigh">
+  <visual>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.041 0.041 0.026"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Lthigh_to_Lknee" type="revolute">
+  <parent link="left_thigh"/>
+  <child link="left_knee"/>
+  <origin xyz="0 0 -0.046" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.01" upper="0.785398" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_knee">
+  <visual>
+   <origin xyz="0 0 -0.034" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.041 0.041 0.088"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Lknee_to_Lshin" type="revolute">
+  <parent link="left_knee"/>
+  <child link="left_shin"/>
+  <origin xyz="-0.0205 0 -0.0885" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_shin">
+  <visual>
+   <origin xyz="0.0205 0 -0.024" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.041 0.041 0.047"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Lshin_to_Lankle" type="revolute">
+  <parent link="left_shin"/>
+  <child link="left_ankle"/>
+  <origin xyz="0.0205 0 -0.0319" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_ankle">
+  <visual>
+   <origin xyz="0 0 -0.037" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.041 0.041 0.02"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Lankle_to_Lfoot" type="revolute">
+  <parent link="left_ankle"/>
+  <child link="left_foot"/>
+  <origin xyz="0 0 -0.037" rpy="0 0 0"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_foot">
+  <visual>
+   <origin xyz="0 0.0185 -0.0315" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.122 0.078 0.015"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <!--right foot-->
+
+ <joint name="body_2_to_Rhips" type="revolute">
+  <parent link="body_2"/>
+  <child link="right_hips"/>
+  <origin xyz="0 -0.023 -0.0255" rpy="0 0 0"/>
+  <axis xyz="0 0 1"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_hips">
+  <visual>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.03 0.03 0.0057"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Rhips_to_Rthigh" type="revolute">
+  <parent link="right_hips"/>
+  <child link="right_thigh"/>
+  <origin xyz="0 0 -0.030" rpy="0 0 0"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_thigh">
+  <visual>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.041 0.041 0.026"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Rthigh_to_Rknee" type="revolute">
+  <parent link="right_thigh"/>
+  <child link="right_knee"/>
+  <origin xyz="0 0 -0.046" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_knee">
+  <visual>
+   <origin xyz="0 0 -0.034" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.041 0.041 0.088"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Rknee_to_Rshin" type="revolute">
+  <parent link="right_knee"/>
+  <child link="right_shin"/>
+  <origin xyz="-0.0205 0 -0.0885" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_shin">
+  <visual>
+   <origin xyz="0.0205 0 -0.024" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.041 0.041 0.047"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Rshin_to_Rankle" type="revolute">
+  <parent link="right_shin"/>
+  <child link="right_ankle"/>
+  <origin xyz="0.0205 0 -0.0319" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_ankle">
+  <visual>
+   <origin xyz="0 0 -0.037" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.041 0.041 0.02"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Rankle_to_Rfoot" type="revolute">
+  <parent link="right_ankle"/>
+  <child link="right_foot"/>
+  <origin xyz="0 0 -0.037" rpy="0 0 0"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_foot">
+  <visual>
+   <origin xyz="0 -0.0185 -0.0315" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.122 0.078 0.015"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+</robot>
+=======
+<?xml version="1.0"?>
+<robot name="khr-3hv">
+
+ <material name="green">
+  <color rgba="0 1 0 1"/>
+ </material>
+
+ <!--head-->
+ <joint name="body_to_head" type="revolute">
+  <parent link="body"/>
+  <child link="head"/>
+  <origin xyz="0 0 0.031" rpy="0 0 0"/>
+  <axis xyz="0 0 1"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="head">
+  <visual>
+   <origin xyz="0 0 0.0175" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.052 0.031 0.033"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <!--body-->
+ <!--body link is base_link-->
+ <link name="body">
+  <visual>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.129 0.105 0.062"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="body_to_body_2" type="revolute">
+  <parent link="body"/>
+  <child link="body_2"/>
+  <origin xyz="0 0 -0.0525" rpy="0 0 0"/>
+  <axis xyz="0 0 1"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="body_2">
+  <visual>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.057 0.08 0.041"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <!--left arm-->
+
+ <joint name="body_to_Lshoulder" type="revolute">
+  <parent link="body"/>
+  <child link="Lshoulder"/>
+  <origin xyz="0 0.0525 0.018" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="Lshoulder">
+  <visual>
+   <origin xyz="0 0.023 0" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.026 0.026 0.036"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Lshoulder_to_Lupper_arm" type="revolute">
+  <parent link="Lshoulder"/>
+  <child link="Lupper_arm"/>
+  <origin xyz="0 0.023 0" rpy="0 0 0"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="Lupper_arm">
+  <visual>
+   <origin xyz="0 0 -0.079" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.026 0.026 0.082"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Lupper_arm_to_Llower_arm" type="revolute">
+  <parent link="Lupper_arm"/>
+  <child link="Llower_arm"/>
+  <origin xyz="0.013 0 -0.125" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-3.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="Llower_arm">
+  <visual>
+   <origin xyz="-0.013 0 -0.033" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.026 0.026 0.056"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <!--right arm-->
+
+ <joint name="body_to_Rshoulder" type="revolute">
+  <parent link="body"/>
+  <child link="Rshoulder"/>
+  <origin xyz="0 -0.0525 0.018" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="Rshoulder">
+  <visual>
+   <origin xyz="0 -0.023 0" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.026 0.026 0.036"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Rshoulder_to_Rupper_arm" type="revolute">
+  <parent link="Rshoulder"/>
+  <child link="Rupper_arm"/>
+  <origin xyz="0 -0.023 0" rpy="0 0 0"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="Rupper_arm">
+  <visual>
+   <origin xyz="0 0 -0.079" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.026 0.026 0.082"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Rupper_arm_to_Rlower_arm" type="revolute">
+  <parent link="Rupper_arm"/>
+  <child link="Rlower_arm"/>
+  <origin xyz="0.013 0 -0.125" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="Rlower_arm">
+  <visual>
+   <origin xyz="-0.013 0 -0.033" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.026 0.026 0.056"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <!--left foot-->
+
+ <joint name="body_2_to_Lhips" type="revolute">
+  <parent link="body_2"/>
+  <child link="left_hips"/>
+  <origin xyz="0 0.023 -0.0255" rpy="0 0 0"/>
+  <axis xyz="0 0 1"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_hips">
+  <visual>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.03 0.03 0.0057"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Lhips_to_Lthigh" type="revolute">
+  <parent link="left_hips"/>
+  <child link="left_thigh"/>
+  <origin xyz="0 0 -0.030" rpy="0 0 0"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_thigh">
+  <visual>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.041 0.041 0.026"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Lthigh_to_Lknee" type="revolute">
+  <parent link="left_thigh"/>
+  <child link="left_knee"/>
+  <origin xyz="0 0 -0.046" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.01" upper="0.785398" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_knee">
+  <visual>
+   <origin xyz="0 0 -0.034" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.041 0.041 0.088"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Lknee_to_Lshin" type="revolute">
+  <parent link="left_knee"/>
+  <child link="left_shin"/>
+  <origin xyz="-0.0205 0 -0.0885" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_shin">
+  <visual>
+   <origin xyz="0.0205 0 -0.024" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.041 0.041 0.047"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Lshin_to_Lankle" type="revolute">
+  <parent link="left_shin"/>
+  <child link="left_ankle"/>
+  <origin xyz="0.0205 0 -0.0319" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_ankle">
+  <visual>
+   <origin xyz="0 0 -0.037" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.041 0.041 0.02"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Lankle_to_Lfoot" type="revolute">
+  <parent link="left_ankle"/>
+  <child link="left_foot"/>
+  <origin xyz="0 0 -0.037" rpy="0 0 0"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_foot">
+  <visual>
+   <origin xyz="0 0.0185 -0.0315" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.122 0.078 0.015"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <!--right foot-->
+
+ <joint name="body_2_to_Rhips" type="revolute">
+  <parent link="body_2"/>
+  <child link="right_hips"/>
+  <origin xyz="0 -0.023 -0.0255" rpy="0 0 0"/>
+  <axis xyz="0 0 1"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_hips">
+  <visual>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.03 0.03 0.0057"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Rhips_to_Rthigh" type="revolute">
+  <parent link="right_hips"/>
+  <child link="right_thigh"/>
+  <origin xyz="0 0 -0.030" rpy="0 0 0"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_thigh">
+  <visual>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.041 0.041 0.026"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Rthigh_to_Rknee" type="revolute">
+  <parent link="right_thigh"/>
+  <child link="right_knee"/>
+  <origin xyz="0 0 -0.046" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_knee">
+  <visual>
+   <origin xyz="0 0 -0.034" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.041 0.041 0.088"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Rknee_to_Rshin" type="revolute">
+  <parent link="right_knee"/>
+  <child link="right_shin"/>
+  <origin xyz="-0.0205 0 -0.0885" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_shin">
+  <visual>
+   <origin xyz="0.0205 0 -0.024" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.041 0.041 0.047"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Rshin_to_Rankle" type="revolute">
+  <parent link="right_shin"/>
+  <child link="right_ankle"/>
+  <origin xyz="0.0205 0 -0.0319" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_ankle">
+  <visual>
+   <origin xyz="0 0 -0.037" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.041 0.041 0.02"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+ <joint name="Rankle_to_Rfoot" type="revolute">
+  <parent link="right_ankle"/>
+  <child link="right_foot"/>
+  <origin xyz="0 0 -0.037" rpy="0 0 0"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_foot">
+  <visual>
+   <origin xyz="0 -0.0185 -0.0315" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.122 0.078 0.015"/>
+   </geometry>
+   <material name="green"/>
+  </visual>
+ </link>
+
+</robot>
+>>>>>>> 42ca683593df3d34624e90336fab16e0fade033c
