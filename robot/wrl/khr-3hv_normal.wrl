@@ -124,7 +124,7 @@ PROTO ExtraJoint [
 
 
 
-DEF base_link Humanoid {
+DEF khr-3hv Humanoid {
   humanoidBody [
     DEF base_link Joint {
       jointType "free"
@@ -144,7 +144,7 @@ DEF base_link Humanoid {
                 Shape {
                   appearance Appearance {
                     material Material {
-                      diffuseColor 0.8 0.8 0.8
+                      diffuseColor 0.0 1.0 0.0
                     }
                   }
                   geometry Box {
@@ -179,6 +179,11 @@ DEF base_link Humanoid {
                   rotation 0 1 0 0
                   children [
                     Shape {
+					  appearance Appearance {
+                        material Material {
+                          diffuseColor 0.0 1.0 0.0
+                        }
+                  	  }
                       geometry Box {
                         size 0.026 0.026 0.036
                       }
@@ -211,6 +216,11 @@ DEF base_link Humanoid {
                       rotation 0 1 0 0
                       children [
                         Shape {
+						  appearance Appearance {
+                            material Material {
+                              diffuseColor 0.0 1.0 0.0
+                            }
+                  	      }
                           geometry Box {
                             size 0.026 0.026 0.082
                           }
@@ -243,6 +253,11 @@ DEF base_link Humanoid {
                           rotation 0 1 0 0
                           children [
                             Shape {
+							  appearance Appearance {
+                        	    material Material {
+                          		  diffuseColor 0.0 1.0 0.0
+                        		}
+                  	  		  }
                               geometry Box {
                                 size 0.026 0.026 0.056
                               }
@@ -281,6 +296,11 @@ DEF base_link Humanoid {
                   rotation 0 1 0 0
                   children [
                     Shape {
+					  appearance Appearance {
+                        material Material {
+                          diffuseColor 0.0 1.0 0.0
+                        }
+                  	  }
                       geometry Box {
                         size 0.026 0.026 0.036
                       }
@@ -313,6 +333,11 @@ DEF base_link Humanoid {
                       rotation 0 1 0 0
                       children [
                         Shape {
+						  appearance Appearance {
+                        	material Material {
+                          	  diffuseColor 0.0 1.0 0.0
+                        	}
+                  	  	  }
                           geometry Box {
                             size 0.026 0.026 0.082
                           }
@@ -345,6 +370,11 @@ DEF base_link Humanoid {
                           rotation 0 1 0 0
                           children [
                             Shape {
+							  appearance Appearance {
+                        		material Material {
+                          		  diffuseColor 0.0 1.0 0.0
+                        		}
+                  	  		  }
                               geometry Box {
                                 size 0.026 0.026 0.056
                               }
@@ -385,7 +415,7 @@ DEF base_link Humanoid {
                     Shape {
                       appearance Appearance {
                         material Material {
-                          diffuseColor 0.8 0.8 0.8
+                          diffuseColor 0.0 1.0 0.0
                         }
                       }
                       geometry Box {
@@ -420,6 +450,11 @@ DEF base_link Humanoid {
                       rotation 0 1 0 0
                       children [
                         Shape {
+						  appearance Appearance {
+                            material Material {
+                              diffuseColor 0.0 1.0 0.0
+                            }
+                  	      }
                           geometry Box {
                             size 0.03 0.03 0.0039
                           }
@@ -452,6 +487,11 @@ DEF base_link Humanoid {
                           rotation 0 1 0 0
                           children [
                             Shape {
+							  appearance Appearance {
+                        		material Material {
+                          		  diffuseColor 0.0 1.0 0.0
+                        		}
+                  	  		  }
                               geometry Box {
                                 size 0.03 0.03 0.026
                               }
@@ -484,6 +524,11 @@ DEF base_link Humanoid {
                               rotation 0 1 0 0
                               children [
                                 Shape {
+						 		  appearance Appearance {
+                        		    material Material {
+                          			  diffuseColor 0.0 1.0 0.0
+                        			}
+                  	  			  }
                                   geometry Box {
                                     size 0.03 0.03 0.088
                                   }
@@ -516,6 +561,11 @@ DEF base_link Humanoid {
                                   rotation 0 1 0 0
                                   children [
                                     Shape {
+								      appearance Appearance {
+                        				material Material {
+                          				  diffuseColor 0.0 1.0 0.0
+                        				}
+                  	  				  }
                                       geometry Box {
                                         size 0.03 0.03 0.047
                                       }
@@ -548,6 +598,11 @@ DEF base_link Humanoid {
                                       rotation 0 1 0 0
                                       children [
                                         Shape {
+										  appearance Appearance {
+                        					material Material {
+                             				  diffuseColor 0.0 1.0 0.0
+                        					}
+                  	  					  }
                                           geometry Box {
                                             size 0.03 0.03 0.02
                                           }
@@ -580,6 +635,11 @@ DEF base_link Humanoid {
                                           rotation 0 1 0 0
                                           children [
                                             Shape {
+											  appearance Appearance {
+                        						material Material {
+                          						  diffuseColor 0.0 1.0 0.0
+                        						}
+                  	  						  }
                                               geometry Box {
                                                 size 0.122 0.078 0.01
                                               }
@@ -592,6 +652,11 @@ DEF base_link Humanoid {
                                           rotation 0 1 0 0
                                           children [
                                             Shape {
+											  appearance Appearance {
+                        						material Material {
+                          						  diffuseColor 0.0 1.0 0.0
+                        						}
+                  	  						  }
                                               geometry Box {
                                                 size 0.122 0.078 0.01
                                               }
@@ -604,6 +669,11 @@ DEF base_link Humanoid {
                                           rotation 0 1 0 0
                                           children [
                                             Shape {
+											  appearance Appearance {
+                        						material Material {
+                          						  diffuseColor 0.5 0.5 0.5
+                        						}
+                  	  						  }
                                               geometry Box {
                                                 size 0.02 0.02 0.01
                                               }
@@ -616,6 +686,11 @@ DEF base_link Humanoid {
                                           rotation 0 1 0 0
                                           children [
                                             Shape {
+											  appearance Appearance {
+                        						material Material {
+                          						  diffuseColor 0.5 0.5 0.5
+                        						}
+                  	  						  }
                                               geometry Box {
                                                 size 0.02 0.02 0.01
                                               }
@@ -628,6 +703,11 @@ DEF base_link Humanoid {
                                           rotation 0 1 0 0
                                           children [
                                             Shape {
+											  appearance Appearance {
+                        						material Material {
+                          						  diffuseColor 0.5 0.5 0.5
+                        						}
+                  	  						  }
                                               geometry Box {
                                                 size 0.02 0.02 0.01
                                               }
@@ -640,6 +720,11 @@ DEF base_link Humanoid {
                                           rotation 0 1 0 0
                                           children [
                                             Shape {
+											  appearance Appearance {
+                        						material Material {
+                          						  diffuseColor 0.5 0.5 0.5
+                        						}
+                  	  						  }
                                               geometry Box {
                                                 size 0.02 0.02 0.01
                                               }
@@ -684,6 +769,11 @@ DEF base_link Humanoid {
                       rotation 0 1 0 0
                       children [
                         Shape {
+						  appearance Appearance {
+                        	material Material {
+                          	  diffuseColor 0.0 1.0 0.0
+                        	}
+                  	  	  }
                           geometry Box {
                             size 0.03 0.03 0.0039
                           }
@@ -716,6 +806,11 @@ DEF base_link Humanoid {
                           rotation 0 1 0 0
                           children [
                             Shape {
+							  appearance Appearance {
+                        		material Material {
+                          	  	  diffuseColor 0.0 1.0 0.0
+                        		}
+                  	  	  	  }
                               geometry Box {
                                 size 0.03 0.03 0.026
                               }
@@ -748,6 +843,11 @@ DEF base_link Humanoid {
                               rotation 0 1 0 0
                               children [
                                 Shape {
+								  appearance Appearance {
+                        			material Material {
+                          	  		  diffuseColor 0.0 1.0 0.0
+                        			}
+                  	  	  		  }
                                   geometry Box {
                                     size 0.03 0.03 0.088
                                   }
@@ -780,6 +880,11 @@ DEF base_link Humanoid {
                                   rotation 0 1 0 0
                                   children [
                                     Shape {
+									  appearance Appearance {
+                        				material Material {
+                          	  			  diffuseColor 0.0 1.0 0.0
+                        				}
+                  	  	  			  }
                                       geometry Box {
                                         size 0.03 0.03 0.047
                                       }
@@ -812,6 +917,11 @@ DEF base_link Humanoid {
                                       rotation 0 1 0 0
                                       children [
                                         Shape {
+										  appearance Appearance {
+                        					material Material {
+                          	  				  diffuseColor 0.0 1.0 0.0
+                        					}
+                  	  	  				  }
                                           geometry Box {
                                             size 0.03 0.03 0.02
                                           }
@@ -844,6 +954,11 @@ DEF base_link Humanoid {
                                           rotation 0 1 0 0
                                           children [
                                             Shape {
+											  appearance Appearance {
+                        						material Material {
+                          	  					  diffuseColor 0.0 1.0 0.0
+                        						}
+                  	  	  					  }
                                               geometry Box {
                                                 size 0.122 0.078 0.01
                                               }
@@ -856,6 +971,11 @@ DEF base_link Humanoid {
                                           rotation 0 1 0 0
                                           children [
                                             Shape {
+											  appearance Appearance {
+                        						material Material {
+                          	  					  diffuseColor 0.0 1.0 0.0
+                        						}
+                  	  	  					  }
                                               geometry Box {
                                                 size 0.122 0.078 0.01
                                               }
@@ -868,6 +988,11 @@ DEF base_link Humanoid {
                                           rotation 0 1 0 0
                                           children [
                                             Shape {
+											  appearance Appearance {
+                        						material Material {
+                          	  					  diffuseColor 0.5 0.5 0.5
+                        						}
+                  	  	  					  }
                                               geometry Box {
                                                 size 0.02 0.02 0.01
                                               }
@@ -880,6 +1005,11 @@ DEF base_link Humanoid {
                                           rotation 0 1 0 0
                                           children [
                                             Shape {
+											  appearance Appearance {
+                        						material Material {
+                          	  					  diffuseColor 0.5 0.5 0.5
+                        						}
+                  	  	  					  }
                                               geometry Box {
                                                 size 0.02 0.02 0.01
                                               }
@@ -892,6 +1022,11 @@ DEF base_link Humanoid {
                                           rotation 0 1 0 0
                                           children [
                                             Shape {
+											  appearance Appearance {
+                        						material Material {
+                          	  					  diffuseColor 0.5 0.5 0.5
+                        						}
+                  	  	  					  }
                                               geometry Box {
                                                 size 0.02 0.02 0.01
                                               }
@@ -904,6 +1039,11 @@ DEF base_link Humanoid {
                                           rotation 0 1 0 0
                                           children [
                                             Shape {
+											  appearance Appearance {
+                        						material Material {
+                          	  					  diffuseColor 0.5 0.5 0.5
+                        						}
+                  	  	  					  }
                                               geometry Box {
                                                 size 0.02 0.02 0.01
                                               }
@@ -950,6 +1090,11 @@ DEF base_link Humanoid {
                   rotation 0 1 0 0
                   children [
                     Shape {
+					  appearance Appearance {
+                        material Material {
+                          diffuseColor 0.0 1.0 0.0
+                        }
+                  	  }
                       geometry Box {
                         size 0.052 0.031 0.033
                       }
@@ -987,6 +1132,6 @@ DEF base_link Humanoid {
     USE base_link_to_head
   ]
   
-  name "base_link"
+  name "khr-3hv"
   version "1.0"
 }
