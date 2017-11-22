@@ -144,7 +144,7 @@ DEF base_link Humanoid {
                 Shape {
                   appearance Appearance {
                     material Material {
-                      diffuseColor 0.0 1.0 0.0
+                      diffuseColor 0.8 0.8 0.8
                     }
                   }
                   geometry Box {
@@ -179,11 +179,6 @@ DEF base_link Humanoid {
                   rotation 0 1 0 0
                   children [
                     Shape {
-                      appearance Appearance {
-                        material Material {
-                          diffuseColor 0.0 1.0 0.0
-                        }
-                      }
                       geometry Box {
                         size 0.026 0.026 0.036
                       }
@@ -216,11 +211,6 @@ DEF base_link Humanoid {
                       rotation 0 1 0 0
                       children [
                         Shape {
-                          appearance Appearance {
-                            material Material {
-                              diffuseColor 0.0 1.0 0.0
-                            }
-                          }
                           geometry Box {
                             size 0.026 0.026 0.082
                           }
@@ -253,11 +243,6 @@ DEF base_link Humanoid {
                           rotation 0 1 0 0
                           children [
                             Shape {
-                              appearance Appearance {
-                                material Material {
-                                  diffuseColor 0.0 1.0 0.0
-                                }
-                              }
                               geometry Box {
                                 size 0.026 0.026 0.056
                               }
@@ -296,11 +281,6 @@ DEF base_link Humanoid {
                   rotation 0 1 0 0
                   children [
                     Shape {
-                      appearance Appearance {
-                        material Material {
-                          diffuseColor 0.0 1.0 0.0
-                        }
-                      }
                       geometry Box {
                         size 0.026 0.026 0.036
                       }
@@ -333,11 +313,6 @@ DEF base_link Humanoid {
                       rotation 0 1 0 0
                       children [
                         Shape {
-                          appearance Appearance {
-                            material Material {
-                              diffuseColor 0.0 1.0 0.0
-                            }
-                          }
                           geometry Box {
                             size 0.026 0.026 0.082
                           }
@@ -370,11 +345,6 @@ DEF base_link Humanoid {
                           rotation 0 1 0 0
                           children [
                             Shape {
-                              appearance Appearance {
-                                material Material {
-                                  diffuseColor 0.0 1.0 0.0
-                                }
-                              }
                               geometry Box {
                                 size 0.026 0.026 0.056
                               }
@@ -415,7 +385,7 @@ DEF base_link Humanoid {
                     Shape {
                       appearance Appearance {
                         material Material {
-                          diffuseColor 0.0 1.0 0.0
+                          diffuseColor 0.8 0.8 0.8
                         }
                       }
                       geometry Box {
@@ -450,11 +420,6 @@ DEF base_link Humanoid {
                       rotation 0 1 0 0
                       children [
                         Shape {
-                          appearance Appearance {
-                            material Material {
-                              diffuseColor 0.0 1.0 0.0
-                            }
-                          }
                           geometry Box {
                             size 0.03 0.03 0.0039
                           }
@@ -487,11 +452,6 @@ DEF base_link Humanoid {
                           rotation 0 1 0 0
                           children [
                             Shape {
-                              appearance Appearance {
-                                material Material {
-                                  diffuseColor 0.0 1.0 0.0
-                                }
-                              }
                               geometry Box {
                                 size 0.03 0.03 0.026
                               }
@@ -524,11 +484,6 @@ DEF base_link Humanoid {
                               rotation 0 1 0 0
                               children [
                                 Shape {
-                                  appearance Appearance {
-                                    material Material {
-                                      diffuseColor 0.0 1.0 0.0
-                                    }
-                                  }
                                   geometry Box {
                                     size 0.03 0.03 0.088
                                   }
@@ -561,11 +516,6 @@ DEF base_link Humanoid {
                                   rotation 0 1 0 0
                                   children [
                                     Shape {
-                                      appearance Appearance {
-                                        material Material {
-                                          diffuseColor 0.0 1.0 0.0
-                                        }
-                                      }
                                       geometry Box {
                                         size 0.03 0.03 0.047
                                       }
@@ -598,11 +548,6 @@ DEF base_link Humanoid {
                                       rotation 0 1 0 0
                                       children [
                                         Shape {
-                                          appearance Appearance {
-                                            material Material {
-                                              diffuseColor 0.0 1.0 0.0
-                                            }
-                                          }
                                           geometry Box {
                                             size 0.03 0.03 0.02
                                           }
@@ -625,23 +570,78 @@ DEF base_link Humanoid {
                                   climit [0.5]
                                   children [
                                     DEF Lfoot Segment {
-                                      mass 0.02346
-                                      centerOfMass 0.0 0.0185 -0.0315
-                                      momentsOfInertia [2.92937e-05 0.0 0.0 0.0 4.09924e-05 0.0 0.0 0.0 1.20897e-05]
+                                      mass 0.08692
+                                      centerOfMass 6.23678e-19 0.015 -0.0415
+                                      momentsOfInertia [8.79861e-05 -3.38813e-23 -2.24972e-21 -3.38813e-23 0.000173984 2.03288e-20 -2.24972e-21 2.03288e-20 0.000133526]
                                       children [
                                         Transform {
                                           scale 1.0 1.0 1.0
-                                          translation 0.0 0.0185 -0.0315
+                                          translation 0.0 0.015 -0.0315
                                           rotation 0 1 0 0
                                           children [
                                             Shape {
-                                              appearance Appearance {
-                                                material Material {
-                                                  diffuseColor 0.0 1.0 0.0
-                                                }
-                                              }
                                               geometry Box {
                                                 size 0.122 0.078 0.01
+                                              }
+                                            }
+                                          ]
+                                        }
+                                        Transform {
+                                          scale 1.0 1.0 1.0
+                                          translation 0.0 0.015 -0.0515
+                                          rotation 0 1 0 0
+                                          children [
+                                            Shape {
+                                              geometry Box {
+                                                size 0.122 0.078 0.01
+                                              }
+                                            }
+                                          ]
+                                        }
+                                        Transform {
+                                          scale 1.0 1.0 1.0
+                                          translation 0.046 0.039 -0.0415
+                                          rotation 0 1 0 0
+                                          children [
+                                            Shape {
+                                              geometry Box {
+                                                size 0.02 0.02 0.01
+                                              }
+                                            }
+                                          ]
+                                        }
+                                        Transform {
+                                          scale 1.0 1.0 1.0
+                                          translation -0.046 0.039 -0.0415
+                                          rotation 0 1 0 0
+                                          children [
+                                            Shape {
+                                              geometry Box {
+                                                size 0.02 0.02 0.01
+                                              }
+                                            }
+                                          ]
+                                        }
+                                        Transform {
+                                          scale 1.0 1.0 1.0
+                                          translation 0.046 -0.009 -0.0415
+                                          rotation 0 1 0 0
+                                          children [
+                                            Shape {
+                                              geometry Box {
+                                                size 0.02 0.02 0.01
+                                              }
+                                            }
+                                          ]
+                                        }
+                                        Transform {
+                                          scale 1.0 1.0 1.0
+                                          translation -0.046 -0.009 -0.0415
+                                          rotation 0 1 0 0
+                                          children [
+                                            Shape {
+                                              geometry Box {
+                                                size 0.02 0.02 0.01
                                               }
                                             }
                                           ]
@@ -684,11 +684,6 @@ DEF base_link Humanoid {
                       rotation 0 1 0 0
                       children [
                         Shape {
-                          appearance Appearance {
-                            material Material {
-                              diffuseColor 0.0 1.0 0.0
-                            }
-                          }
                           geometry Box {
                             size 0.03 0.03 0.0039
                           }
@@ -721,11 +716,6 @@ DEF base_link Humanoid {
                           rotation 0 1 0 0
                           children [
                             Shape {
-                              appearance Appearance {
-                                material Material {
-                                  diffuseColor 0.0 1.0 0.0
-                                }
-                              }
                               geometry Box {
                                 size 0.03 0.03 0.026
                               }
@@ -758,11 +748,6 @@ DEF base_link Humanoid {
                               rotation 0 1 0 0
                               children [
                                 Shape {
-                                  appearance Appearance {
-                                    material Material {
-                                      diffuseColor 0.0 1.0 0.0
-                                    }
-                                  }
                                   geometry Box {
                                     size 0.03 0.03 0.088
                                   }
@@ -795,11 +780,6 @@ DEF base_link Humanoid {
                                   rotation 0 1 0 0
                                   children [
                                     Shape {
-                                      appearance Appearance {
-                                        material Material {
-                                          diffuseColor 0.0 1.0 0.0
-                                        }
-                                      }
                                       geometry Box {
                                         size 0.03 0.03 0.047
                                       }
@@ -832,11 +812,6 @@ DEF base_link Humanoid {
                                       rotation 0 1 0 0
                                       children [
                                         Shape {
-                                          appearance Appearance {
-                                            material Material {
-                                              diffuseColor 0.0 1.0 0.0
-                                            }
-                                          }
                                           geometry Box {
                                             size 0.03 0.03 0.02
                                           }
@@ -859,23 +834,78 @@ DEF base_link Humanoid {
                                   climit [0.5]
                                   children [
                                     DEF Rfoot Segment {
-                                      mass 0.02346
-                                      centerOfMass 0.0 -0.0185 -0.0315
-                                      momentsOfInertia [2.92937e-05 0.0 0.0 0.0 4.09924e-05 0.0 0.0 0.0 1.20897e-05]
+                                      mass 0.08692
+                                      centerOfMass 6.23678e-19 -0.015 -0.0415
+                                      momentsOfInertia [8.79861e-05 -8.13152e-22 -2.24972e-21 -8.13152e-22 0.000173984 -6.77626e-21 -2.24972e-21 -6.77626e-21 0.000133526]
                                       children [
                                         Transform {
                                           scale 1.0 1.0 1.0
-                                          translation 0.0 -0.0185 -0.0315
+                                          translation 0.0 -0.015 -0.0315
                                           rotation 0 1 0 0
                                           children [
                                             Shape {
-                                              appearance Appearance {
-                                                material Material {
-                                                  diffuseColor 0.0 1.0 0.0
-                                                }
-                                              }
                                               geometry Box {
                                                 size 0.122 0.078 0.01
+                                              }
+                                            }
+                                          ]
+                                        }
+                                        Transform {
+                                          scale 1.0 1.0 1.0
+                                          translation 0.0 -0.015 -0.0515
+                                          rotation 0 1 0 0
+                                          children [
+                                            Shape {
+                                              geometry Box {
+                                                size 0.122 0.078 0.01
+                                              }
+                                            }
+                                          ]
+                                        }
+                                        Transform {
+                                          scale 1.0 1.0 1.0
+                                          translation 0.046 0.009 -0.0415
+                                          rotation 0 1 0 0
+                                          children [
+                                            Shape {
+                                              geometry Box {
+                                                size 0.02 0.02 0.01
+                                              }
+                                            }
+                                          ]
+                                        }
+                                        Transform {
+                                          scale 1.0 1.0 1.0
+                                          translation -0.046 0.009 -0.0415
+                                          rotation 0 1 0 0
+                                          children [
+                                            Shape {
+                                              geometry Box {
+                                                size 0.02 0.02 0.01
+                                              }
+                                            }
+                                          ]
+                                        }
+                                        Transform {
+                                          scale 1.0 1.0 1.0
+                                          translation 0.046 -0.039 -0.0415
+                                          rotation 0 1 0 0
+                                          children [
+                                            Shape {
+                                              geometry Box {
+                                                size 0.02 0.02 0.01
+                                              }
+                                            }
+                                          ]
+                                        }
+                                        Transform {
+                                          scale 1.0 1.0 1.0
+                                          translation -0.046 -0.039 -0.0415
+                                          rotation 0 1 0 0
+                                          children [
+                                            Shape {
+                                              geometry Box {
+                                                size 0.02 0.02 0.01
                                               }
                                             }
                                           ]
@@ -920,11 +950,6 @@ DEF base_link Humanoid {
                   rotation 0 1 0 0
                   children [
                     Shape {
-                      appearance Appearance {
-                        material Material {
-                          diffuseColor 0.0 1.0 0.0
-                        }
-                      }
                       geometry Box {
                         size 0.052 0.031 0.033
                       }
