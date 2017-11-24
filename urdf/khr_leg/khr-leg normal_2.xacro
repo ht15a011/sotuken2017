@@ -3,7 +3,7 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
 <xacro:include filename="$(find sotuken2017)/urdf/common.xacro"/>
-<xacro:include filename="$(find sotuken2017)/urdf/sensor/khr-force_sensor normal.xacro"/>
+<xacro:include filename="$(find sotuken2017)/urdf/sensor/khr-force_sensor normal_2.xacro"/>
 
 	<property name="ef" value="0.5"/>
   	<property name="vel" value="6.0"/>
