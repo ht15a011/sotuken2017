@@ -107,6 +107,9 @@ PROTO Humanoid [
       Group {
         children IS viewpoints
       }
+	  Group {
+        children IS humanoidBody 
+      }
     ]
   }
 }
@@ -122,7 +125,19 @@ PROTO ExtraJoint [
 {
 }
 
-
+PROTO ForceSensor [  
+exposedField SFVec3f maxForce -1 -1 -1
+  exposedField SFVec3f maxTorque -1 -1 -1
+  exposedField SFVec3f translation 0 0 0
+  exposedField SFRotation rotation 0 0 1 0
+  exposedField SFInt32 sensorId -1
+]
+{
+  Transform {
+translation IS translation
+    rotation IS rotation
+  }
+}
 
 DEF khr-3hv Humanoid {
   humanoidBody [
@@ -678,6 +693,9 @@ DEF khr-3hv Humanoid {
                                                 size 0.02 0.02 0.01
                                               }
                                             }
+											DEF Lfsensor1 ForceSensor {
+												sensorId 0
+											}
                                           ]
                                         }
                                         Transform {
@@ -695,6 +713,9 @@ DEF khr-3hv Humanoid {
                                                 size 0.02 0.02 0.01
                                               }
                                             }
+											DEF Lfsensor2 ForceSensor {
+												sensorId 1
+											}
                                           ]
                                         }
                                         Transform {
@@ -712,6 +733,9 @@ DEF khr-3hv Humanoid {
                                                 size 0.02 0.02 0.01
                                               }
                                             }
+											DEF Lfsensor3 ForceSensor {
+												sensorId 2
+											}
                                           ]
                                         }
                                         Transform {
@@ -729,6 +753,9 @@ DEF khr-3hv Humanoid {
                                                 size 0.02 0.02 0.01
                                               }
                                             }
+											DEF Lfsensor4 ForceSensor {
+												sensorId 3
+											}
                                           ]
                                         }
                                       ]
@@ -997,6 +1024,9 @@ DEF khr-3hv Humanoid {
                                                 size 0.02 0.02 0.01
                                               }
                                             }
+											DEF Rfsensor5 ForceSensor {
+												sensorId 4
+											}
                                           ]
                                         }
                                         Transform {
@@ -1014,6 +1044,9 @@ DEF khr-3hv Humanoid {
                                                 size 0.02 0.02 0.01
                                               }
                                             }
+											DEF Rfsensor6 ForceSensor {
+												sensorId 5
+											}
                                           ]
                                         }
                                         Transform {
@@ -1031,6 +1064,9 @@ DEF khr-3hv Humanoid {
                                                 size 0.02 0.02 0.01
                                               }
                                             }
+											DEF Rfsensor7 ForceSensor {
+												sensorId 6
+											}
                                           ]
                                         }
                                         Transform {
@@ -1048,6 +1084,9 @@ DEF khr-3hv Humanoid {
                                                 size 0.02 0.02 0.01
                                               }
                                             }
+											DEF Rfsensor8 ForceSensor {
+												sensorId 7
+											}
                                           ]
                                         }
                                       ]
