@@ -5,8 +5,9 @@
 <xacro:include filename="$(find sotuken2017)/urdf/urdf_gazebo.xacro"/>
 <xacro:include filename="$(find sotuken2017)/urdf/sensor/khr-force_sensor.xacro"/>
 <xacro:include filename="$(find sotuken2017)/urdf/sensor/sensor-gazebo.xacro"/>
-	<property name="ef" value="0.5"/>
-  	<property name="vel" value="6.0"/>
+	
+	<property name="ef" value="1.37293"/>
+    <property name="vel" value="0.14"/>
 	
 	<property name="leg_xy" value="0.03"/>
 	

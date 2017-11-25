@@ -4,8 +4,8 @@
 <xacro:include filename="$(find sotuken2017)/urdf/common.xacro"/>
 <xacro:include filename="$(find sotuken2017)/urdf/sensor/khr-force_sensor normal_2.xacro"/>
 
-	<property name="ef" value="0.5"/>
-  	<property name="vel" value="6.0"/>
+	<property name="ef" value="1.37293"/>
+  <property name="vel" value="0.14"/>
 	
 	<property name="leg_xy" value="0.03"/>
 	
@@ -28,6 +28,11 @@
 	<property name="foot_y" value="0.078"/>
 	<property name="foot_z" value="0.01"/>
 	<property name="foot_mass" value="0.02346"/>
+	
+	<property name="foot2_x" value="0.122"/>
+	<property name="foot2_y" value="0.078"/>
+	<property name="foot2_z" value="0.002"/>
+	<property name="foot2_mass" value="0.05"/>
 
 	<xacro:macro name="make_leg" params="parent LRleg ref leg_bool">
  		<joint name="${parent}_to_${LRleg}hips" type="revolute">
@@ -243,17 +248,19 @@
 				<origin xyz="-${foot_x / 2 -0.015}  ${(ref * leg_xy / 2) - (foot_y / 2 - 0.015)} -${0.0315 + foot_z / 2 + box_z / 2}" rpy="0 0 0" />
 		</xacro:make_fsensor>
 		
-		<joint name="${LRleg}foot_to_${LRleg}foot2" type="fixed">
+		<joint name="${LRleg}foot_to_${LRleg}foot2" type="revolute">
 				<parent link="${LRleg}foot"/>
 				<child link="${LRleg}foot2"/>
-				<origin xyz="0 ${ref * leg_xy / 2} -${0.0315 + box_z + foot_z}" rpy="0 0 0"/>
+				<origin xyz="0 ${ref * leg_xy / 2} -${0.0315 + foot_z / 2 + foot_z / 10 + box_z}" rpy="0 0 0"/>
+				<axis xyz="0 0 1"/>
+				<limit lower="-0.0" upper="0.0" effort="0.0" velocity="0.0"/>
 		</joint>
 		
 		<link name="${LRleg}foot2">
 				<visual>
 						<origin xyz="0 0 0" rpy="0 0 0"/>
 						<geometry>
-								<box size="${foot_x} ${foot_y} ${foot_z / 5}"/>
+								<box size="${foot2_x} ${foot2_y} ${foot2_z}"/>
 						</geometry>
 						<xacro:set_color/>
 				</visual>
@@ -261,13 +268,13 @@
 				<collision>
 						<origin xyz="0 0 0" rpy="0 0 0"/>
 						<geometry>
-								<box size="${foot_x} ${foot_y} ${foot_z / 5}"/>
+								<box size="${foot2_x} ${foot2_y} ${foot2_z}"/>
 						</geometry>
 				</collision>
 
 				<inertial>
 						<origin xyz="0 0 0" rpy="0 0 0"/>
-						<xacro:box_inertial m="${foot_mass}" d="${foot_x}" w="${foot_y}" h="${foot_z / 5}"/>
+						<xacro:box_inertial m="${foot2_mass}" d="${foot2_x}" w="${foot2_y}" h="${foot2_z}"/>
 				</inertial>
 		</link>
 		
