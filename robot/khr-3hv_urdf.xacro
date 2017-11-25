@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0"?>
 <robot name="khr-3hv" xmlns:xacro="http://ros.org/wiki/xacro">
 
@@ -28,37 +27,5 @@
 		
 	<!-- right leg -->
 	<xacro:make_leg parent="body_2" LRleg="R" ref="-1" leg_bool="false"/>
-	
-=======
-<?xml version="1.0"?>
-<robot name="khr-3hv" xmlns:xacro="http://ros.org/wiki/xacro">
 
-	<xacro:include filename="$(find sotuken2017)/urdf/urdf_gazebo.xacro"/>
-	<xacro:include filename="$(find sotuken2017)/urdf/khr_body/khr-body.xacro"/>
-	<xacro:include filename="$(find sotuken2017)/urdf/khr_head/khr-head.xacro"/>
-	<xacro:include filename="$(find sotuken2017)/urdf/khr_arm/khr-arm.xacro"/>
-	<xacro:include filename="$(find sotuken2017)/urdf/khr_leg/khr-leg.xacro"/>
-	
-	<!-- ros_control plugin -->
-	<xacro:gazebo_control robot="khr-3hv"/>
-	
-	<!-- head -->
-	<xacro:make_head parent="base_link"/>
-	
-	<!-- base link (body)-->
-	<xacro:make_body/>
-	
-	<!-- left arm -->
-	<xacro:make_arm parent="base_link" LRarm="L" ref="1" arm_bool="true"/>
-
-	<!-- right arm -->
-	<xacro:make_arm parent="base_link" LRarm="R" ref="-1" arm_bool="false"/>
-	
-	<!-- left leg -->
-	<xacro:make_leg parent="body_2" LRleg="L" ref="1" leg_bool="true"/>
-		
-	<!-- right leg -->
-	<xacro:make_leg parent="body_2" LRleg="R" ref="-1" leg_bool="false"/>
-	
->>>>>>> 42ca683593df3d34624e90336fab16e0fade033c
 </robot>

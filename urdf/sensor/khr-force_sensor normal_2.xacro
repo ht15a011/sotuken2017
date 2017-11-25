@@ -1,10 +1,9 @@
-<<<<<<< HEAD
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 	
 	<property name="box_xy" value="0.02"/>
 	<property name="box_z" value="0.01"/>
-	<property name="box_mass" value="0.01"/>
+	<property name="box_mass" value="0.005"/>
 	
 	<xacro:macro name="make_fsensor" params="parent LR num *joint_origin">
  		<joint name="${LR}fsensor${num}_joint" type="revolute">
@@ -42,47 +41,5 @@
    			<parent link="${parent}" />
  		</sensor>
 	</xacro:macro>
-=======
-<?xml version="1.0"?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro">
-	
-	<property name="box_xy" value="0.02"/>
-	<property name="box_z" value="0.01"/>
-	<property name="box_mass" value="0.01"/>
-	
-	<xacro:macro name="make_fsensor" params="parent LR num *joint_origin">
- 		<joint name="${LR}fsensor${num}_joint" type="fixed">
-   			<insert_block name="joint_origin"/>
-   			<parent link="${parent}" />
-   			<child link="${LR}fsensor${num}" />
- 		</joint>
-		
-		<link name="${LR}fsensor${num}">
-			<visual>
-				<origin xyz="0 0 0" rpy="0 0 0"/>
-				<geometry>
-					<box size="${box_xy} ${box_xy} ${box_z}"/>
-				</geometry>
-				<xacro:set_color/>
-			</visual>
 
-			<collision>
-				<origin xyz="0 0 0" rpy="0 0 0"/>
-				<geometry>
-					<box size="${box_xy} ${box_xy} ${box_z}"/>
-				</geometry>
-			</collision>
-
-			<inertial>
-				<origin xyz="0 0 0" rpy="0 0 0"/>
-				<xacro:box_inertial m="${box_mass}" d="${box_xy}" w="${box_xy}" h="${box_z}"/>
-			</inertial>
- 		</link>
-
- 		<sensor name="${LR}fsensor${num}_sensor" update_rate="20">
-   			<insert_block name="joint_origin"/>
-   			<parent link="${parent}" />
- 		</sensor>
-	</xacro:macro>
->>>>>>> 42ca683593df3d34624e90336fab16e0fade033c
 </robot>
