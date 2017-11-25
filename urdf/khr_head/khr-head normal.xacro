@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<xacro:include filename="$(find sotuken2017)/urdf/common.xacro"/>
+<xacro:include filename="$(find sotuken2017)/urdf/khr_body/khr-body.xacro"/>
+	
+  <property name="ef" value="0.5"/>
+  <property name="vel" value="6.0"/>
+	
+  <property name="head_x" value="0.052"/>
+  <property name="head_y" value="0.031"/>
+  <property name="head_z" value="0.033"/>
+  <property name="head_mass" value="0.119"/>
+
+   <xacro:macro name="make_head" params="parent">
+     <joint name="${parent}_to_head" type="revolute">
+       <parent link="${parent}"/>
+       <child link="head"/>
+       <origin xyz="0 0 ${body_z / 2 + 0.0005}" rpy="0 0 0"/>
+       <axis xyz="0 0 1"/>
+	   <dynamics damping="0.5"/>
+       <limit lower="-${M_PI / 2}" upper="${M_PI / 2}" effort="${ef}" velocity="${vel}"/>
+     </joint>
+
+     <link name="head">
+		<visual>
+        	<origin xyz="0 0 ${head_z /2 + 0.0005}" rpy="0 0 0"/>
+       		<geometry>
+        		<box size="${head_x} ${head_y} ${head_z}"/>
+       		</geometry>
+       		<xacro:set_color/>
+       	</visual>
+
+       	<collision>
+			<origin xyz="0 0 ${head_z /2 + 0.0005}" rpy="0 0 0"/>
+			<geometry>
+				<box size="${head_x} ${head_y} ${head_z}"/>
+			</geometry>
+       	</collision>
+		 
+	   	<inertial>
+		    <origin xyz="0 0 ${head_z /2 + 0.0005}" rpy="0 0 0"/>
+		    <xacro:box_inertial m="${head_mass}" d="${head_x}" w="${head_y}" h="${head_z}"/>
+	   	</inertial>
+     </link>
+	   
+   </xacro:macro>
+
+</robot>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<xacro:include filename="$(find sotuken2017)/urdf/common.xacro"/>
+	
+  <property name="ef" value="0.5"/>
+  <property name="vel" value="6.0"/>
+	
+  <property name="body_x" value="0.129"/>
+  <property name="body_y" value="0.105"/>
+  <property name="body_z" value="0.062"/>
+  <property name="body_mass" value="0.3655"/>
+  
+  <property name="body_2_x" value="0.057"/>
+  <property name="body_2_y" value="0.08"/>
+  <property name="body_2_z" value="0.041"/>
+  <property name="body_2_mass" value="0.3655"/>
+  
+  <xacro:macro name="default_origin">
+	  <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:macro>
+	
+  <xacro:macro name="make_body">
+    <link name="base_link">
+      <visual>
+		<xacro:default_origin/>
+        <geometry>
+          <box size="${body_x} ${body_y} ${body_z}"/>
+        </geometry>
+        <xacro:set_color/>
+      </visual>
+		
+      <collision>
+		<xacro:default_origin/>
+        <geometry>
+          <box size="${body_x} ${body_y} ${body_z}"/>
+        </geometry>
+      </collision>
+		
+      <inertial>
+		<xacro:default_origin/>
+        <xacro:box_inertial m="${body_mass}" d="${body_x}" w="${body_y}" h="${body_z}"/>
+      </inertial>
+		
+    </link>
+
+    <joint name="base_link_to_body_2" type="revolute">
+      <parent link="base_link"/>
+      <child link="body_2"/>
+      <origin xyz="0 0 -${body_z / 2 + body_2_z / 2 + 0.001}" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+	  <dynamics damping="0.5"/>
+      <limit lower="-${M_PI / 4}" upper="${M_PI / 4}" effort="${ef}" velocity="${vel}"/>
+    </joint>
+
+    <link name="body_2">
+      <visual>
+		<xacro:default_origin/>
+        <geometry>
+          <box size="${body_2_x} ${body_2_y} ${body_2_z}"/>
+        </geometry>
+        <xacro:set_color/>
+      </visual>
+		
+	  <collision>
+		<xacro:default_origin/>
+        <geometry>
+          <box size="${body_2_x} ${body_2_y} ${body_2_z}"/>
+        </geometry>
+      </collision>
+		
+      <inertial>
+		<xacro:default_origin/>
+        <xacro:box_inertial m="${body_2_mass}" d="${body_2_x}" w="${body_2_y}" h="${body_2_z}"/>
+      </inertial>
+    </link>
+	  
+  </xacro:macro>
+
+</robot>

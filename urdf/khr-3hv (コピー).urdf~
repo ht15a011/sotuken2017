@@ -1,0 +1,283 @@
+<<<<<<< HEAD
+<?xml version="1.0"?>
+<robot name="khr-3hv">
+
+ <material name="green">
+  <color rgba="0 1 0 1"/>
+ </material>
+
+ <!--head-->
+ <link name="head">
+ </link>
+
+ <!--body-->
+ <link name="body">
+ </link>
+
+ <!--left foot-->
+
+ <joint name="body_to_Lhips" type="revolute">
+  <parent link="body"/>
+  <child link="left_hips"/>
+  <axis xyz="0 0 1"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_hips">
+ </link>
+
+ <joint name="Lhips_to_Lthigh" type="revolute">
+  <parent link="left_hips"/>
+  <child link="left_thigh"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_thigh">
+ </link>
+
+ <joint name="Lthigh_to_Lknee" type="revolute">
+  <parent link="left_thigh"/>
+  <child link="left_knee"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_knee">
+ </link>
+
+ <joint name="Lknee_to_Lshin" type="revolute">
+  <parent link="left_knee"/>
+  <child link="left_shin"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_shin">
+ </link>
+
+ <joint name="Lshin_to_Lankle" type="revolute">
+  <parent link="left_shin"/>
+  <child link="left_ankle"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_ankle">
+ </link>
+
+ <joint name="Lankle_to_Lfoot" type="revolute">
+  <parent link="left_ankle"/>
+  <child link="left_foot"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_foot">
+ </link>
+
+ <!--right foot-->
+
+ <joint name="body_to_Rhips" type="revolute">
+  <parent link="body"/>
+  <child link="right_hips"/>
+  <axis xyz="0 0 1"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_hips">
+ </link>
+
+ <joint name="Rhips_to_Rthigh" type="revolute">
+  <parent link="right_hips"/>
+  <child link="right_thigh"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_thigh">
+ </link>
+
+ <joint name="Rthigh_to_Rknee" type="revolute">
+  <parent link="right_thigh"/>
+  <child link="right_knee"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_knee">
+ </link>
+
+ <joint name="Rknee_to_Rshin" type="revolute">
+  <parent link="right_knee"/>
+  <child link="right_shin"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_shin">
+ </link>
+
+ <joint name="Rshin_to_Rankle" type="revolute">
+  <parent link="right_shin"/>
+  <child link="right_ankle"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_ankle">
+ </link>
+
+ <joint name="Rankle_to_Rfoot" type="revolute">
+  <parent link="right_ankle"/>
+  <child link="right_foot"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_foot">
+ </link>
+
+</robot>
+=======
+<?xml version="1.0"?>
+<robot name="khr-3hv">
+
+ <material name="green">
+  <color rgba="0 1 0 1"/>
+ </material>
+
+ <!--head-->
+ <link name="head">
+ </link>
+
+ <!--body-->
+ <link name="body">
+ </link>
+
+ <!--left foot-->
+
+ <joint name="body_to_Lhips" type="revolute">
+  <parent link="body"/>
+  <child link="left_hips"/>
+  <axis xyz="0 0 1"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_hips">
+ </link>
+
+ <joint name="Lhips_to_Lthigh" type="revolute">
+  <parent link="left_hips"/>
+  <child link="left_thigh"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_thigh">
+ </link>
+
+ <joint name="Lthigh_to_Lknee" type="revolute">
+  <parent link="left_thigh"/>
+  <child link="left_knee"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_knee">
+ </link>
+
+ <joint name="Lknee_to_Lshin" type="revolute">
+  <parent link="left_knee"/>
+  <child link="left_shin"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_shin">
+ </link>
+
+ <joint name="Lshin_to_Lankle" type="revolute">
+  <parent link="left_shin"/>
+  <child link="left_ankle"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_ankle">
+ </link>
+
+ <joint name="Lankle_to_Lfoot" type="revolute">
+  <parent link="left_ankle"/>
+  <child link="left_foot"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="left_foot">
+ </link>
+
+ <!--right foot-->
+
+ <joint name="body_to_Rhips" type="revolute">
+  <parent link="body"/>
+  <child link="right_hips"/>
+  <axis xyz="0 0 1"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_hips">
+ </link>
+
+ <joint name="Rhips_to_Rthigh" type="revolute">
+  <parent link="right_hips"/>
+  <child link="right_thigh"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_thigh">
+ </link>
+
+ <joint name="Rthigh_to_Rknee" type="revolute">
+  <parent link="right_thigh"/>
+  <child link="right_knee"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_knee">
+ </link>
+
+ <joint name="Rknee_to_Rshin" type="revolute">
+  <parent link="right_knee"/>
+  <child link="right_shin"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_shin">
+ </link>
+
+ <joint name="Rshin_to_Rankle" type="revolute">
+  <parent link="right_shin"/>
+  <child link="right_ankle"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_ankle">
+ </link>
+
+ <joint name="Rankle_to_Rfoot" type="revolute">
+  <parent link="right_ankle"/>
+  <child link="right_foot"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="-2.0" upper="2.0" effort="1000" velocity="0.5"/>
+ </joint>
+
+ <link name="right_foot">
+ </link>
+
+</robot>
+>>>>>>> 42ca683593df3d34624e90336fab16e0fade033c

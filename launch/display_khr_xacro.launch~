@@ -1,0 +1,35 @@
+<<<<<<< HEAD
+<launch>
+  <!-- arguments -->
+  <arg name="model"/>
+  <arg name="gui" default="true" />
+
+  <!-- prameters -->
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(arg model)'"/>
+  <param name="use_gui" value="$(arg gui)"/>
+
+  <!-- nodes -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+  <!-- rviz -->
+  <node name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(find fourth_robot_description)/launch/config/fourth_robot_description.rviz"/>
+</launch>
+=======
+<launch>
+  <!-- arguments -->
+  <arg name="model"/>
+  <arg name="gui" default="true" />
+
+  <!-- prameters -->
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(arg model)'"/>
+  <param name="use_gui" value="$(arg gui)"/>
+
+  <!-- nodes -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+  <!-- rviz -->
+  <node name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(find fourth_robot_description)/launch/config/fourth_robot_description.rviz"/>
+</launch>
+>>>>>>> 42ca683593df3d34624e90336fab16e0fade033c

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+	
+	<xacro:macro name="make_fsensor" params="parent LR num *joint_origin">
+ 		<joint name="${LR}fsensor${num}_joint" type="fixed">
+   			<insert_block name="joint_origin"/>
+   			<parent link="${parent}" />
+   			<child link="${LR}fsensor${num}" />
+ 		</joint>
+		
+		<link name="${LR}fsensor${num}">
+ 		</link>
+
+ 		<sensor name="${LR}fsensor${num}_sensor" update_rate="20">
+   			<insert_block name="joint_origin"/>
+   			<parent link="${parent}" />
+ 		</sensor>
+	</xacro:macro>
+
+</robot>

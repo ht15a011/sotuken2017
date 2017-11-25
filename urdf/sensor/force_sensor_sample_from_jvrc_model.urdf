@@ -1,0 +1,22 @@
+<link name="rfsensor">
+  </link>
+  <joint name="rfsensor_JOINT" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+    <parent link="R_ANKLE_P_S" />
+    <child link="rfsensor" />
+  </joint>
+  <sensor name="rfsensor_SENSOR" update_rate="20">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+    <parent link="R_ANKLE_P_S" />
+  </sensor>
+  <link name="lfsensor">
+  </link>
+  <joint name="lfsensor_JOINT" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+    <parent link="L_ANKLE_P_S" />
+    <child link="lfsensor" />
+  </joint>
+  <sensor name="lfsensor_SENSOR" update_rate="20">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+    <parent link="L_ANKLE_P_S" />
+  </sensor>
