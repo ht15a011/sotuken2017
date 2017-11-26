@@ -4,8 +4,26 @@
 
   <!-- common color -->
   <xacro:macro name="set_color">
-	  <material name="green">
-   		<color rgba="0.0 1.0 0.0 1.0"/>
+	  <material name="default">
+   		<color rgba="0.8 0.8 0.8 1.0"/>
+  	  </material>
+  </xacro:macro>
+  
+  <xacro:macro name="silver">
+	  <material name="silver">
+   		<color rgba="${192 / 255} ${192 / 255} ${192 / 255} 1.0"/>
+  	  </material>
+  </xacro:macro>
+  
+  <xacro:macro name="darkgray">
+	  <material name="dimgray">
+   		<color rgba="${105 / 255} ${105 / 255} ${105 / 255} 1.0"/>
+  	  </material>
+  </xacro:macro>
+  
+  <xacro:macro name="lightgray">
+	  <material name="lightgray">
+   		<color rgba="${211 / 255} ${211 / 255} ${211 / 255} 1.0"/>
   	  </material>
   </xacro:macro>
 

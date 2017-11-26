@@ -9,13 +9,13 @@
   <property name="arm_xy" value="0.026"/>
   
   <property name="shoulder_z" value="0.036"/>
-  <property name="shoulder_mass" value="0.02975"/>
+  <property name="shoulder_mass" value="0.0625"/>
   
   <property name="upper_arm_z" value="0.082"/>
-  <property name="upper_arm_mass" value="0.02975"/>
+  <property name="upper_arm_mass" value="0.0625"/>
   
   <property name="lower_arm_z" value="0.056"/>
-  <property name="lower_arm_mass" value="0.051"/>
+  <property name="lower_arm_mass" value="0.025"/>
   
  <xacro:macro name="make_arm" params="parent LRarm ref arm_bool">
      <joint name="${parent}_to_${LRarm}shoulder" type="revolute">
@@ -33,7 +33,7 @@
             <geometry>
                 <box size="${arm_xy} ${arm_xy} ${shoulder_z}"/>
             </geometry>
-            <xacro:set_color/>
+            <xacro:darkgray/>
         </visual>
 
         <collision>
@@ -69,7 +69,7 @@
             <geometry>
                 <box size="${arm_xy} ${arm_xy} ${upper_arm_z}"/>
             </geometry>
-            <xacro:set_color/>
+            <xacro:darkgray/>
         </visual>
 
         <collision>
@@ -100,7 +100,7 @@
             <geometry>
                 <box size="${arm_xy} ${arm_xy} ${lower_arm_z}"/>
             </geometry>
-            <xacro:set_color/>
+            <xacro:darkgray/>
         </visual>
 
         <collision>

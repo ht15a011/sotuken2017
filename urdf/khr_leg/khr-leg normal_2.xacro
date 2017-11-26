@@ -5,29 +5,29 @@
 <xacro:include filename="$(find sotuken2017)/urdf/sensor/khr-force_sensor normal_2.xacro"/>
 
 	<property name="ef" value="1.37293"/>
-  <property name="vel" value="0.14"/>
+    <property name="vel" value="0.14"/>
 	
 	<property name="leg_xy" value="0.03"/>
 	
 	<property name="hips_z" value="0.0039"/>
-	<property name="hips_mass" value="0.03944"/>
+	<property name="hips_mass" value="0.048"/>
 	
 	<property name="thigh_z" value="0.026"/>
-	<property name="thigh_mass" value="0.03944"/>
+	<property name="thigh_mass" value="0.068"/>
 	
 	<property name="knee_z" value="0.088"/>
-	<property name="knee_mass" value="0.11832"/>
+	<property name="knee_mass" value="0.118"/>
 	
 	<property name="shin_z" value="0.047"/>
-	<property name="shin_mass" value="0.04692"/>
+	<property name="shin_mass" value="0.068"/>
 	
 	<property name="ankle_z" value="0.02"/>
-	<property name="ankle_mass" value="0.04692"/>
+	<property name="ankle_mass" value="0.068"/>
 	
 	<property name="foot_x" value="0.122"/>
 	<property name="foot_y" value="0.078"/>
 	<property name="foot_z" value="0.01"/>
-	<property name="foot_mass" value="0.02346"/>
+	<property name="foot_mass" value="0.03"/>
 	
 	<property name="foot2_x" value="0.122"/>
 	<property name="foot2_y" value="0.078"/>
@@ -55,7 +55,7 @@
    						<geometry>
     							<box size="${leg_xy} ${leg_xy} ${hips_z}"/>
   						</geometry>
-  						<xacro:set_color/>
+  						<xacro:darkgray/>
   				</visual>
 
   				<collision>
@@ -91,7 +91,7 @@
 						<geometry>
 								<box size="${leg_xy} ${leg_xy} ${thigh_z}"/>
 						</geometry>
-						<xacro:set_color/>
+						<xacro:darkgray/>
 				</visual>
 
 				<collision>
@@ -122,7 +122,7 @@
 						<geometry>
 								<box size="${leg_xy} ${leg_xy} ${knee_z}"/>
 						</geometry>
-						<xacro:set_color/>
+						<xacro:darkgray/>
 				</visual>
 
 				<collision>
@@ -153,7 +153,7 @@
 						<geometry>
 								<box size="${leg_xy} ${leg_xy} ${shin_z}"/>
 						</geometry>
-						<xacro:set_color/>
+						<xacro:darkgray/>
 				</visual>
 
 				<collision>
@@ -184,7 +184,7 @@
 						<geometry>
 								<box size="${leg_xy} ${leg_xy} ${ankle_z}"/>
 						</geometry>
-						<xacro:set_color/>
+						<xacro:darkgray/>
 				</visual>
 
 				<collision>
@@ -215,7 +215,7 @@
 						<geometry>
 								<box size="${foot_x} ${foot_y} ${foot_z}"/>
 						</geometry>
-						<xacro:set_color/>
+						<xacro:darkgray/>
 				</visual>
 
 				<collision>
@@ -262,7 +262,7 @@
 						<geometry>
 								<box size="${foot2_x} ${foot2_y} ${foot2_z}"/>
 						</geometry>
-						<xacro:set_color/>
+						<xacro:darkgray/>
 				</visual>
 
 				<collision>
