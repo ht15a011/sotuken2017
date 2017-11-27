@@ -1,6 +1,33 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
+  <xacro:macro name="gazebo_link" params="ref mu" >
+	<gazebo reference="${ref}">
+	  <selfCollide>false</selfCollide>
+      <mu1 value="${mu}" />
+      <mu2 value="${mu}" />
+	  <material>Gazebo/Green</material>
+    </gazebo>
+  </xacro:macro>
+  
+  <xacro:macro name="gazebo_link_red" params="ref">
+	<gazebo reference="${ref}">
+	  <material>Gazebo/Red</material>
+    </gazebo>
+  </xacro:macro>
+  
+  <xacro:macro name="gazebo_link_black" params="ref">
+	<gazebo reference="${ref}">
+	  <material>Gazebo/Black</material>
+    </gazebo>
+  </xacro:macro>
+  
+  <xacro:macro name="gazebo_link_gray" params="ref">
+	<gazebo reference="${ref}">
+	  <material>Gazebo/Grey</material>
+    </gazebo>
+  </xacro:macro>
+
   <!-- ros_control plugin -->
   <xacro:macro name="gazebo_control" params="robot">
   	<gazebo>
@@ -10,16 +37,8 @@
     	</plugin>
   	</gazebo>
   </xacro:macro>
-	
-  <xacro:macro name="gazebo_link" params="ref mu" >
-	<gazebo reference="${ref}">
-	  <selfCollide>false</selfCollide>
-      <mu1 value="${mu}" />
-      <mu2 value="${mu}" />
-	  <material>Gazebo/Green</material>
-    </gazebo>
-  </xacro:macro>
-	
+  
+  <!-- gazebo transmission(type effort) -->
   <xacro:macro name="gazebo_trans" params="tran joint motor" >
   	<transmission name="${tran}">
     	<type>transmission_interface/SimpleTransmission</type>

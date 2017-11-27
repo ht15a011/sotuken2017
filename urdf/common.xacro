@@ -9,21 +9,21 @@
   	  </material>
   </xacro:macro>
   
+  <xacro:macro name="red">
+	  <material name="red">
+   		<color rgba="1.0 0.0 0.0 1.0"/>
+  	  </material>
+  </xacro:macro>
+  
+  <xacro:macro name="black">
+	  <material name="black">
+   		<color rgba="0.3 0.3 0.3 1.0"/>
+  	  </material>
+  </xacro:macro>
+  
   <xacro:macro name="silver">
 	  <material name="silver">
    		<color rgba="${192 / 255} ${192 / 255} ${192 / 255} 1.0"/>
-  	  </material>
-  </xacro:macro>
-  
-  <xacro:macro name="darkgray">
-	  <material name="dimgray">
-   		<color rgba="${105 / 255} ${105 / 255} ${105 / 255} 1.0"/>
-  	  </material>
-  </xacro:macro>
-  
-  <xacro:macro name="lightgray">
-	  <material name="lightgray">
-   		<color rgba="${211 / 255} ${211 / 255} ${211 / 255} 1.0"/>
   	  </material>
   </xacro:macro>
 

@@ -2,6 +2,7 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
 <xacro:include filename="$(find sotuken2017)/urdf/common.xacro"/>
+<xacro:include filename="$(find sotuken2017)/urdf/urdf_gazebo.xacro"/>
 	
   <property name="ef" value="1.37293"/>
   <property name="vel" value="0.14"/>
@@ -33,7 +34,7 @@
             <geometry>
                 <box size="${arm_xy} ${arm_xy} ${shoulder_z}"/>
             </geometry>
-            <xacro:darkgray/>
+            <xacro:black/>
         </visual>
 
         <collision>
@@ -69,7 +70,7 @@
             <geometry>
                 <box size="${arm_xy} ${arm_xy} ${upper_arm_z}"/>
             </geometry>
-            <xacro:darkgray/>
+            <xacro:black/>
         </visual>
 
         <collision>
@@ -100,7 +101,7 @@
             <geometry>
                 <box size="${arm_xy} ${arm_xy} ${lower_arm_z}"/>
             </geometry>
-            <xacro:darkgray/>
+            <xacro:black/>
         </visual>
 
         <collision>
@@ -115,7 +116,9 @@
             <xacro:box_inertial m="${lower_arm_mass}" d="${arm_xy}" w="${arm_xy}" h="${lower_arm_z}"/>
         </inertial>
     </link>
-	 
+	
+	<xacro:gazebo_link_black ref="${LRarm}shoulder"/>
+	<xacro:gazebo_link_black ref="${LRarm}upper_arm"/>
+	<xacro:gazebo_link_black ref="${LRarm}lower_arm"/>
   </xacro:macro>
-
 </robot>

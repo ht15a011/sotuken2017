@@ -2,6 +2,7 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
 <xacro:include filename="$(find sotuken2017)/urdf/common.xacro"/>
+<xacro:include filename="$(find sotuken2017)/urdf/urdf_gazebo.xacro"/>
 <xacro:include filename="$(find sotuken2017)/urdf/khr_body/khr-body.xacro"/>
 	
   <property name="ef" value="1.37293"/>
@@ -44,6 +45,7 @@
 	   	</inertial>
      </link>
 	   
+	 <xacro:gazebo_link_gray ref="head"/>
    </xacro:macro>
 
 </robot>

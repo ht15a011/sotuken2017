@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<xacro:include filename="$(find sotuken2017)/urdf/urdf_gazebo.xacro"/>
 	
 	<property name="box_xy" value="0.02"/>
 	<property name="box_z" value="0.01"/>
@@ -20,7 +22,7 @@
 				<geometry>
 					<box size="${box_xy} ${box_xy} ${box_z}"/>
 				</geometry>
-				<xacro:lightgray/>
+				<xacro:red/>
 			</visual>
 
 			<collision>
@@ -40,6 +42,7 @@
    			<insert_block name="joint_origin"/>
    			<parent link="${parent}" />
  		</sensor>
+		
+		<xacro:gazebo_link_red ref="${LR}fsensor${num}"/>
 	</xacro:macro>
-
 </robot>
