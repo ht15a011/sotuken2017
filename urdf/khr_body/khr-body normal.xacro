@@ -28,7 +28,7 @@
         <geometry>
           <box size="${body_x} ${body_y} ${body_z}"/>
         </geometry>
-        <xacro:silver/>
+        <xacro:gray/>
       </visual>
 		
       <collision>

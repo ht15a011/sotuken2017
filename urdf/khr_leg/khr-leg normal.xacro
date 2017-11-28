@@ -261,7 +261,7 @@
 						<geometry>
 								<box size="${foot2_x} ${foot2_y} ${foot2_z}"/>
 						</geometry>
-						<xacro:black/>
+						<xacro:gray/>
 				</visual>
 
 				<collision>

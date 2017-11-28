@@ -21,9 +21,9 @@
   	  </material>
   </xacro:macro>
   
-  <xacro:macro name="silver">
-	  <material name="silver">
-   		<color rgba="${192 / 255} ${192 / 255} ${192 / 255} 1.0"/>
+  <xacro:macro name="gray">
+	  <material name="gray">
+   		<color rgba="0.8 0.8 0.8 1.0"/>
   	  </material>
   </xacro:macro>
 
