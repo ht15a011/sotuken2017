@@ -120,7 +120,7 @@ items:
               plugin: RosBody
               class: BodyRosTorqueControllerItem
               data: 
-                pdcParameterFilename: "/home/uemoto/catkin_ws/install/share/sotuken2017/launch/rviz-config/khr-3hv_normal.rviz"
+                pdcParameterFilename: "/home/uemoto/catkin_ws/install/share/sotuken2017/robot/khr-PD-parameter/khr-3hv-parameter.yml"
 views: 
   - 
     id: 0
@@ -133,7 +133,7 @@ views:
     class: ItemTreeView
     mounted: true
     state: 
-      selected: [ 5 ]
+      selected: [ 1 ]
       checked: [ 1, 2, 3, 5, 6, 7 ]
       expanded: [ 1, 5 ]
   - 
@@ -185,9 +185,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 100
-          eye: [ 1.09763041, 0.268105861, 0.490643722 ]
-          direction: [ -0.947004398, -0.265813835, -0.180348759 ]
-          up: [ -0.173638262, -0.0487383716, 0.983602727 ]
+          eye: [ 1.15542183, 0.152610458, 0.490643722 ]
+          direction: [ -0.968810424, -0.169943191, -0.180348759 ]
+          up: [ -0.177636512, -0.0311599823, 0.983602727 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -239,6 +239,28 @@ views:
     class: PythonConsoleView
     mounted: true
 toolbars: 
+  "TimeBar": 
+    minTime: 0
+    maxTime: 30
+    frameRate: 1000
+    playbackFrameRate: 50
+    idleLoopDrivenMode: false
+    currentTime: 15.919
+    speedScale: 1
+    syncToOngoingUpdates: true
+    autoExpansion: true
+  "KinematicsBar": 
+    mode: AUTO
+    enablePositionDragger: true
+    penetrationBlock: true
+    collisionLinkHighlight: false
+    snapDistance: 0.025
+    penetrationBlockDepth: 0.0005
+    lazyCollisionDetectionMode: true
+  "BodyBar": 
+    current: 5
+  "LeggedBodyBar": 
+    stanceWidth: 0.15
   "BodyMotionGenerationBar": 
     autoGenerationForNewBody: true
     balancer: false
@@ -272,28 +294,6 @@ toolbars:
     waistHeightRelaxation: false
     gravity: 9.8
     dynamicsTimeRatio: 1
-  "TimeBar": 
-    minTime: 0
-    maxTime: 30
-    frameRate: 1000
-    playbackFrameRate: 50
-    idleLoopDrivenMode: false
-    currentTime: 0
-    speedScale: 1
-    syncToOngoingUpdates: true
-    autoExpansion: true
-  "KinematicsBar": 
-    mode: AUTO
-    enablePositionDragger: true
-    penetrationBlock: true
-    collisionLinkHighlight: false
-    snapDistance: 0.025
-    penetrationBlockDepth: 0.0005
-    lazyCollisionDetectionMode: true
-  "BodyBar": 
-    current: 5
-  "LeggedBodyBar": 
-    stanceWidth: 0.15
 Body: 
   "BodyMotionEngine": 
     updateJointVelocities: false
@@ -354,7 +354,7 @@ viewAreas:
                 - 
                   type: pane
                   views: [ 4, 6, 5 ]
-                  current: 6
+                  current: 4
                 - 
                   type: pane
                   views: [ 3 ]

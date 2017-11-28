@@ -4,28 +4,6 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="khr-3hv" xmlns:xacro="http://ros.org/wiki/xacro">
-  <!-- common color -->
-  <!-- calculate box inertia -->
-  <!-- ros_control plugin -->
-  <!-- gazebo transmission(type effort) -->
-  <!-- common color -->
-  <!-- calculate box inertia -->
-  <!-- ros_control plugin -->
-  <!-- gazebo transmission(type effort) -->
-  <!-- common color -->
-  <!-- calculate box inertia -->
-  <!-- ros_control plugin -->
-  <!-- gazebo transmission(type effort) -->
-  <!-- common color -->
-  <!-- calculate box inertia -->
-  <!-- ros_control plugin -->
-  <!-- gazebo transmission(type effort) -->
-  <!-- common color -->
-  <!-- calculate box inertia -->
-  <!-- ros_control plugin -->
-  <!-- gazebo transmission(type effort) -->
-  <!-- ros_control plugin -->
-  <!-- gazebo transmission(type effort) -->
   <!-- head -->
   <joint name="base_link_to_head" type="revolute">
     <parent link="base_link"/>
@@ -67,7 +45,7 @@
       <geometry>
         <box size="0.129 0.105 0.062"/>
       </geometry>
-      <material name="default">
+      <material name="gray">
         <color rgba="0.8 0.8 0.8 1.0"/>
       </material>
     </visual>
@@ -79,8 +57,8 @@
     </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <mass value="0.3655"/>
-      <inertia ixx="0.000623938958333" ixy="0" ixz="0" iyy="0.00084266025" iyz="0" izz="0.000452884958333"/>
+      <mass value="0.3"/>
+      <inertia ixx="0.000512125" ixy="0" ixz="0" iyy="0.00069165" iyz="0" izz="0.000371725"/>
     </inertial>
   </link>
   <joint name="base_link_to_body_2" type="revolute">
@@ -97,8 +75,8 @@
       <geometry>
         <box size="0.057 0.08 0.041"/>
       </geometry>
-      <material name="default">
-        <color rgba="0.8 0.8 0.8 1.0"/>
+      <material name="black">
+        <color rgba="0.3 0.3 0.3 1.0"/>
       </material>
     </visual>
     <collision>
@@ -109,32 +87,16 @@
     </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <mass value="0.3655"/>
-      <inertia ixx="0.000150159583333" ixy="0" ixz="0" iyy="0.000293892458333" iyz="0" izz="0.000246133791667"/>
+      <mass value="0.2"/>
+      <inertia ixx="8.21666666667e-05" ixy="0" ixz="0" iyy="0.000160816666667" iyz="0" izz="0.000134683333333"/>
     </inertial>
   </link>
   <gazebo reference="base_link">
-    <selfCollide>false</selfCollide>
-    <mu1 value="0.05"/>
-    <mu2 value="0.05"/>
-    <material>Gazebo/Green</material>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="body_2">
-    <selfCollide>false</selfCollide>
-    <mu1 value="0.8"/>
-    <mu2 value="0.8"/>
-    <material>Gazebo/Green</material>
+    <material>Gazebo/Black</material>
   </gazebo>
-  <transmission name="base_link_to_body_2_tran">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="base_link_to_body_2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="body_motor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
   <!-- left arm -->
   <joint name="base_link_to_Lshoulder" type="revolute">
     <parent link="base_link"/>

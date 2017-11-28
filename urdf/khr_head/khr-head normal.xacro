@@ -3,7 +3,7 @@
 
 <xacro:include filename="$(find sotuken2017)/urdf/common.xacro"/>
 <xacro:include filename="$(find sotuken2017)/urdf/urdf_gazebo.xacro"/>
-<xacro:include filename="$(find sotuken2017)/urdf/khr_body/khr-body.xacro"/>
+<xacro:include filename="$(find sotuken2017)/urdf/khr_body/khr-body normal.xacro"/>
 	
   <property name="ef" value="1.37293"/>
   <property name="vel" value="0.14"/>

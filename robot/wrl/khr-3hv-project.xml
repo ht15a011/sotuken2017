@@ -6,7 +6,7 @@
    <property name="totalTime" value="2000000.0"/>
    <property name="method" value="EULER"/>
   </item>
-  <item class="com.generalrobotix.ui.item.GrxModelItem" name="base_link" url="/home/uemoto/catkin_ws/install/share/sotuken2017/robot/wrl/KHR-3HV.wrl">
+  <item class="com.generalrobotix.ui.item.GrxModelItem" name="base_link" url="/home/uemoto/catkin_ws/install/share/sotuken2017/robot/wrl/khr-3hv.wrl">
    <property name="WAIST.translation" value="0.0 0.0 0.0"/>
    <property name="WAIST.rotation" value="0 1 0 0"/>
   </item>

@@ -114,6 +114,17 @@ PROTO Humanoid [
   }
 }
 
+PROTO ExtraJoint [
+  exposedField SFString link1Name ""
+  exposedField SFString link2Name ""
+  exposedField SFVec3f  link1LocalPos 0 0 0
+  exposedField SFVec3f  link2LocalPos 0 0 0
+  exposedField SFString jointType "xyz"
+  exposedField SFVec3f  jointAxis 1 0 0
+]
+{
+}
+
 PROTO ForceSensor [  
 exposedField SFVec3f maxForce -1 -1 -1
   exposedField SFVec3f maxTorque -1 -1 -1
@@ -128,17 +139,6 @@ translation IS translation
   }
 }
 
-PROTO ExtraJoint [
-  exposedField SFString link1Name ""
-  exposedField SFString link2Name ""
-  exposedField SFVec3f  link1LocalPos 0 0 0
-  exposedField SFVec3f  link2LocalPos 0 0 0
-  exposedField SFString jointType "xyz"
-  exposedField SFVec3f  jointAxis 1 0 0
-]
-{
-}
-
 DEF KHR-3HV Humanoid {
   humanoidBody [
     DEF base_link Joint {
@@ -147,9 +147,9 @@ DEF KHR-3HV Humanoid {
       rotation 0 1 0 0
       children [
         DEF base_link Segment {
-          mass 0.3655
+          mass 0.3
           centerOfMass 0.0 0.0 0.0
-          momentsOfInertia [0.000623939 0.0 0.0 0.0 0.00084266 0.0 0.0 0.0 0.000452885]
+          momentsOfInertia [0.000512125 0.0 0.0 0.0 0.00069165 0.0 0.0 0.0 0.000371725]
           children [
             Transform {
               scale 1.0 1.0 1.0
@@ -177,10 +177,10 @@ DEF KHR-3HV Humanoid {
           jointId 2
           translation 0.0 0.0525 0.018
           rotation 0 1 0 0
-          ulimit 1.0472
-          llimit -3.14159
-          uvlimit 0.14
-          lvlimit -0.14
+          ulimit [1.0472]
+          llimit [-3.14159]
+          uvlimit [0.14]
+          lvlimit [-0.14]
           climit [1.37293]
           children [
             DEF Lshoulder Segment {
@@ -214,10 +214,10 @@ DEF KHR-3HV Humanoid {
               jointId 3
               translation 0.0 0.023 6.59194920871e-17
               rotation 0 1 0 0
-              ulimit 1.5708
-              llimit -0.0
-              uvlimit 0.14
-              lvlimit -0.14
+              ulimit [1.5708]
+              llimit [-0.0]
+              uvlimit [0.14]
+              lvlimit [-0.14]
               climit [1.37293]
               children [
                 DEF Lupper_arm Segment {
@@ -251,10 +251,10 @@ DEF KHR-3HV Humanoid {
                   jointId 4
                   translation 0.013 -2.49800180541e-16 -0.125
                   rotation 0 1 0 0
-                  ulimit 0.0
-                  llimit -2.61799
-                  uvlimit 0.14
-                  lvlimit -0.14
+                  ulimit [0.0]
+                  llimit [-2.61799]
+                  uvlimit [0.14]
+                  lvlimit [-0.14]
                   climit [1.37293]
                   children [
                     DEF Llower_arm Segment {
@@ -294,10 +294,10 @@ DEF KHR-3HV Humanoid {
           jointId 5
           translation 0.0 -0.0525 0.018
           rotation 0 1 0 0
-          ulimit 1.0472
-          llimit -3.14159
-          uvlimit 0.14
-          lvlimit -0.14
+          ulimit [1.0472]
+          llimit [-3.14159]
+          uvlimit [0.14]
+          lvlimit [-0.14]
           climit [1.37293]
           children [
             DEF Rshoulder Segment {
@@ -331,10 +331,10 @@ DEF KHR-3HV Humanoid {
               jointId 6
               translation 0.0 -0.023 6.59194920871e-17
               rotation 0 1 0 0
-              ulimit 0.0
-              llimit -1.5708
-              uvlimit 0.14
-              lvlimit -0.14
+              ulimit [0.0]
+              llimit [-1.5708]
+              uvlimit [0.14]
+              lvlimit [-0.14]
               climit [1.37293]
               children [
                 DEF Rupper_arm Segment {
@@ -368,10 +368,10 @@ DEF KHR-3HV Humanoid {
                   jointId 7
                   translation 0.013 2.49800180541e-16 -0.125
                   rotation 0 1 0 0
-                  ulimit 0.0
-                  llimit -2.61799
-                  uvlimit 0.14
-                  lvlimit -0.14
+                  ulimit [0.0]
+                  llimit [-2.61799]
+                  uvlimit [0.14]
+                  lvlimit [-0.14]
                   climit [1.37293]
                   children [
                     DEF Rlower_arm Segment {
@@ -411,16 +411,16 @@ DEF KHR-3HV Humanoid {
           jointId 1
           translation 0.0 0.0 -0.0525
           rotation 0 1 0 0
-          ulimit 0.785398
-          llimit -0.785398
-          uvlimit 0.14
-          lvlimit -0.14
+          ulimit [0.785398]
+          llimit [-0.785398]
+          uvlimit [0.14]
+          lvlimit [-0.14]
           climit [1.37293]
           children [
             DEF body_2 Segment {
-              mass 0.3655
+              mass 0.2
               centerOfMass 0.0 0.0 0.0
-              momentsOfInertia [0.00015016 0.0 0.0 0.0 0.000293892 0.0 0.0 0.0 0.000246134]
+              momentsOfInertia [8.21667e-05 0.0 0.0 0.0 0.000160817 0.0 0.0 0.0 0.000134683]
               children [
                 Transform {
                   scale 1.0 1.0 1.0
@@ -448,10 +448,10 @@ DEF KHR-3HV Humanoid {
               jointId 8
               translation 0.0 0.03 -0.0255
               rotation 0 1 0 0
-              ulimit 0.785398
-              llimit -0.523599
-              uvlimit 0.14
-              lvlimit -0.14
+              ulimit [0.785398]
+              llimit [-0.523599]
+              uvlimit [0.14]
+              lvlimit [-0.14]
               climit [1.37293]
               children [
                 DEF Lhips Segment {
@@ -485,10 +485,10 @@ DEF KHR-3HV Humanoid {
                   jointId 9
                   translation 0.0 -6.93889390391e-18 -0.03
                   rotation 0 1 0 0
-                  ulimit 0.785398
-                  llimit -0.523599
-                  uvlimit 0.14
-                  lvlimit -0.14
+                  ulimit [0.785398]
+                  llimit [-0.523599]
+                  uvlimit [0.14]
+                  lvlimit [-0.14]
                   climit [1.37293]
                   children [
                     DEF Lthigh Segment {
@@ -522,10 +522,10 @@ DEF KHR-3HV Humanoid {
                       jointId 10
                       translation 0.0 -9.02056207508e-17 -0.046
                       rotation 0 1 0 0
-                      ulimit 0.785398
-                      llimit -2.0944
-                      uvlimit 0.14
-                      lvlimit -0.14
+                      ulimit [0.785398]
+                      llimit [-2.0944]
+                      uvlimit [0.14]
+                      lvlimit [-0.14]
                       climit [1.37293]
                       children [
                         DEF Lknee Segment {
@@ -559,10 +559,10 @@ DEF KHR-3HV Humanoid {
                           jointId 11
                           translation -0.0205 -2.98372437868e-16 -0.0885
                           rotation 0 1 0 0
-                          ulimit 2.61799
-                          llimit -0.0
-                          uvlimit 0.14
-                          lvlimit -0.14
+                          ulimit [2.61799]
+                          llimit [-0.0]
+                          uvlimit [0.14]
+                          lvlimit [-0.14]
                           climit [1.37293]
                           children [
                             DEF Lshin Segment {
@@ -596,10 +596,10 @@ DEF KHR-3HV Humanoid {
                               jointId 12
                               translation 0.0205 -3.12250225676e-17 -0.0319
                               rotation 0 1 0 0
-                              ulimit 1.0472
-                              llimit -1.5708
-                              uvlimit 0.14
-                              lvlimit -0.14
+                              ulimit [1.0472]
+                              llimit [-1.5708]
+                              uvlimit [0.14]
+                              lvlimit [-0.14]
                               climit [1.37293]
                               children [
                                 DEF Lankle Segment {
@@ -633,10 +633,10 @@ DEF KHR-3HV Humanoid {
                                   jointId 13
                                   translation 0.0 7.2858385991e-17 -0.037
                                   rotation 0 1 0 0
-                                  ulimit 0.785398
-                                  llimit -0.785398
-                                  uvlimit 0.14
-                                  lvlimit -0.14
+                                  ulimit [0.785398]
+                                  llimit [-0.785398]
+                                  uvlimit [0.14]
+                                  lvlimit [-0.14]
                                   climit [1.37293]
                                   children [
                                     DEF Lfoot Segment {
@@ -693,6 +693,9 @@ DEF KHR-3HV Humanoid {
                                                 size 0.02 0.02 0.01
                                               }
                                             }
+                                            DEF lfsensor1 ForceSensor {
+											  sensorId 0
+											}
                                           ]
                                         }
                                         Transform {
@@ -710,6 +713,9 @@ DEF KHR-3HV Humanoid {
                                                 size 0.02 0.02 0.01
                                               }
                                             }
+                                            DEF lfsensor2 ForceSensor {
+											  sensorId 1
+											}
                                           ]
                                         }
                                         Transform {
@@ -727,6 +733,9 @@ DEF KHR-3HV Humanoid {
                                                 size 0.02 0.02 0.01
                                               }
                                             }
+                                            DEF lfsensor3 ForceSensor {
+											  sensorId 2
+											}
                                           ]
                                         }
                                         Transform {
@@ -744,6 +753,9 @@ DEF KHR-3HV Humanoid {
                                                 size 0.02 0.02 0.01
                                               }
                                             }
+                                            DEF lfsensor4 ForceSensor {
+											  sensorId 3
+											}
                                           ]
                                         }
                                       ]
@@ -767,10 +779,10 @@ DEF KHR-3HV Humanoid {
               jointId 14
               translation 0.0 -0.03 -0.0255
               rotation 0 1 0 0
-              ulimit 0.523599
-              llimit -0.785398
-              uvlimit 0.14
-              lvlimit -0.14
+              ulimit [0.523599]
+              llimit [-0.785398]
+              uvlimit [0.14]
+              lvlimit [-0.14]
               climit [1.37293]
               children [
                 DEF Rhips Segment {
@@ -804,10 +816,10 @@ DEF KHR-3HV Humanoid {
                   jointId 15
                   translation 0.0 6.93889390391e-18 -0.03
                   rotation 0 1 0 0
-                  ulimit 0.523599
-                  llimit -0.785398
-                  uvlimit 0.14
-                  lvlimit -0.14
+                  ulimit [0.523599]
+                  llimit [-0.785398]
+                  uvlimit [0.14]
+                  lvlimit [-0.14]
                   climit [1.37293]
                   children [
                     DEF Rthigh Segment {
@@ -841,10 +853,10 @@ DEF KHR-3HV Humanoid {
                       jointId 16
                       translation 0.0 -1.73472347598e-17 -0.046
                       rotation 0 1 0 0
-                      ulimit 0.785398
-                      llimit -2.0944
-                      uvlimit 0.14
-                      lvlimit -0.14
+                      ulimit [0.785398]
+                      llimit [-2.0944]
+                      uvlimit [0.14]
+                      lvlimit [-0.14]
                       climit [1.37293]
                       children [
                         DEF Rknee Segment {
@@ -878,10 +890,10 @@ DEF KHR-3HV Humanoid {
                           jointId 17
                           translation -0.0205 1.31838984174e-16 -0.0885
                           rotation 0 1 0 0
-                          ulimit 2.61799
-                          llimit -0.0
-                          uvlimit 0.14
-                          lvlimit -0.14
+                          ulimit [2.61799]
+                          llimit [-0.0]
+                          uvlimit [0.14]
+                          lvlimit [-0.14]
                           climit [1.37293]
                           children [
                             DEF Rshin Segment {
@@ -915,10 +927,10 @@ DEF KHR-3HV Humanoid {
                               jointId 18
                               translation 0.0205 3.12250225676e-17 -0.0319
                               rotation 0 1 0 0
-                              ulimit 1.0472
-                              llimit -1.5708
-                              uvlimit 0.14
-                              lvlimit -0.14
+                              ulimit [1.0472]
+                              llimit [-1.5708]
+                              uvlimit [0.14]
+                              lvlimit [-0.14]
                               climit [1.37293]
                               children [
                                 DEF Rankle Segment {
@@ -952,10 +964,10 @@ DEF KHR-3HV Humanoid {
                                   jointId 19
                                   translation 0.0 -7.2858385991e-17 -0.037
                                   rotation 0 1 0 0
-                                  ulimit 0.785398
-                                  llimit -0.785398
-                                  uvlimit 0.14
-                                  lvlimit -0.14
+                                  ulimit [0.785398]
+                                  llimit [-0.785398]
+                                  uvlimit [0.14]
+                                  lvlimit [-0.14]
                                   climit [1.37293]
                                   children [
                                     DEF Rfoot Segment {
@@ -1012,6 +1024,9 @@ DEF KHR-3HV Humanoid {
                                                 size 0.02 0.02 0.01
                                               }
                                             }
+                                            DEF rfsensor1 ForceSensor {
+											  sensorId 4
+											}
                                           ]
                                         }
                                         Transform {
@@ -1029,6 +1044,9 @@ DEF KHR-3HV Humanoid {
                                                 size 0.02 0.02 0.01
                                               }
                                             }
+                                            DEF rfsensor2 ForceSensor {
+											  sensorId 5
+											}
                                           ]
                                         }
                                         Transform {
@@ -1046,6 +1064,9 @@ DEF KHR-3HV Humanoid {
                                                 size 0.02 0.02 0.01
                                               }
                                             }
+                                            DEF rfsensor3 ForceSensor {
+											  sensorId 6
+											}
                                           ]
                                         }
                                         Transform {
@@ -1063,6 +1084,9 @@ DEF KHR-3HV Humanoid {
                                                 size 0.02 0.02 0.01
                                               }
                                             }
+                                            DEF rfsensor4 ForceSensor {
+											  sensorId 7
+											}
                                           ]
                                         }
                                       ]
@@ -1088,10 +1112,10 @@ DEF KHR-3HV Humanoid {
           jointId 0
           translation 0.0 0.0 0.0315
           rotation 0 1 0 0
-          ulimit 1.5708
-          llimit -1.5708
-          uvlimit 0.14
-          lvlimit -0.14
+          ulimit [1.5708]
+          llimit [-1.5708]
+          uvlimit [0.14]
+          lvlimit [-0.14]
           climit [1.37293]
           children [
             DEF head Segment {
