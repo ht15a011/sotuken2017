@@ -1,32 +1,35 @@
+参照
+http://www.mutoh-sekkei.jp/keisan/03_moment.html
+
 head
-rotorInertia
+rotorInertia 0.000059
 
 body_2
-rotorInertia
+rotorInertia 0.000161
 
 shoulder
-rotorInertia
+rotorInertia 0.000043
 
 arm_upper
-rotorInertia
+rotorInertia 0.000429
 
 arm_lower
-rotorInertia
+rotorInertia 0.000039
 
 hip
-rotorInertia
+rotorInertia 0.000007
 
 thigh
-rotorInertia
+rotorInertia 0.000009
 
 knee
-rotorInertia
+rotorInertia 0.000221
 
 shin
-rotorInertia
+rotorInertia 0.000085
 
 ankle
-rotorInertia
+rotorInertia 0.0001
 
 foot
-rotorInertia
+rotorInertia 0.000168
