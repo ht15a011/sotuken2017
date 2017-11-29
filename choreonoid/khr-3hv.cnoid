@@ -45,7 +45,7 @@ items:
               0, 0, 1 ]
             zmp: [ 0, 0, 0 ]
             collisionDetection: true
-            selfCollisionDetection: false
+            selfCollisionDetection: true
             isEditable: false
         - 
           id: 4
@@ -86,15 +86,15 @@ items:
           data: 
             modelFile: "/home/uemoto/catkin_ws/install/share/sotuken2017/robot/wrl/khr-3hv.wrl"
             currentBaseLink: "base_link"
-            rootPosition: [ 1.36073389e-05, 1.3379383e-05, 0.359802734 ]
+            rootPosition: [ -0.0875066, 0.0151750626, 0.365571341 ]
             rootAttitude: [ 
-              0.999999999, 1.06564153e-06, 4.17090338e-05, 
-              -1.06629896e-06, 1, 1.57622566e-05, 
-              -4.17090169e-05, -1.5762301e-05, 0.999999999 ]
+              0.959701748, -0.000501019363, -0.281020112, 
+              -0.0101065796, 0.999289969, -0.0362962126, 
+              0.280838764, 0.0376736908, 0.959015267 ]
             jointPositions: [ 
-               0.000000, -0.000000, -0.000000,  0.000000, -0.000001, -0.000000,  0.000000, -0.000001,  0.000001, -0.000025, 
-               0.000000, -0.000043,  0.000001, -0.000018, -0.000001, -0.000024, -0.000000, -0.000012, -0.000001, -0.000031 ]
-            initialRootPosition: [ 0, 0, 0.366299563 ]
+              -0.294624,  0.002307, -0.018368, -0.002218, -0.014499, -0.007887, -0.092268, -0.144175,  0.462656, -0.068231, 
+              -0.069852,  0.003551,  0.049369,  0.050534,  0.042257, -0.190749,  0.003083,  0.021342,  0.146707,  0.184995 ]
+            initialRootPosition: [ 1.97626258e-323, 0, 0.377833864 ]
             initialRootAttitude: [ 
               1, 0, 0, 
               0, 1, 0, 
@@ -104,7 +104,7 @@ items:
                0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
             zmp: [ 0, 0, 0 ]
             collisionDetection: true
-            selfCollisionDetection: false
+            selfCollisionDetection: true
             isEditable: true
           children: 
             - 
@@ -133,7 +133,7 @@ views:
     class: ItemTreeView
     mounted: true
     state: 
-      checked: [ 1, 2, 3, 5, 6, 7 ]
+      checked: [ 1, 2, 3, 4, 5, 6, 7 ]
       expanded: [ 1, 5 ]
   - 
     id: 2
@@ -184,9 +184,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 100
-          eye: [ 1.10986309, 0.27045291, 0.472676518 ]
-          direction: [ -0.956876614, -0.227731138, -0.180348759 ]
-          up: [ -0.175448385, -0.0417557079, 0.983602727 ]
+          eye: [ 0.810318066, 0.726890876, 0.587049136 ]
+          direction: [ -0.768462733, -0.57652297, -0.277644185 ]
+          up: [ -0.222090941, -0.166619048, 0.960683978 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -217,49 +217,35 @@ views:
     mounted: true
     state: 
       showAllJoints: true
-      jointId: false
+      jointId: true
       name: true
       numColumns: 1
       spinBox: true
       slider: true
       labelOnLeft: true
-      currentBodyItem: 5
   - 
     id: 7
+    name: "Joint State"
+    plugin: Body
+    class: JointStateView
+    mounted: true
+  - 
+    id: 8
     plugin: Body
     class: LinkSelectionView
     mounted: true
     state: 
       listingMode: "Link List"
-      currentBodyItem: 5
+      bodyItems: 
+        - 
+          id: 3
+          selectedLinks: [ 0 ]
   - 
-    id: 8
+    id: 9
     plugin: Python
     class: PythonConsoleView
     mounted: true
 toolbars: 
-  "TimeBar": 
-    minTime: 0
-    maxTime: 30
-    frameRate: 1000
-    playbackFrameRate: 50
-    idleLoopDrivenMode: false
-    currentTime: 29.512
-    speedScale: 1
-    syncToOngoingUpdates: true
-    autoExpansion: true
-  "KinematicsBar": 
-    mode: AUTO
-    enablePositionDragger: true
-    penetrationBlock: true
-    collisionLinkHighlight: false
-    snapDistance: 0.025
-    penetrationBlockDepth: 0.0005
-    lazyCollisionDetectionMode: true
-  "BodyBar": 
-    current: 5
-  "LeggedBodyBar": 
-    stanceWidth: 0.15
   "BodyMotionGenerationBar": 
     autoGenerationForNewBody: true
     balancer: false
@@ -293,6 +279,26 @@ toolbars:
     waistHeightRelaxation: false
     gravity: 9.8
     dynamicsTimeRatio: 1
+  "TimeBar": 
+    minTime: 0
+    maxTime: 66.299
+    frameRate: 1000
+    playbackFrameRate: 50
+    idleLoopDrivenMode: false
+    currentTime: 0.236
+    speedScale: 1
+    syncToOngoingUpdates: true
+    autoExpansion: true
+  "KinematicsBar": 
+    mode: IK
+    enablePositionDragger: true
+    penetrationBlock: true
+    collisionLinkHighlight: false
+    snapDistance: 0.025
+    penetrationBlockDepth: 0.0005
+    lazyCollisionDetectionMode: true
+  "LeggedBodyBar": 
+    stanceWidth: 0.15
 Body: 
   "BodyMotionEngine": 
     updateJointVelocities: false
@@ -338,12 +344,12 @@ viewAreas:
               current: 1
             - 
               type: pane
-              views: [ 0, 7 ]
-              current: 0
+              views: [ 0, 8 ]
+              current: 8
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 484, 194 ]
+          sizes: [ 455, 223 ]
           children: 
             - 
               type: splitter
@@ -352,7 +358,7 @@ viewAreas:
               children: 
                 - 
                   type: pane
-                  views: [ 4, 6, 5 ]
+                  views: [ 4, 6, 5, 7 ]
                   current: 6
                 - 
                   type: pane
@@ -360,7 +366,7 @@ viewAreas:
                   current: 3
             - 
               type: pane
-              views: [ 2, 8 ]
+              views: [ 2, 9 ]
               current: 2
 layoutOfToolBars: 
   rows: 

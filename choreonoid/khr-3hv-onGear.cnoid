@@ -45,7 +45,7 @@ items:
               0, 0, 1 ]
             zmp: [ 0, 0, 0 ]
             collisionDetection: true
-            selfCollisionDetection: false
+            selfCollisionDetection: true
             isEditable: false
         - 
           id: 4
@@ -78,6 +78,49 @@ items:
             kinematicWalking: false
             2Dmode: false
             oldAccelSensorMode: false
+        - 
+          id: 5
+          name: "KHR-3HV"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/uemoto/catkin_ws/install/share/sotuken2017/robot/wrl/khr-3hv_gear-true.wrl"
+            currentBaseLink: "base_link"
+            rootPosition: [ 8.3395584e-06, 5.51435083e-06, 0.359801971 ]
+            rootAttitude: [ 
+              1, 4.76192543e-07, 2.57862282e-05, 
+              -4.76181558e-07, 1, -4.26020097e-07, 
+              -2.57862284e-05, 4.26007818e-07, 1 ]
+            jointPositions: [ 
+              -0.000000,  0.000000, -0.000000,  0.000000, -0.000000, -0.000000, -0.000001, -0.000000,  0.000001, -0.000015, 
+               0.000000, -0.000027,  0.000001, -0.000012, -0.000000, -0.000018, -0.000000, -0.000007, -0.000001, -0.000021 ]
+            initialRootPosition: [ 0, 0, 0.381660135 ]
+            initialRootAttitude: [ 
+              1, 0, 0, 
+              0, 1, 0, 
+              0, 0, 1 ]
+            initialJointPositions: [ 
+               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: true
+            isEditable: true
+          children: 
+            - 
+              id: 6
+              name: "BodyRos"
+              plugin: RosBody
+              class: BodyRosItem
+              data: 
+                jointStateUpdateRate: 100
+            - 
+              id: 7
+              name: "BodyRosTorqueController"
+              plugin: RosBody
+              class: BodyRosTorqueControllerItem
+              data: 
+                pdcParameterFilename: "/home/uemoto/catkin_ws/install/share/sotuken2017/robot/khr-PD-parameter/khr-3hv-parameter.yml"
 views: 
   - 
     id: 0
@@ -90,8 +133,9 @@ views:
     class: ItemTreeView
     mounted: true
     state: 
-      checked: [ 1, 2, 3, 4 ]
-      expanded: [ 1 ]
+      selected: [ 4 ]
+      checked: [ 1, 2, 3, 4, 5, 6, 7 ]
+      expanded: [ 1, 5 ]
   - 
     id: 2
     plugin: Base
@@ -141,9 +185,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 100
-          eye: [ 1.1843858, 0.218970558, 0.308702626 ]
-          direction: [ -0.961421176, -0.259517474, -0.0912140553 ]
-          up: [ -0.0880622284, -0.0237707341, 0.995831309 ]
+          eye: [ 1.01550165, 0.533167055, 0.308702626 ]
+          direction: [ -0.915800752, -0.391138056, -0.0912140553 ]
+          up: [ -0.0838835851, -0.0358266385, 0.995831309 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -179,6 +223,7 @@ views:
       spinBox: true
       slider: true
       labelOnLeft: true
+      currentBodyItem: 5
   - 
     id: 7
     name: "Joint State"
@@ -191,6 +236,7 @@ views:
     mounted: true
     state: 
       listingMode: "Link List"
+      currentBodyItem: 5
   - 
     id: 9
     plugin: Python
@@ -203,7 +249,7 @@ toolbars:
     frameRate: 1000
     playbackFrameRate: 50
     idleLoopDrivenMode: false
-    currentTime: 0
+    currentTime: 22.858
     speedScale: 1
     syncToOngoingUpdates: true
     autoExpansion: true
@@ -215,6 +261,8 @@ toolbars:
     snapDistance: 0.025
     penetrationBlockDepth: 0.0005
     lazyCollisionDetectionMode: true
+  "BodyBar": 
+    current: 5
   "LeggedBodyBar": 
     stanceWidth: 0.15
   "BodyMotionGenerationBar": 
@@ -257,6 +305,11 @@ Body:
     editableSceneBodies: 
       - 
         bodyItem: 3
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 5
         showCenterOfMass: false
         showPpcom: false
         showZmp: false
