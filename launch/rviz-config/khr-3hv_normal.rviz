@@ -222,23 +222,128 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
     - Class: rviz/TF
-      Enabled: false
+      Enabled: true
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        Lankle:
+          Value: true
+        Lfoot:
+          Value: true
+        Lfoot2:
+          Value: true
+        Lfsensor1:
+          Value: true
+        Lfsensor2:
+          Value: true
+        Lfsensor3:
+          Value: true
+        Lfsensor4:
+          Value: true
+        Lhips:
+          Value: true
+        Lknee:
+          Value: true
+        Llower_arm:
+          Value: true
+        Lshin:
+          Value: true
+        Lshoulder:
+          Value: true
+        Lthigh:
+          Value: true
+        Lupper_arm:
+          Value: true
+        Rankle:
+          Value: true
+        Rfoot:
+          Value: true
+        Rfoot2:
+          Value: true
+        Rfsensor1:
+          Value: true
+        Rfsensor2:
+          Value: true
+        Rfsensor3:
+          Value: true
+        Rfsensor4:
+          Value: true
+        Rhips:
+          Value: true
+        Rknee:
+          Value: true
+        Rlower_arm:
+          Value: true
+        Rshin:
+          Value: true
+        Rshoulder:
+          Value: true
+        Rthigh:
+          Value: true
+        Rupper_arm:
+          Value: true
+        base_link:
+          Value: true
+        body_2:
+          Value: true
+        head:
+          Value: true
       Marker Scale: 0.5
       Name: TF
-      Show Arrows: true
+      Show Arrows: false
       Show Axes: true
       Show Names: true
       Tree:
-        {}
+        base_link:
+          Lshoulder:
+            Lupper_arm:
+              Llower_arm:
+                {}
+          Rshoulder:
+            Rupper_arm:
+              Rlower_arm:
+                {}
+          body_2:
+            Lhips:
+              Lthigh:
+                Lknee:
+                  Lshin:
+                    Lankle:
+                      Lfoot:
+                        Lfoot2:
+                          {}
+                        Lfsensor1:
+                          {}
+                        Lfsensor2:
+                          {}
+                        Lfsensor3:
+                          {}
+                        Lfsensor4:
+                          {}
+            Rhips:
+              Rthigh:
+                Rknee:
+                  Rshin:
+                    Rankle:
+                      Rfoot:
+                        Rfoot2:
+                          {}
+                        Rfsensor1:
+                          {}
+                        Rfsensor2:
+                          {}
+                        Rfsensor3:
+                          {}
+                        Rfsensor4:
+                          {}
+          head:
+            {}
       Update Interval: 0
-      Value: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base_link
+    Fixed Frame: body_2
     Frame Rate: 30
   Name: root
   Tools:
@@ -259,22 +364,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.767271
+      Distance: 0.787718
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.00975065
-        Y: 0.0181267
-        Z: -0.156953
+        X: 0.000993717
+        Y: 0.0128644
+        Z: -0.0995973
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.200397
+      Pitch: 0.170397
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.103592
+      Yaw: 0.0385982
     Saved: ~
 Window Geometry:
   Displays:

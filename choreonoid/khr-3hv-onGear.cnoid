@@ -134,7 +134,7 @@ views:
     mounted: true
     state: 
       selected: [ 4 ]
-      checked: [ 1, 2, 3, 4, 5, 6, 7 ]
+      checked: [ 1, 2, 4, 5, 6, 7 ]
       expanded: [ 1, 5 ]
   - 
     id: 2
@@ -147,7 +147,7 @@ views:
     class: SceneView
     mounted: true
     state: 
-      editMode: true
+      editMode: false
       viewpointControlMode: thirdPerson
       collisionLines: false
       polygonMode: fill
@@ -185,9 +185,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 100
-          eye: [ 1.01550165, 0.533167055, 0.308702626 ]
-          direction: [ -0.915800752, -0.391138056, -0.0912140553 ]
-          up: [ -0.0838835851, -0.0358266385, 0.995831309 ]
+          eye: [ 0.811025693, 0.10868659, 0.299038875 ]
+          direction: [ -0.987920853, -0.0828305014, -0.130963724 ]
+          up: [ -0.130505819, -0.0109420329, 0.991387161 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -249,14 +249,14 @@ toolbars:
     frameRate: 1000
     playbackFrameRate: 50
     idleLoopDrivenMode: false
-    currentTime: 22.858
+    currentTime: 0
     speedScale: 1
     syncToOngoingUpdates: true
     autoExpansion: true
   "KinematicsBar": 
     mode: AUTO
     enablePositionDragger: true
-    penetrationBlock: false
+    penetrationBlock: true
     collisionLinkHighlight: false
     snapDistance: 0.025
     penetrationBlockDepth: 0.0005
@@ -358,7 +358,7 @@ viewAreas:
                 - 
                   type: pane
                   views: [ 4, 6 ]
-                  current: 6
+                  current: 4
                 - 
                   type: pane
                   views: [ 3 ]
