@@ -8,6 +8,7 @@ Panels:
         - /Status1
         - /RobotModel1
         - /TF1
+        - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 489
   - Class: rviz/Selection
@@ -222,19 +223,124 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
     - Class: rviz/TF
-      Enabled: false
+      Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: true
+        All Enabled: false
+        Lankle:
+          Value: true
+        Lfoot:
+          Value: true
+        Lfoot2:
+          Value: false
+        Lfsensor1:
+          Value: false
+        Lfsensor2:
+          Value: false
+        Lfsensor3:
+          Value: false
+        Lfsensor4:
+          Value: false
+        Lhips:
+          Value: true
+        Lknee:
+          Value: true
+        Llower_arm:
+          Value: true
+        Lshin:
+          Value: true
+        Lshoulder:
+          Value: true
+        Lthigh:
+          Value: true
+        Lupper_arm:
+          Value: true
+        Rankle:
+          Value: true
+        Rfoot:
+          Value: true
+        Rfoot2:
+          Value: false
+        Rfsensor1:
+          Value: false
+        Rfsensor2:
+          Value: false
+        Rfsensor3:
+          Value: false
+        Rfsensor4:
+          Value: false
+        Rhips:
+          Value: true
+        Rknee:
+          Value: true
+        Rlower_arm:
+          Value: true
+        Rshin:
+          Value: true
+        Rshoulder:
+          Value: true
+        Rthigh:
+          Value: true
+        Rupper_arm:
+          Value: true
+        base_link:
+          Value: true
+        body_2:
+          Value: true
+        head:
+          Value: true
       Marker Scale: 0.5
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        {}
+        base_link:
+          Lshoulder:
+            Lupper_arm:
+              Llower_arm:
+                {}
+          Rshoulder:
+            Rupper_arm:
+              Rlower_arm:
+                {}
+          body_2:
+            Lhips:
+              Lthigh:
+                Lknee:
+                  Lshin:
+                    Lankle:
+                      Lfoot:
+                        Lfoot2:
+                          {}
+                        Lfsensor1:
+                          {}
+                        Lfsensor2:
+                          {}
+                        Lfsensor3:
+                          {}
+                        Lfsensor4:
+                          {}
+            Rhips:
+              Rthigh:
+                Rknee:
+                  Rshin:
+                    Rankle:
+                      Rfoot:
+                        Rfoot2:
+                          {}
+                        Rfsensor1:
+                          {}
+                        Rfsensor2:
+                          {}
+                        Rfsensor3:
+                          {}
+                        Rfsensor4:
+                          {}
+          head:
+            {}
       Update Interval: 0
-      Value: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -259,7 +365,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.767271
+      Distance: 1.00255
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
@@ -271,10 +377,10 @@ Visualization Manager:
         Z: -0.156953
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.200397
+      Pitch: 0.135397
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.103592
+      Yaw: 0.0385996
     Saved: ~
 Window Geometry:
   Displays:
