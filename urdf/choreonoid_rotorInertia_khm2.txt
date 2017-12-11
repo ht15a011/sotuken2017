@@ -1,35 +1,36 @@
 参照
 http://www.mutoh-sekkei.jp/keisan/03_moment.html
+https://www.orientalmotor.co.jp/tech/reference/sizing_motor03/
 
 head
-rotorInertia 0.000059
+rotorInertia 0.000030542
 
 body_2
-rotorInertia 0.000161
+rotorInertia 0.000160817
 
 shoulder
-rotorInertia 0.000043
+rotorInertia 0.000043333
 
 arm_upper
-rotorInertia 0.000429
+rotorInertia 0.000428604
 
 arm_lower
-rotorInertia 0.000039
+rotorInertia 0.000039391
 
 hip
-rotorInertia 0.000007
+rotorInertia 0.0000072
 
 thigh
-rotorInertia 0.000009
+rotorInertia 0.0000102
 
 knee
-rotorInertia 0.000221
+rotorInertia 0.000221407
 
 shin
-rotorInertia 0.000085
+rotorInertia 0.00022903
 
 ankle
-rotorInertia 0.0001
+rotorInertia 0.000100459
 
 foot
-rotorInertia 0.000168
+rotorInertia 0.000173258
