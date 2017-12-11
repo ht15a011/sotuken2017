@@ -146,7 +146,7 @@ DEF KHR-3HV Humanoid {
       translation 0.0 0.0 0.0
       rotation 0 1 0 0
       children [
-        DEF base_link Segment {
+        DEF base_link_s Segment {
           mass 0.3
           centerOfMass 0.0 0.0 0.0
           momentsOfInertia [0.000512125 0.0 0.0 0.0 0.00069165 0.0 0.0 0.0 0.000371725]
@@ -1189,26 +1189,51 @@ DEF KHR-3HV Humanoid {
     }
   ]
   joints [
+  	USE base_link,
+	USE base_link_to_Lshoulder,
+	USE Lshoulder_to_Lupper_arm,
     USE Lupper_arm_to_Llower_arm,
-    USE Lshoulder_to_Lupper_arm,
-    USE base_link_to_Lshoulder,
-    USE Rupper_arm_to_Rlower_arm,
-    USE Rshoulder_to_Rupper_arm,
     USE base_link_to_Rshoulder,
-    USE Lankle_to_Lfoot,
-    USE Lshin_to_Lankle,
-    USE Lknee_to_Lshin,
-    USE Lthigh_to_Lknee,
-    USE Lhips_to_Lthigh,
-    USE body_2_to_Lhips,
-    USE Rankle_to_Rfoot,
-    USE Rshin_to_Rankle,
-    USE Rknee_to_Rshin,
-    USE Rthigh_to_Rknee,
-    USE Rhips_to_Rthigh,
-    USE body_2_to_Rhips,
+    USE Rshoulder_to_Rupper_arm,
+    USE Rupper_arm_to_Rlower_arm,
     USE base_link_to_body_2,
+    USE body_2_to_Lhips,
+	USE Lhips_to_Lthigh,
+	USE Lthigh_to_Lknee,
+	USE Lknee_to_Lshin,
+	USE Lshin_to_Lankle,
+    USE Lankle_to_Lfoot,
+    USE body_2_to_Rhips,
+    USE Rhips_to_Rthigh,
+	USE Rthigh_to_Rknee,
+	USE Rknee_to_Rshin,
+	USE Rshin_to_Rankle,
+    USE Rankle_to_Rfoot,
     USE base_link_to_head
+  ]
+  
+  segments [
+  	base_link,
+	Lshoulder,
+	Lupper_arm,
+	Llower_arm,
+	Rshoulder,
+	Rupper_arm,
+	Rlower_arm,
+	body_2,
+	Lhips,
+	Lthigh,
+	Lknee,
+	Lshin,
+	Lankle,
+	Lfoot,
+	Rhips,
+	Rthigh,
+	Rknee,
+	Rshin,
+	Rankle,
+	Rfoot,
+	head
   ]
   
   name "KHR-3HV"
