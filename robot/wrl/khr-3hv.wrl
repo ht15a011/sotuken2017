@@ -146,7 +146,7 @@ DEF KHR-3HV Humanoid {
       translation 0.0 0.0 0.0
       rotation 0 1 0 0
       children [
-        DEF base_link_s Segment {
+        DEF base_link Segment {
           mass 0.3
           centerOfMass 0.0 0.0 0.0
           momentsOfInertia [0.000512125 0.0 0.0 0.0 0.00069165 0.0 0.0 0.0 0.000371725]
@@ -1209,31 +1209,31 @@ DEF KHR-3HV Humanoid {
 	USE Rknee_to_Rshin,
 	USE Rshin_to_Rankle,
     USE Rankle_to_Rfoot,
-    USE base_link_to_head
+    USE base_link_to_head,
   ]
   
   segments [
-  	base_link,
-	Lshoulder,
-	Lupper_arm,
-	Llower_arm,
-	Rshoulder,
-	Rupper_arm,
-	Rlower_arm,
-	body_2,
-	Lhips,
-	Lthigh,
-	Lknee,
-	Lshin,
-	Lankle,
-	Lfoot,
-	Rhips,
-	Rthigh,
-	Rknee,
-	Rshin,
-	Rankle,
-	Rfoot,
-	head
+  	USE base_link,
+	USE Lshoulder,
+	USE Lupper_arm,
+	USE Llower_arm,
+	USE Rshoulder,
+	USE Rupper_arm,
+	USE Rlower_arm,
+	USE body_2,
+	USE Lhips,
+	USE Lthigh,
+	USE Lknee,
+	USE Lshin,
+	USE Lankle,
+	USE Lfoot,
+	USE Rhips,
+	USE Rthigh,
+	USE Rknee,
+	USE Rshin,
+	USE Rankle,
+	USE Rfoot,
+	USE head,
   ]
   
   name "KHR-3HV"

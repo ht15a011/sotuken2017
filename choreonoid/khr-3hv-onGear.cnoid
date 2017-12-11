@@ -70,7 +70,7 @@ items:
             staticFriction: 1
             dynamicFriction: 1
             cullingThresh: 0.005
-            contactCullingDepth: 0.05
+            contactCullingDepth: 0.03
             errorCriterion: 0.001
             maxNumIterations: 1000
             contactCorrectionDepth: 0.0001
@@ -86,14 +86,14 @@ items:
           data: 
             modelFile: "/home/uemoto/catkin_ws/install/share/sotuken2017/robot/wrl/khr-3hv_gear-true.wrl"
             currentBaseLink: "base_link"
-            rootPosition: [ 8.3395584e-06, 5.51435083e-06, 0.359801971 ]
+            rootPosition: [ 0, 0, 0.381660135 ]
             rootAttitude: [ 
-              1, 4.76192543e-07, 2.57862282e-05, 
-              -4.76181558e-07, 1, -4.26020097e-07, 
-              -2.57862284e-05, 4.26007818e-07, 1 ]
+              1, 0, 0, 
+              0, 1, 0, 
+              0, 0, 1 ]
             jointPositions: [ 
-              -0.000000,  0.000000, -0.000000,  0.000000, -0.000000, -0.000000, -0.000001, -0.000000,  0.000001, -0.000015, 
-               0.000000, -0.000027,  0.000001, -0.000012, -0.000000, -0.000018, -0.000000, -0.000007, -0.000001, -0.000021 ]
+               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
             initialRootPosition: [ 0, 0, 0.381660135 ]
             initialRootAttitude: [ 
               1, 0, 0, 
@@ -133,8 +133,7 @@ views:
     class: ItemTreeView
     mounted: true
     state: 
-      selected: [ 4 ]
-      checked: [ 1, 2, 4, 5, 6, 7 ]
+      checked: [ 1, 2, 3, 4, 5, 6, 7 ]
       expanded: [ 1, 5 ]
   - 
     id: 2
@@ -147,7 +146,7 @@ views:
     class: SceneView
     mounted: true
     state: 
-      editMode: false
+      editMode: true
       viewpointControlMode: thirdPerson
       collisionLines: false
       polygonMode: fill
@@ -185,9 +184,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 100
-          eye: [ 0.811025693, 0.10868659, 0.299038875 ]
-          direction: [ -0.987920853, -0.0828305014, -0.130963724 ]
-          up: [ -0.130505819, -0.0109420329, 0.991387161 ]
+          eye: [ 0.782253841, 0.44743868, 0.454881726 ]
+          direction: [ -0.826978406, -0.47751005, -0.296801057 ]
+          up: [ -0.257030008, -0.14841308, 0.954939335 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -210,8 +209,33 @@ views:
     name: "Body State"
     plugin: Body
     class: BodyStateView
+    mounted: true
   - 
     id: 6
+    name: "Joint Trajectories"
+    plugin: Body
+    class: JointGraphView
+    state: 
+      mode: view
+      editMode: freeLine
+      original: true
+      velocity: false
+      acceleration: false
+      limits: true
+      grid: true
+      gridWidth: 0.2
+      gridHeight: 0.2
+      lineWidth: 1
+      rulers: false
+      sync: true
+      controlPointStep: 1
+      controlPointOffset: 0
+      controlPointHeighlight: false
+      scrollMode: continuous
+      lower: -10
+      upper: 10
+  - 
+    id: 7
     plugin: Body
     class: JointSliderView
     mounted: true
@@ -225,12 +249,13 @@ views:
       labelOnLeft: true
       currentBodyItem: 5
   - 
-    id: 7
+    id: 8
     name: "Joint State"
     plugin: Body
     class: JointStateView
+    mounted: true
   - 
-    id: 8
+    id: 9
     plugin: Body
     class: LinkSelectionView
     mounted: true
@@ -238,14 +263,14 @@ views:
       listingMode: "Link List"
       currentBodyItem: 5
   - 
-    id: 9
+    id: 10
     plugin: Python
     class: PythonConsoleView
     mounted: true
 toolbars: 
   "TimeBar": 
     minTime: 0
-    maxTime: 30
+    maxTime: 64.631
     frameRate: 1000
     playbackFrameRate: 50
     idleLoopDrivenMode: false
@@ -343,7 +368,7 @@ viewAreas:
               current: 1
             - 
               type: pane
-              views: [ 0, 8 ]
+              views: [ 0, 9 ]
               current: 0
         - 
           type: splitter
@@ -357,15 +382,15 @@ viewAreas:
               children: 
                 - 
                   type: pane
-                  views: [ 4, 6 ]
-                  current: 4
+                  views: [ 4, 7, 5, 8 ]
+                  current: 7
                 - 
                   type: pane
                   views: [ 3 ]
                   current: 3
             - 
               type: pane
-              views: [ 2, 9 ]
+              views: [ 2, 10 ]
               current: 2
 layoutOfToolBars: 
   rows: 

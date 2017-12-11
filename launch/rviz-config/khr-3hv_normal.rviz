@@ -6,7 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /RobotModel1
+        - /KHR-3HV1
         - /TF1
       Splitter Ratio: 0.5
     Tree Height: 489
@@ -215,7 +215,7 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-      Name: RobotModel
+      Name: KHR-3HV
       Robot Description: robot_description
       TF Prefix: ""
       Update Interval: 0
@@ -376,10 +376,10 @@ Visualization Manager:
         Z: -0.0995973
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.170397
+      Pitch: 0.0353969
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.0385982
+      Yaw: 0.263596
     Saved: ~
 Window Geometry:
   Displays:
