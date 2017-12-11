@@ -3,12 +3,7 @@ Panels:
     Help Height: 78
     Name: Displays
     Property Tree Widget:
-      Expanded:
-        - /Global Options1
-        - /Status1
-        - /RobotModel1
-        - /TF1
-        - /TF1/Frames1
+      Expanded: ~
       Splitter Ratio: 0.5
     Tree Height: 489
   - Class: rviz/Selection
@@ -216,7 +211,7 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-      Name: RobotModel
+      Name: KHR-3HV
       Robot Description: robot_description
       TF Prefix: ""
       Update Interval: 0
@@ -226,21 +221,21 @@ Visualization Manager:
       Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: false
+        All Enabled: true
         Lankle:
           Value: true
         Lfoot:
           Value: true
         Lfoot2:
-          Value: false
+          Value: true
         Lfsensor1:
-          Value: false
+          Value: true
         Lfsensor2:
-          Value: false
+          Value: true
         Lfsensor3:
-          Value: false
+          Value: true
         Lfsensor4:
-          Value: false
+          Value: true
         Lhips:
           Value: true
         Lknee:
@@ -260,15 +255,15 @@ Visualization Manager:
         Rfoot:
           Value: true
         Rfoot2:
-          Value: false
+          Value: true
         Rfsensor1:
-          Value: false
+          Value: true
         Rfsensor2:
-          Value: false
+          Value: true
         Rfsensor3:
-          Value: false
+          Value: true
         Rfsensor4:
-          Value: false
+          Value: true
         Rhips:
           Value: true
         Rknee:
@@ -291,9 +286,9 @@ Visualization Manager:
           Value: true
       Marker Scale: 0.5
       Name: TF
-      Show Arrows: true
-      Show Axes: true
-      Show Names: true
+      Show Arrows: false
+      Show Axes: false
+      Show Names: false
       Tree:
         base_link:
           Lshoulder:
@@ -365,22 +360,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.00255
+      Distance: 0.85157
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.00975065
-        Y: 0.0181267
-        Z: -0.156953
+        X: 0.022049
+        Y: -0.00545526
+        Z: -0.0940755
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.135397
+      Pitch: 0.100397
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.0385996
+      Yaw: 0.0685553
     Saved: ~
 Window Geometry:
   Displays:
