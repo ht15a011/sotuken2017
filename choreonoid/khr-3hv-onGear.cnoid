@@ -86,15 +86,15 @@ items:
           data: 
             modelFile: "/home/uemoto/catkin_ws/install/share/sotuken2017/robot/wrl/khr-3hv_add.yaml"
             currentBaseLink: "base_link"
-            rootPosition: [ 0, 0, 0.367757852 ]
+            rootPosition: [ 1.22058982e-05, 2.2957766e-05, 0.359802349 ]
             rootAttitude: [ 
-              1, 0, 0, 
-              0, 1, 0, 
-              0, 0, 1 ]
+              0.999999999, 8.89367369e-06, 3.08533676e-05, 
+              -8.89514809e-06, 0.999999999, 4.77875659e-05, 
+              -3.08529426e-05, -4.77878403e-05, 0.999999998 ]
             jointPositions: [ 
-               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
-               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
-            initialRootPosition: [ 0, 0, 0 ]
+               0.000000, -0.000000, -0.000000,  0.000000, -0.000000, -0.000000,  0.000000, -0.000000, -0.000002,  0.000017, 
+              -0.000004, -0.000020, -0.000006,  0.000006,  0.000001, -0.000020,  0.000004, -0.000007,  0.000006, -0.000009 ]
+            initialRootPosition: [ 0, 0, 0.373725292 ]
             initialRootAttitude: [ 
               1, 0, 0, 
               0, 1, 0, 
@@ -133,7 +133,7 @@ views:
     class: ItemTreeView
     mounted: true
     state: 
-      selected: [ 7 ]
+      selected: [ 5 ]
       checked: [ 1, 2, 3, 4, 5, 6, 7 ]
       expanded: [ 1, 5 ]
   - 
@@ -185,9 +185,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 100
-          eye: [ 0.861926138, 0.127635277, 0.414260449 ]
-          direction: [ -0.976093282, -0.121310466, -0.18034876 ]
-          up: [ -0.178971864, -0.0222429152, 0.983602727 ]
+          eye: [ 0.922847669, 0.150119043, 0.276718788 ]
+          direction: [ -0.987805571, -0.132809536, -0.0812513488 ]
+          up: [ -0.0805267853, -0.0108267511, 0.996693643 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -389,7 +389,7 @@ viewAreas:
                 - 
                   type: pane
                   views: [ 4, 7, 5, 8 ]
-                  current: 7
+                  current: 5
                 - 
                   type: pane
                   views: [ 3 ]
@@ -397,7 +397,7 @@ viewAreas:
             - 
               type: pane
               views: [ 2, 10, 6 ]
-              current: 6
+              current: 2
 layoutOfToolBars: 
   rows: 
     - 
