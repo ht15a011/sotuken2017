@@ -32,6 +32,10 @@ footLinks:
     soleCenter: [ 0.0, 0.015, -0.0485 ]
   - link: Rankle_to_Rfoot
     soleCenter: [ 0.0, -0.015, -0.0485 ]
+    
+possibleIkInterpolationLinks: [ base_link_to_body_2, Lankle_to_Lfoot, Rankle_to_Rfoot ]
+defaultIkInterpolationLinks: [ base_link_to_body_2, Lankle_to_Lfoot, Rankle_to_Rfoot ]
+possileSupportLinks: [ Lankle_to_Lfoot, Rankle_to_Rfoot ]
 
 defaultIKsetup:
   base_link_to_body_2: [ Lankle_to_Lfoot, Rankle_to_Rfoot ]
