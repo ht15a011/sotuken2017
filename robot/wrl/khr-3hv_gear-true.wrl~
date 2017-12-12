@@ -182,7 +182,7 @@ DEF KHR-3HV Humanoid {
           uvlimit [0.14]
           lvlimit [-0.14]
 		  rotorInertia 0.0000104
-		  #gearRatio 312.4
+		  gearRatio 312.4
           climit [1.37293]
           children [
             DEF Lshoulder Segment {
@@ -221,7 +221,7 @@ DEF KHR-3HV Humanoid {
               uvlimit [0.14]
               lvlimit [-0.14]
 			  rotorInertia 0.000432
-			  #gearRatio 312.4
+			  gearRatio 312.4
               climit [1.37293]
               children [
                 DEF Lupper_arm Segment {
@@ -260,7 +260,7 @@ DEF KHR-3HV Humanoid {
                   uvlimit [0.14]
                   lvlimit [-0.14]
 				  rotorInertia 0.0000388
-				  #gearRatio 312.4
+				  gearRatio 312.4
                   climit [1.37293]
                   children [
                     DEF Llower_arm Segment {
@@ -305,7 +305,7 @@ DEF KHR-3HV Humanoid {
           uvlimit [0.14]
           lvlimit [-0.14]
 		  rotorInertia 0.0000104
-		  #gearRatio 312.4
+		  gearRatio 312.4
           climit [1.37293]
           children [
             DEF Rshoulder Segment {
@@ -344,7 +344,7 @@ DEF KHR-3HV Humanoid {
               uvlimit [0.14]
               lvlimit [-0.14]
 			  rotorInertia 0.000432
-			  #gearRatio 312.4
+			  gearRatio 312.4
               climit [1.37293]
               children [
                 DEF Rupper_arm Segment {
@@ -383,7 +383,7 @@ DEF KHR-3HV Humanoid {
                   uvlimit [0.14]
                   lvlimit [-0.14]
 				  rotorInertia 0.0000388
-				  #gearRatio 312.4
+				  gearRatio 312.4
                   climit [1.37293]
                   children [
                     DEF Rlower_arm Segment {
@@ -428,7 +428,7 @@ DEF KHR-3HV Humanoid {
           uvlimit [0.14]
           lvlimit [-0.14]
 		  rotorInertia 0.000160817
-		  #gearRatio 312.4
+		  gearRatio 312.4
           climit [1.37293]
           children [
             DEF body_2 Segment {
@@ -467,7 +467,7 @@ DEF KHR-3HV Humanoid {
               uvlimit [0.14]
               lvlimit [-0.14]
 			  rotorInertia 0.0000072
-			  #gearRatio 312.4
+			  gearRatio 312.4
               climit [1.37293]
               children [
                 DEF Lhips Segment {
@@ -506,7 +506,7 @@ DEF KHR-3HV Humanoid {
                   uvlimit [0.14]
                   lvlimit [-0.14]
 				  rotorInertia 0.0000102
-				  #gearRatio 312.4
+				  gearRatio 312.4
                   climit [1.37293]
                   children [
                     DEF Lthigh Segment {
@@ -545,7 +545,7 @@ DEF KHR-3HV Humanoid {
                       uvlimit [0.14]
                       lvlimit [-0.14]
 					  rotorInertia 0.000221407
-					  #gearRatio 312.4
+					  gearRatio 312.4
                       climit [1.37293]
                       children [
                         DEF Lknee Segment {
@@ -584,7 +584,7 @@ DEF KHR-3HV Humanoid {
                           uvlimit [0.14]
                           lvlimit [-0.14]
 						  rotorInertia 0.0000854
-						  #gearRatio 312.4
+						  gearRatio 312.4
                           climit [1.37293]
                           children [
                             DEF Lshin Segment {
@@ -623,7 +623,7 @@ DEF KHR-3HV Humanoid {
                               uvlimit [0.14]
                               lvlimit [-0.14]
 							  rotorInertia 0.0001033
-							  #gearRatio 312.4
+							  gearRatio 312.4
                               climit [1.37293]
                               children [
                                 DEF Lankle Segment {
@@ -662,7 +662,7 @@ DEF KHR-3HV Humanoid {
                                   uvlimit [0.14]
                                   lvlimit [-0.14]
 								  rotorInertia 0.000347
-								  #gearRatio 312.4
+								  gearRatio 312.4
                                   climit [1.37293]
                                   children [
                                     DEF Lfoot Segment {
@@ -810,7 +810,7 @@ DEF KHR-3HV Humanoid {
               uvlimit [0.14]
               lvlimit [-0.14]
 			  rotorInertia 0.0000072
-			  #gearRatio 312.4
+			  gearRatio 312.4
               climit [1.37293]
               children [
                 DEF Rhips Segment {
@@ -849,7 +849,7 @@ DEF KHR-3HV Humanoid {
                   uvlimit [0.14]
                   lvlimit [-0.14]
 				  rotorInertia 0.0000102
-				  #gearRatio 312.4
+				  gearRatio 312.4
                   climit [1.37293]
                   children [
                     DEF Rthigh Segment {
@@ -888,7 +888,7 @@ DEF KHR-3HV Humanoid {
                       uvlimit [0.14]
                       lvlimit [-0.14]
 					  rotorInertia 0.000221407
-					  #gearRatio 312.4
+					  gearRatio 312.4
                       climit [1.37293]
                       children [
                         DEF Rknee Segment {
@@ -927,7 +927,7 @@ DEF KHR-3HV Humanoid {
                           uvlimit [0.14]
                           lvlimit [-0.14]
 						  rotorInertia 0.0000854
-						  #gearRatio 312.4
+						  gearRatio 312.4
                           climit [1.37293]
                           children [
                             DEF Rshin Segment {
@@ -966,7 +966,7 @@ DEF KHR-3HV Humanoid {
                               uvlimit [0.14]
                               lvlimit [-0.14]
 							  rotorInertia 0.0001033
-							  #gearRatio 312.4
+							  gearRatio 312.4
                               climit [1.37293]
                               children [
                                 DEF Rankle Segment {
@@ -1005,7 +1005,7 @@ DEF KHR-3HV Humanoid {
                                   uvlimit [0.14]
                                   lvlimit [-0.14]
 								  rotorInertia 0.000347
-								  #gearRatio 312.4
+								  gearRatio 312.4
                                   climit [1.37293]
                                   children [
                                     DEF Rfoot Segment {
@@ -1155,7 +1155,7 @@ DEF KHR-3HV Humanoid {
           uvlimit [0.14]
           lvlimit [-0.14]
           rotorInertia 0.0000594
-          #gearRatio 312.4
+          gearRatio 312.4
           climit [1.37293]
           children [
             DEF head Segment {

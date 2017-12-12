@@ -84,9 +84,9 @@ items:
           plugin: Body
           class: BodyItem
           data: 
-            modelFile: "/home/uemoto/catkin_ws/install/share/sotuken2017/robot/wrl/khr-3hv_gear-true.wrl"
+            modelFile: "/home/uemoto/catkin_ws/install/share/sotuken2017/robot/wrl/khr-3hv_add.yaml"
             currentBaseLink: "base_link"
-            rootPosition: [ 0, 0, 0.381660135 ]
+            rootPosition: [ 0, 0, 0.367757852 ]
             rootAttitude: [ 
               1, 0, 0, 
               0, 1, 0, 
@@ -94,7 +94,7 @@ items:
             jointPositions: [ 
                0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
                0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
-            initialRootPosition: [ 0, 0, 0.381660135 ]
+            initialRootPosition: [ 0, 0, 0 ]
             initialRootAttitude: [ 
               1, 0, 0, 
               0, 1, 0, 
@@ -104,7 +104,7 @@ items:
                0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
             zmp: [ 0, 0, 0 ]
             collisionDetection: true
-            selfCollisionDetection: true
+            selfCollisionDetection: false
             isEditable: true
           children: 
             - 
@@ -133,6 +133,7 @@ views:
     class: ItemTreeView
     mounted: true
     state: 
+      selected: [ 7 ]
       checked: [ 1, 2, 3, 4, 5, 6, 7 ]
       expanded: [ 1, 5 ]
   - 
@@ -184,9 +185,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 100
-          eye: [ 0.782253841, 0.44743868, 0.454881726 ]
-          direction: [ -0.826978406, -0.47751005, -0.296801057 ]
-          up: [ -0.257030008, -0.14841308, 0.954939335 ]
+          eye: [ 0.861926138, 0.127635277, 0.414260449 ]
+          direction: [ -0.976093282, -0.121310466, -0.18034876 ]
+          up: [ -0.178971864, -0.0222429152, 0.983602727 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -215,6 +216,7 @@ views:
     name: "Joint Trajectories"
     plugin: Body
     class: JointGraphView
+    mounted: true
     state: 
       mode: view
       editMode: freeLine
@@ -260,8 +262,12 @@ views:
     class: LinkSelectionView
     mounted: true
     state: 
-      listingMode: "Link List"
+      listingMode: "Part Tree"
       currentBodyItem: 5
+      bodyItems: 
+        - 
+          id: 5
+          expandedParts: [ "ARMS", "HEAD", "L-ARM", "LEGS", "R-ARM", "UPPER-BODY" ]
   - 
     id: 10
     plugin: Python
@@ -292,7 +298,7 @@ toolbars:
     stanceWidth: 0.15
   "BodyMotionGenerationBar": 
     autoGenerationForNewBody: true
-    balancer: false
+    balancer: true
     autoGeneration: false
     timeScaleRatio: 1
     preInitialDuration: 1
@@ -337,7 +343,7 @@ Body:
         bodyItem: 5
         showCenterOfMass: false
         showPpcom: false
-        showZmp: false
+        showZmp: true
     staticModelEditing: true
   "KinematicFaultChecker": 
     checkJointPositions: true
@@ -390,8 +396,8 @@ viewAreas:
                   current: 3
             - 
               type: pane
-              views: [ 2, 10 ]
-              current: 2
+              views: [ 2, 10, 6 ]
+              current: 6
 layoutOfToolBars: 
   rows: 
     - 

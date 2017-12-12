@@ -1,9 +1,12 @@
 参照
 http://www.mutoh-sekkei.jp/keisan/03_moment.html
 https://www.orientalmotor.co.jp/tech/reference/sizing_motor03/
+http://mssc.smcworld.com/mipcgcs/index.php/mipcgcs/parainput
+
+ギア比 312.4:1
 
 head
-rotorInertia 0.000030542
+rotorInertia 0.0000594
 
 body_2
 rotorInertia 0.000160817
