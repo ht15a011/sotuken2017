@@ -3,17 +3,18 @@ modelFile: khr-3hv_gear-true.wrl
 standardPose: [
    0, 0, 0, 0, 0,
    0, 0, 0, 0, 0,
-   0, 0, 0, 0, 0,
-   0, 0, 0, 0, 0
+   -27, 95, -68, 0, 0,
+   0, -27, 95, -68, 0
 ]
 
 linkGroup:
   - name: UPPER-BODY
     links:
-      - base_link
-      - base_link_to_body_2
       - name: HEAD
         links: [ base_link_to_head ]
+      - base_link
+      - base_link_to_body_2
+      
       - name: ARMS
         links:
           - name: L-ARM
