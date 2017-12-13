@@ -15,60 +15,17 @@ items:
       children: 
         - 
           id: 2
-          name: "KHR-3HV"
-          plugin: Body
-          class: BodyItem
+          name: "WorldRos"
+          plugin: RosBody
+          class: WorldRosItem
           data: 
-            modelFile: "/home/uemoto/catkin_ws/install/share/sotuken2017/robot/wrl/khr-3hv_add.yaml"
-            currentBaseLink: "base_link_to_body_2"
-            rootPosition: [ 8.82476512e-06, 1.73607389e-05, 0.359684379 ]
-            rootAttitude: [ 
-              0.999985932, 0.00530431755, 1.77262937e-05, 
-              -0.00530431766, 0.999985932, 5.94630659e-06, 
-              -1.76945032e-05, -6.04024883e-06, 1 ]
-            jointPositions: [ 
-              -0.000000, -0.000000, -0.000000,  0.000000, -0.000000, -0.000000,  0.000000, -0.000000, -0.000001, -0.000015, 
-               0.000004, -0.000020,  0.000003, -0.000015,  0.000001, -0.000014, -0.000004, -0.000007, -0.000003, -0.000015 ]
-            initialRootPosition: [ 6.00198438e-06, 1.98644374e-05, 0.371860752 ]
-            initialRootAttitude: [ 
-              0.999985932, 0.00530422993, 4.7317361e-06, 
-              -0.00530423004, 0.999985932, 2.49257995e-05, 
-              -4.59945736e-06, -2.4950547e-05, 1 ]
-            initialJointPositions: [ 
-               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
-               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
-            zmp: [ 0, 0, 0 ]
-            collisionDetection: true
-            selfCollisionDetection: false
-            isEditable: true
-          children: 
-            - 
-              id: 3
-              name: "BodyRos"
-              plugin: RosBody
-              class: BodyRosItem
-              data: 
-                jointStateUpdateRate: 100
-            - 
-              id: 4
-              name: "BodyRosTorqueController"
-              plugin: RosBody
-              class: BodyRosTorqueControllerItem
-              data: 
-                pdcParameterFilename: "/home/uemoto/catkin_ws/install/share/sotuken2017/robot/khr-PD-parameter/khr-3hv-parameter.yml"
-            - 
-              id: 5
-              name: "SensorVisualizer"
-              plugin: Body
-              class: SensorVisualizer
-              data: 
-                subItems: 
-                  - 
-                    class: ForceSensorVisualizer
-                    name: ForceSensor
-                    visualRatio: 0.002
+            publishClockUpdateRate: 100
+            publishLinkStatesUpdateRate: 100
+            publishModelStatesUpdateRate: 100
+            publishContactsStateUpdateRate: 100
+            contactsStateMessagesVerbose: false
         - 
-          id: 6
+          id: 3
           name: "Floor"
           plugin: Body
           class: BodyItem
@@ -88,21 +45,10 @@ items:
               0, 0, 1 ]
             zmp: [ 0, 0, 0 ]
             collisionDetection: true
-            selfCollisionDetection: true
+            selfCollisionDetection: false
             isEditable: false
         - 
-          id: 7
-          name: "WorldRos"
-          plugin: RosBody
-          class: WorldRosItem
-          data: 
-            publishClockUpdateRate: 100
-            publishLinkStatesUpdateRate: 100
-            publishModelStatesUpdateRate: 100
-            publishContactsStateUpdateRate: 100
-            contactsStateMessagesVerbose: false
-        - 
-          id: 8
+          id: 4
           name: "AISTSimulator"
           plugin: Body
           class: AISTSimulatorItem
@@ -111,7 +57,7 @@ items:
             realtimeSync: true
             recording: "full"
             timeRangeMode: "Active control period"
-            timeLength: 180
+            timeLength: 600
             allLinkPositionOutputMode: false
             deviceStateOutput: true
             selfCollision: false
@@ -124,7 +70,7 @@ items:
             staticFriction: 1
             dynamicFriction: 1
             cullingThresh: 0.005
-            contactCullingDepth: 0.03
+            contactCullingDepth: 0.05
             errorCriterion: 0.001
             maxNumIterations: 1000
             contactCorrectionDepth: 0.0001
@@ -132,6 +78,62 @@ items:
             kinematicWalking: false
             2Dmode: false
             oldAccelSensorMode: false
+        - 
+          id: 5
+          name: "KHR-3HV"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/uemoto/catkin_ws/install/share/sotuken2017/robot/wrl/khr-3hv_revlute.yaml"
+            currentBaseLink: "base_link"
+            rootPosition: [ 0.000552570369, -0.00183371351, 0.36116467 ]
+            rootAttitude: [ 
+              1, 0, 0, 
+              0, 1, 0, 
+              0, 0, 1 ]
+            jointPositions: [ 
+               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
+            initialRootPosition: [ 0.000552570369, -0.00183371351, 0.36116467 ]
+            initialRootAttitude: [ 
+              1, 0, 0, 
+              0, 1, 0, 
+              0, 0, 1 ]
+            initialJointPositions: [ 
+               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+          children: 
+            - 
+              id: 6
+              name: "BodyRos"
+              plugin: RosBody
+              class: BodyRosItem
+              data: 
+                jointStateUpdateRate: 100
+            - 
+              id: 7
+              name: "BodyRosTorqueController"
+              plugin: RosBody
+              class: BodyRosTorqueControllerItem
+              data: 
+                pdcParameterFilename: "/home/uemoto/catkin_ws/install/share/sotuken2017/robot/khr-PD-parameter/khr-3hv_revokute-param.yml"
+            - 
+              id: 8
+              name: "SensorVisualizer"
+              plugin: Body
+              class: SensorVisualizer
+              data: 
+                subItems: 
+                  - 
+                    class: ForceSensorVisualizer
+                    name: ForceSensor
+                    visualRatio: 0.002
 views: 
   - 
     id: 0
@@ -144,9 +146,9 @@ views:
     class: ItemTreeView
     mounted: true
     state: 
-      selected: [ 8 ]
-      checked: [ 1, 2, 3, 4, 5, [ 5, "ForceSensor" ], 6, 7, 8 ]
-      expanded: [ 1, 2 ]
+      selected: [ 1 ]
+      checked: [ 1, 2, 3, 4, 5, 6, 7, 8, [ 8, "ForceSensor" ] ]
+      expanded: [ 1, 5, 8 ]
   - 
     id: 2
     plugin: Base
@@ -196,9 +198,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 100
-          eye: [ 0.774142715, 0.0783362587, 0.206613921 ]
-          direction: [ -0.999994086, 0.00316692678, -0.00134101664 ]
-          up: [ -0.00134100991, 4.24690532e-06, 0.999999101 ]
+          eye: [ 0.550085053, 0.0955876651, 0.194195813 ]
+          direction: [ -0.976093282, -0.121310467, -0.180348758 ]
+          up: [ -0.178971862, -0.0222429152, 0.983602727 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -227,7 +229,6 @@ views:
     name: "Joint Trajectories"
     plugin: Body
     class: JointGraphView
-    mounted: true
     state: 
       mode: view
       editMode: freeLine
@@ -254,13 +255,13 @@ views:
     mounted: true
     state: 
       showAllJoints: true
-      jointId: true
+      jointId: false
       name: true
       numColumns: 1
       spinBox: true
       slider: true
       labelOnLeft: true
-      currentBodyItem: 2
+      currentBodyItem: 5
   - 
     id: 8
     name: "Joint State"
@@ -274,16 +275,12 @@ views:
     mounted: true
     state: 
       listingMode: "Part Tree"
-      currentBodyItem: 2
+      currentBodyItem: 5
       bodyItems: 
         - 
-          id: 2
-          selectedLinks: [ 14 ]
-          expandedParts: [ "ARMS", "HEAD", "L-ARM", "L-LEG", "LEGS", "R-ARM", "R-LEG", "UPPER-BODY", "Whole Body" ]
-        - 
-          id: 6
+          id: 5
           selectedLinks: [ 0 ]
-          expandedParts: [ "Whole Body" ]
+          expandedParts: [ "LEGS", "Whole Body" ]
   - 
     id: 10
     name: "Pose Roll"
@@ -295,10 +292,6 @@ views:
       autoUpdate: false
       timeSync: true
       listingMode: "Part Tree"
-      bodyItems: 
-        - 
-          id: 2
-          expandedParts: [ "LEGS", "Whole Body" ]
       timeLength: 10
       showLipSync: false
       gridInterval: 1
@@ -308,32 +301,10 @@ views:
     class: PythonConsoleView
     mounted: true
 toolbars: 
-  "TimeBar": 
-    minTime: 0
-    maxTime: 77.023
-    frameRate: 1000
-    playbackFrameRate: 50
-    idleLoopDrivenMode: false
-    currentTime: 1.387
-    speedScale: 1
-    syncToOngoingUpdates: true
-    autoExpansion: true
-  "KinematicsBar": 
-    mode: FK
-    enablePositionDragger: true
-    penetrationBlock: true
-    collisionLinkHighlight: false
-    snapDistance: 0.025
-    penetrationBlockDepth: 0.0005
-    lazyCollisionDetectionMode: true
-  "BodyBar": 
-    current: 2
-  "LeggedBodyBar": 
-    stanceWidth: 0.15
   "BodyMotionGenerationBar": 
     autoGenerationForNewBody: true
-    balancer: true
-    autoGeneration: true
+    balancer: false
+    autoGeneration: false
     timeScaleRatio: 1
     preInitialDuration: 1
     postFinalDuration: 1
@@ -363,18 +334,38 @@ toolbars:
     waistHeightRelaxation: false
     gravity: 9.8
     dynamicsTimeRatio: 1
+  "TimeBar": 
+    minTime: 0
+    maxTime: 56.892
+    frameRate: 1000
+    playbackFrameRate: 50
+    idleLoopDrivenMode: false
+    currentTime: 0
+    speedScale: 1
+    syncToOngoingUpdates: true
+    autoExpansion: true
+  "KinematicsBar": 
+    mode: AUTO
+    enablePositionDragger: true
+    penetrationBlock: false
+    collisionLinkHighlight: false
+    snapDistance: 0.025
+    penetrationBlockDepth: 0.0005
+    lazyCollisionDetectionMode: true
+  "LeggedBodyBar": 
+    stanceWidth: 0.15
 Body: 
   "BodyMotionEngine": 
     updateJointVelocities: false
   "EditableSceneBody": 
     editableSceneBodies: 
       - 
-        bodyItem: 2
+        bodyItem: 3
         showCenterOfMass: false
         showPpcom: false
-        showZmp: true
+        showZmp: false
       - 
-        bodyItem: 6
+        bodyItem: 5
         showCenterOfMass: false
         showPpcom: false
         showZmp: false
@@ -395,7 +386,7 @@ viewAreas:
     contents: 
       type: splitter
       orientation: horizontal
-      sizes: [ 206, 1003 ]
+      sizes: [ 180, 1029 ]
       children: 
         - 
           type: splitter
@@ -409,28 +400,28 @@ viewAreas:
             - 
               type: pane
               views: [ 0, 9 ]
-              current: 9
+              current: 0
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 460, 218 ]
+          sizes: [ 484, 194 ]
           children: 
             - 
               type: splitter
               orientation: horizontal
-              sizes: [ 380, 617 ]
+              sizes: [ 475, 548 ]
               children: 
                 - 
                   type: pane
                   views: [ 4, 7, 5, 8 ]
-                  current: 4
+                  current: 5
                 - 
                   type: pane
                   views: [ 3 ]
                   current: 3
             - 
               type: pane
-              views: [ 2, 11, 6 ]
+              views: [ 2, 11 ]
               current: 2
 layoutOfToolBars: 
   rows: 

@@ -47,33 +47,33 @@ def check_khr_3hv_joint_name(khrname=''):
     return khrname in names
 
 
-#def usage():
-#    name = os.path.basename(sys.argv[0])
+def usage():
+    name = os.path.basename(sys.argv[0])
 
-#    print 'usage: ' + name + ' [joint name] [joint angle (degree)]'
-#    print ''
-#   print 'Set joint angle for JVRC-1 robot.'
-#	print ''
-#    print '[joint name] setting choose one of them:'
-#	print '  base_link					Lthigh_to_Lknee'
-#	print '  base_link_to_Lshoulder		Lknee_to_Lshin'
-#	print '  Lshoulder_to_Lupper_arm	Lshin_to_Lankle'
-#	print '  Lupper_arm_to_Llower_arm	Lankle_to_Lfoot'
-#	print '  base_link_to_Rshoulder		body_2_to_Rhips'
-#	print '  Rshoulder_to_Rupper_arm	Rhips_to_Rthigh'
-#	print '  Rupper_arm_to_Rlower_arm	Rthigh_to_Rknee'
-#	print '  base_link_to_body_2		knee_to_Rshin'
-#	print '  body_2_to_Lhips			Rshin_to_Rankle'
-#	print '  Lhips_to_Lthigh			ankle_to_Rfoot'
-#	print '  base_link_to_head'
-#    print ''
-#   print '[joint angle] setting is range from 360.0 to -360.0.'
-#    print ''
-#    print 'e.g. if you want to change the joint angle of the base_link_to_head to degree of 40.'
-#    print '  ' + name + ' base_link_to_head 40.0'
-#    print ''
-
-#    return
+    print 'usage: ' + name + ' [joint name] [joint angle (degree)]'
+    print ''
+    print 'Set joint angle for KHR-3HV robot.'
+    print ''
+    print '[joint name] setting choose one of them:'
+    print '  base_link					Lthigh_to_Lknee'
+    print '  base_link_to_Lshoulder		Lknee_to_Lshin'
+    print '  Lshoulder_to_Lupper_arm	Lshin_to_Lankle'
+    print '  Lupper_arm_to_Llower_arm	Lankle_to_Lfoot'
+    print '  base_link_to_Rshoulder		body_2_to_Rhips'
+    print '  Rshoulder_to_Rupper_arm	Rhips_to_Rthigh'
+    print '  Rupper_arm_to_Rlower_arm	Rthigh_to_Rknee'
+    print '  base_link_to_body_2		knee_to_Rshin'
+    print '  body_2_to_Lhips			Rshin_to_Rankle'
+    print '  Lhips_to_Lthigh			ankle_to_Rfoot'
+    print '  base_link_to_head'
+    print ''
+    print '[joint angle] setting is range from 360.0 to -360.0.'
+    print ''
+    print 'e.g. if you want to change the joint angle of the base_link_to_head to degree of 40.'
+    print '  ' + name + ' base_link_to_head 40.0'
+    print ''
+    
+    return
 
 # 
 # Main.  
@@ -96,7 +96,7 @@ if __name__ == '__main__':
         pass
 
     if (is_error):
-        #usage()
+        usage()
         sys.exit(1)
 
     sys.exit(0)

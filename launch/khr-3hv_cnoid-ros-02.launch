@@ -1,0 +1,15 @@
+<launch>
+  <param name="use_sim_time" value="true" />
+  <param name="robot_description" textfile="$(find sotuken2017)/robot/urdf-temp/khr-3hv_revolute.urdf"/>
+  <include file="$(find choreonoid_ros)/launch/choreonoid.launch">
+    <arg name="PROJECT_FILE" default="$(find sotuken2017)/choreonoid/khr-3hv_onGear_revolute.cnoid" />
+  </include>
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="khr_3hv_state_publisher" >
+    <remap from="joint_states" to="/KHR_3HV/joint_states" />
+  </node>
+  <node name="khr_3hv_rviz" pkg="rviz" type="rviz" respawn="true"
+        args="-d $(find sotuken2017)/launch/rviz-config/khr-3hv_revolute.rviz" />
+  <node name="map_root_frame_id" pkg="tf"
+        type="static_transform_publisher"
+        args="0 0 0 0 0 0 /map /base_link 100" />
+</launch>
