@@ -1,0 +1,33 @@
+「このファイルにあるプログラムについて」
+
+・このディレクトリにあるプログラムは，パッケージのディレクトリではなく，ワークスペースのディレクトリ以下のsrc内のパッケージに置く必要がある．
+・例えば，ワークスペース名が"catkin_ws"の場合は，"~/catkin_ws/src/<パッケージ名>/src"　以下にcppファイルを置く．
+・cppファイルはcatkinコマンドを使用してコンパイルする必要がある．
+
+手順は以下のようになる．
+＊ワークスペース名が"catkin_ws"の場合
+
+1.~/catkin_ws/src/<パッケージ名>/src　にcppファイルを作成
+
+2.CMakeLists.txt に以下を追記
+
+add_executable(ファイル名 src/ファイル名.cpp)
+target_link_libraries(ファイル名 ${catkin_LIBRARIES})
+
+3.CMakeLists.txt　の以下の部分のコメントアウトを削除する．
+　これによって，~/catkin_ws/devel 以下に作られる実行プログラムを
+　いちいちコピーしてこなくて済む（ただし，プログラムがパッケージディレクトリに作られるわけではない）
+
+以下のようにする（170行目前後にある）
+## Mark executables and/or libraries for installation
+install(TARGETS hello_world konbanwa
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+4.~/catkin_ws に移動
+
+5.catkin build <パッケージ名>　or catkin_make を実行
+
+6.rosrun パッケージ名　cppファイル名（.cpp　はなくていい） を実行で確認できる

@@ -140,6 +140,9 @@ PROTO ForceSensor [
 }
 
 DEF KHR-3HV Humanoid {
+  
+  name "KHR-3HV"
+
   humanoidBody [
     DEF base_link Joint {
       jointType "free"
@@ -1097,12 +1100,12 @@ DEF KHR-3HV Humanoid {
                                   climit [1.37293]
                                   children [
                                     DEF rfsensor1 ForceSensor {
-									  translation 0.046 0.039 -0.0415
+									  translation 0.046 0.009 -0.0415
 									  rotation 0 1 0 0
 									  sensorId 4
 									}
 									DEF rfsensor2 ForceSensor {
-									  translation -0.046 0.039 -0.0415
+									  translation 0.046 -0.039 -0.0415
 									  rotation 0 1 0 0
 									  sensorId 5
 									}
@@ -1112,7 +1115,7 @@ DEF KHR-3HV Humanoid {
 									  sensorId 6
 									}
 									DEF rfsensor4 ForceSensor {
-									 translation -0.046 -0.009 -0.0415
+									  translation -0.046 -0.039 -0.0415
 									  rotation 0 1 0 0
 									  sensorId 7
 									}
@@ -1200,9 +1203,6 @@ DEF KHR-3HV Humanoid {
                                                     size 0.02 0.02 0.01
                                                   }
                                                 }
-                                                DEF rfsensor1 ForceSensor {
-												  sensorId 4
-												}
                                               ]
                                             }
                                           ]
@@ -1236,9 +1236,6 @@ DEF KHR-3HV Humanoid {
                                                     size 0.02 0.02 0.01
                                                   }
                                                 }
-                                                DEF rfsensor2 ForceSensor {
-												  sensorId 5
-												}
                                               ]
                                             }
                                           ]
@@ -1272,9 +1269,6 @@ DEF KHR-3HV Humanoid {
                                                     size 0.02 0.02 0.01
                                                   }
                                                 }
-                                                DEF rfsensor3 ForceSensor {
-												  sensorId 6
-												}
                                               ]
                                             }
                                           ]
@@ -1301,16 +1295,13 @@ DEF KHR-3HV Humanoid {
                                                 Shape {
                                                   appearance Appearance {
                                                     material Material {
-                                                      diffuseColor 0.8 0.8 0.8
+                                                      diffuseColor 1.0 0.0 0.0
                                                     }
                                                   }
                                                   geometry Box {
                                                     size 0.02 0.02 0.01
                                                   }
                                                 }
-                                                DEF rfsensor4 ForceSensor {
-												  sensorId 7
-												}
                                               ]
                                             }
                                           ]
@@ -1458,6 +1449,5 @@ DEF KHR-3HV Humanoid {
     USE Rfsensor4
   ]
   
-  name "KHR-3HV"
   version "1.0"
 }
