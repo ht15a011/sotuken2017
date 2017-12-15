@@ -161,14 +161,14 @@
 				</visual>
 
 				<collision>
-						<origin xyz="${hizakozo_xz} 0 -0.0235" rpy="0 0 0"/>
+						<origin xyz="${hizakozo_xz} 0 -0.016" rpy="0 0 0"/>
 						<geometry>
 								<box size="${hizakozo_xz} ${leg_xy} ${hizakozo_xz}"/>
 						</geometry>
 				</collision>
 
 				<inertial>
-						<origin xyz="${hizakozo_xz} 0 -0.0235" rpy="0 0 0"/>
+						<origin xyz="${hizakozo_xz} 0 -0.016" rpy="0 0 0"/>
 						<xacro:box_inertial m="${hizakozo_mass}" d="${hizakozo_xz}" w="${leg_xy}" h="${hizakozo_xz}"/>
 				</inertial>
 		</link>
