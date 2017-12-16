@@ -5,7 +5,7 @@
 <xacro:include filename="$(find sotuken2017)/urdf/urdf_gazebo.xacro"/>
 	
   <property name="ef" value="1.37293"/>
-  <property name="vel" value="0.14"/>
+  <property name="vel" value="7.5"/>
 	
   <property name="body_x" value="0.129"/>
   <property name="body_y" value="0.105"/>

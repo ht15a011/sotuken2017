@@ -6,7 +6,7 @@
 <xacro:include filename="$(find sotuken2017)/urdf/sensor/khr-forcd_sensor-revolute.xacro"/>
 
 	<property name="ef" value="1.37293"/>
-    <property name="vel" value="0.14"/>
+    <property name="vel" value="7.5"/>
 	
 	<property name="leg_xy" value="0.03"/>
 	
