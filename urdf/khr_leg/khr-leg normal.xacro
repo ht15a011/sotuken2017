@@ -6,7 +6,7 @@
 <xacro:include filename="$(find sotuken2017)/urdf/sensor/khr-force_sensor normal.xacro"/>
 
 	<property name="ef" value="1.37293"/>
-    <property name="vel" value="0.14"/>
+    <property name="vel" value="7.5"/>
 	
 	<property name="leg_xy" value="0.03"/>
 	
@@ -22,8 +22,11 @@
 	<property name="shin_z" value="0.047"/>
 	<property name="shin_mass" value="0.068"/>
 	
+	<property name="hizakozo_xz" value="0.01"/>
+	<property name="hizakozo_mass" value="0.01"/>
+	
 	<property name="ankle_z" value="0.02"/>
-	<property name="ankle_mass" value="0.068"/>
+	<property name="ankle_mass" value="0.058"/>
 	
 	<property name="foot_x" value="0.122"/>
 	<property name="foot_y" value="0.078"/>
@@ -139,18 +142,49 @@
 				</inertial>
 		</link>
 
-		<joint name="${LRleg}knee_to_${LRleg}shin" type="revolute">
+		<joint name="${LRleg}knee_to_${LRleg}hizakozo" type="revolute">
 				<parent link="${LRleg}knee"/>
-				<child link="${LRleg}shin"/>
-				<origin xyz="-0.0205 0 -0.0885" rpy="0 0 0"/>
+				<child link="${LRleg}hizakozo"/>
+				<origin xyz="0 0 -0.078" rpy="0 0 0"/>
 				<axis xyz="0 1 0"/>
 				<dynamics damping="0.5"/>
-				<limit lower="-0.0" upper="${M_PI * 5 / 6}" effort="${ef}" velocity="${vel}"/>
+				<limit lower="-0.0" upper="${M_PI / 2}" effort="${ef}" velocity="${vel}"/>
+		</joint>
+		
+		<link name="${LRleg}hizakozo">
+				<visual>
+						<origin xyz="${hizakozo_xz} 0 -0.016" rpy="0 0 0"/>
+						<geometry>
+								<box size="${hizakozo_xz} ${leg_xy} ${hizakozo_xz}"/>
+						</geometry>
+						<xacro:black/>
+				</visual>
+
+				<collision>
+						<origin xyz="${hizakozo_xz} 0 -0.016" rpy="0 0 0"/>
+						<geometry>
+								<box size="${hizakozo_xz} ${leg_xy} ${hizakozo_xz}"/>
+						</geometry>
+				</collision>
+
+				<inertial>
+						<origin xyz="${hizakozo_xz} 0 -0.016" rpy="0 0 0"/>
+						<xacro:box_inertial m="${hizakozo_mass}" d="${hizakozo_xz}" w="${leg_xy}" h="${hizakozo_xz}"/>
+				</inertial>
+		</link>
+		
+		<joint name="${LRleg}hizakozo_to_${LRleg}shin" type="revolute">
+				<parent link="${LRleg}hizakozo"/>
+				<child link="${LRleg}shin"/>
+				<origin xyz="0 0 -0.032" rpy="0 0 0"/>
+				<axis xyz="0 1 0"/>
+				<dynamics damping="0.5"/>
+				<limit lower="-0.0" upper="${M_PI / 2}" effort="${ef}" velocity="${vel}"/>
 		</joint>
 
 		<link name="${LRleg}shin">
 				<visual>
-						<origin xyz="0.0205 0 -0.024" rpy="0 0 0"/>
+						<origin xyz="0 0 -0.0235" rpy="0 0 0"/>
 						<geometry>
 								<box size="${leg_xy} ${leg_xy} ${shin_z}"/>
 						</geometry>
@@ -158,14 +192,14 @@
 				</visual>
 
 				<collision>
-						<origin xyz="0.0205 0 -0.024" rpy="0 0 0"/>
+						<origin xyz="0 0 -0.0235" rpy="0 0 0"/>
 						<geometry>
 								<box size="${leg_xy} ${leg_xy} ${shin_z}"/>
 						</geometry>
 				</collision>
 
 				<inertial>
-						<origin xyz="0.0205 0 -0.024" rpy="0 0 0"/>
+						<origin xyz="0 0 -0.0235" rpy="0 0 0"/>
 						<xacro:box_inertial m="${shin_mass}" d="${leg_xy}" w="${leg_xy}" h="${shin_z}"/>
 				</inertial>
 		</link>
@@ -173,7 +207,7 @@
 		<joint name="${LRleg}shin_to_${LRleg}ankle" type="revolute">
 				<parent link="${LRleg}shin"/>
 				<child link="${LRleg}ankle"/>
-				<origin xyz="0.0205 0 -0.0319" rpy="0 0 0"/>
+				<origin xyz="0 0 -0.0319" rpy="0 0 0"/>
 				<axis xyz="0 1 0"/>
 				<dynamics damping="0.5"/>
 				<limit lower="-${M_PI / 2}" upper="${M_PI / 3}" effort="${ef}" velocity="${vel}"/>
@@ -181,7 +215,7 @@
 
 		<link name="${LRleg}ankle">
 				<visual>
-						<origin xyz="0 0 -0.037" rpy="0 0 0"/>
+						<origin xyz="0 0 -0.04" rpy="0 0 0"/>
 						<geometry>
 								<box size="${leg_xy} ${leg_xy} ${ankle_z}"/>
 						</geometry>
@@ -189,14 +223,14 @@
 				</visual>
 
 				<collision>
-						<origin xyz="0 0 -0.037" rpy="0 0 0"/>
+						<origin xyz="0 0 -0.04" rpy="0 0 0"/>
 						<geometry>
 								<box size="${leg_xy} ${leg_xy} ${ankle_z}"/>
 						</geometry>
 				</collision>
 
 				<inertial>
-						<origin xyz="0 0 -0.037" rpy="0 0 0"/>
+						<origin xyz="0 0 -0.04" rpy="0 0 0"/>
 						<xacro:box_inertial m="${ankle_mass}" d="${leg_xy}" w="${leg_xy}" h="${ankle_z}"/>
 				</inertial>
 		</link>
@@ -212,7 +246,7 @@
 
 		<link name="${LRleg}foot">
 				<visual>
-						<origin xyz="0 ${ref * leg_xy / 2} -0.0315" rpy="0 0 0"/>
+						<origin xyz="0 ${ref * leg_xy / 2} -0.0312" rpy="0 0 0"/>
 						<geometry>
 								<box size="${foot_x} ${foot_y} ${foot_z}"/>
 						</geometry>
@@ -220,14 +254,14 @@
 				</visual>
 
 				<collision>
-						<origin xyz="0 ${ref * leg_xy / 2} -0.0315" rpy="0 0 0"/>
+						<origin xyz="0 ${ref * leg_xy / 2} -0.0312" rpy="0 0 0"/>
 						<geometry>
 								<box size="${foot_x} ${foot_y} ${foot_z}"/>
 						</geometry>
 				</collision>
 
 				<inertial>
-						<origin xyz="0 ${ref * leg_xy / 2} -0.0315" rpy="0 0 0"/>
+						<origin xyz="0 ${ref * leg_xy / 2} -0.0312" rpy="0 0 0"/>
 						<xacro:box_inertial m="${foot_mass}" d="${foot_x}" w="${foot_y}" h="${foot_z}"/>
 				</inertial>
 		</link>
@@ -249,10 +283,12 @@
 				<origin xyz="-${foot_x / 2 -0.015}  ${(ref * leg_xy / 2) - (foot_y / 2 - 0.015)} -${0.0315 + foot_z / 2 + box_z / 2}" rpy="0 0 0" />
 		</xacro:make_fsensor>
 		
-		<joint name="${LRleg}foot_to_${LRleg}foot2" type="fixed">
+		<joint name="${LRleg}foot_to_${LRleg}foot2" type="revolute">
 				<parent link="${LRleg}foot"/>
 				<child link="${LRleg}foot2"/>
 				<origin xyz="0 ${ref * leg_xy / 2} -${0.0315 + foot_z / 2 + foot_z / 10 + box_z}" rpy="0 0 0"/>
+				<axis xyz="0 0 1"/>
+				<limit lower="-0" upper="0" effort="0" velocity="0"/>
 		</joint>
 		
 		<link name="${LRleg}foot2">
@@ -280,6 +316,7 @@
 		<xacro:gazebo_link_black ref="${LRleg}hips"/>
 		<xacro:gazebo_link_black ref="${LRleg}thigh"/>
 		<xacro:gazebo_link_black ref="${LRleg}knee"/>
+		<xacro:gazebo_link_black ref="${LRleg}hizakozo"/>
 		<xacro:gazebo_link_black ref="${LRleg}shin"/>
 		<xacro:gazebo_link_black ref="${LRleg}ankle"/>
 		<xacro:gazebo_link_black ref="${LRleg}foot"/>
