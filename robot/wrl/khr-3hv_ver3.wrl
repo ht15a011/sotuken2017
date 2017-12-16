@@ -184,7 +184,7 @@ DEF KHR-3HV Humanoid {
           llimit [-3.14159]
           uvlimit [7.5]
           lvlimit [-7.5]
-		  rotorInertia 0.0000104
+		  rotorInertia 0.0008234
 		  gearRatio 312.4
           climit [1.37293]
           children [
@@ -223,7 +223,7 @@ DEF KHR-3HV Humanoid {
               llimit [-0.0]
               uvlimit [7.5]
               lvlimit [-7.5]
-			  rotorInertia 0.000432
+			  rotorInertia 0.0007669
 			  gearRatio 312.4
 			  climit [1.37293]
               children [
@@ -262,7 +262,7 @@ DEF KHR-3HV Humanoid {
                   llimit [-2.61799]
                   uvlimit [7.5]
                   lvlimit [-7.5]
-				  rotorInertia 0.0000388
+				  rotorInertia 0.0000262
 				  gearRatio 312.4
                   climit [1.37293]
                   children [
@@ -307,7 +307,7 @@ DEF KHR-3HV Humanoid {
           llimit [-3.14159]
           uvlimit [7.5]
           lvlimit [-7.5]
-		  rotorInertia 0.0000104
+		  rotorInertia 0.0008234
 		  gearRatio 312.4
           climit [1.37293]
           children [
@@ -346,7 +346,7 @@ DEF KHR-3HV Humanoid {
               llimit [-1.5708]
               uvlimit [7.5]
               lvlimit [-7.5]
-			  rotorInertia 0.000432
+			  rotorInertia 0.0007669
 			  gearRatio 312.4
               climit [1.37293]
               children [
@@ -385,7 +385,7 @@ DEF KHR-3HV Humanoid {
                   llimit [-2.61799]
                   uvlimit [7.5]
                   lvlimit [-7.5]
-				  rotorInertia 0.0000388
+				  rotorInertia 0.0000262
 				  gearRatio 312.4
                   climit [1.37293]
                   children [
@@ -430,7 +430,7 @@ DEF KHR-3HV Humanoid {
           llimit [-0.785398]
           uvlimit [7.5]
           lvlimit [-7.5]
-		  rotorInertia 0.000160817
+		  rotorInertia 0.0009167
 		  gearRatio 312.4
           climit [1.37293]
           children [
@@ -469,7 +469,7 @@ DEF KHR-3HV Humanoid {
               llimit [-0.523599]
               uvlimit [7.5]
               lvlimit [-7.5]
-			  rotorInertia 0.0000072
+			  rotorInertia 0.0000729
 			  gearRatio 312.4
               climit [1.37293]
               children [
@@ -508,7 +508,7 @@ DEF KHR-3HV Humanoid {
                   llimit [-0.523599]
                   uvlimit [7.5]
                   lvlimit [-7.5]
-				  rotorInertia 0.0000102
+				  rotorInertia 0.0124947
 				  gearRatio 312.4
                   climit [1.37293]
                   children [
@@ -547,7 +547,7 @@ DEF KHR-3HV Humanoid {
                       llimit [-2.0944]
                       uvlimit [7.5]
                       lvlimit [-7.5]
-					  rotorInertia 0.000221407
+					  rotorInertia 0.0061173
 					  gearRatio 312.4
                       climit [1.37293]
                       children [
@@ -586,7 +586,7 @@ DEF KHR-3HV Humanoid {
                           llimit [-0.0]
                           uvlimit [7.5]
                           lvlimit [-7.5]
-                          #rotorInertia 
+                          rotorInertia 0.0020267
 						  gearRatio 312.4
                           climit [1.37293]
                           children [
@@ -625,7 +625,7 @@ DEF KHR-3HV Humanoid {
                               llimit [-0.0]
                               uvlimit [7.5]
                               lvlimit [-7.5]
-                              #rotorInertia 
+                              rotorInertia 0.0011382
 							  gearRatio 312.4
                               climit [1.37293]
                               children [
@@ -664,7 +664,7 @@ DEF KHR-3HV Humanoid {
 								  llimit [-1.5708]
 								  uvlimit [7.5]
 								  lvlimit [-7.5]
-								  rotorInertia 0.0001033
+								  rotorInertia 0.0006271
 								  gearRatio 312.4
                                   climit [1.37293]
                                   children [
@@ -703,30 +703,10 @@ DEF KHR-3HV Humanoid {
 									  llimit [-0.785398]
 									  uvlimit [7.5]
 									  lvlimit [-7.5]
-									  rotorInertia 0.000347
+									  rotorInertia 0.0003131
 									  gearRatio 312.4
                                       climit [1.37293]
                                       children [
-                                        DEF lfsensor1 	ForceSensor {
-										  translation 0.046 0.039 -0.0415
-										  rotation 0 1 0 0
-										  sensorId 0
-										}
-										DEF lfsensor2 ForceSensor {
-										  translation -0.046 0.039 -0.0415
-										  rotation 0 1 0 0
-										  sensorId 1
-										}
-										DEF lfsensor3 ForceSensor {
-										  translation 0.046 -0.009 -0.0415
-										  rotation 0 1 0 0
-										  sensorId 2
-										}
-										DEF lfsensor4 ForceSensor {
-										  translation -0.046 -0.009 -0.0415
-										  rotation 0 1 0 0
-										  sensorId 3
-										}
                                         DEF Lfoot Segment {
                                           mass 0.03
                                           centerOfMass 0.0 0.015 -0.0312
@@ -758,6 +738,22 @@ DEF KHR-3HV Humanoid {
                                           translation 0.0 0.015 -0.0475
                                           rotation 0 1 0 0
                                           children [
+										    DEF lfsensor1 ForceSensor {
+									  		  translation 0.046 0.024 0
+									  		  sensorId 0
+											}
+											DEF lfsensor2 ForceSensor {
+									 		  translation -0.046 0.024 0
+									  		  sensorId 1
+											}
+											DEF lfsensor3 ForceSensor {
+									  		  translation 0.046 -0.024 0
+									  		  sensorId 2
+											}
+											DEF lfsensor4 ForceSensor {
+									 		  translation -0.046 -0.024 0
+									  		  sensorId 3
+											}
                                             DEF Lfoot2 Segment {
                                               mass 0.05
                                               centerOfMass 0.0 0.0 0.0
@@ -941,7 +937,7 @@ DEF KHR-3HV Humanoid {
               llimit [-0.785398]
               uvlimit [7.5]
               lvlimit [-7.5]
-			  rotorInertia 0.0000072
+			  rotorInertia 0.0000729
 			  gearRatio 312.4
               climit [1.37293]
               children [
@@ -980,7 +976,7 @@ DEF KHR-3HV Humanoid {
                   llimit [-0.785398]
                   uvlimit [7.5]
                   lvlimit [-7.5]
-				  rotorInertia 0.0000102
+				  rotorInertia 0.0124947
 				  gearRatio 312.4
                   climit [1.37293]
                   children [
@@ -1019,7 +1015,7 @@ DEF KHR-3HV Humanoid {
                       llimit [-2.0944]
                       uvlimit [7.5]
                       lvlimit [-7.5]
-					  rotorInertia 0.000221407
+					  rotorInertia 0.0061173
 					  gearRatio 312.4
                       climit [1.37293]
                       children [
@@ -1058,7 +1054,7 @@ DEF KHR-3HV Humanoid {
                           llimit [-0.0]
                           uvlimit [7.5]
                           lvlimit [-7.5]
-                          #rotorInertia 
+                          rotorInertia 0.0020267 
 						  gearRatio 312.4
                           climit [1.37293]
                           children [
@@ -1097,7 +1093,7 @@ DEF KHR-3HV Humanoid {
                               llimit [-0.0]
                               uvlimit [7.5]
                               lvlimit [-7.5]
-                              #rotorInertia 
+                              rotorInertia 0.0011382
 							  gearRatio 312.4
                               climit [1.37293]
                               children [
@@ -1136,6 +1132,8 @@ DEF KHR-3HV Humanoid {
                                   llimit [-1.5708]
                                   uvlimit [7.5]
                                   lvlimit [-7.5]
+								  rotorInertia 0.0006271
+								  gearRatio 312.4
                                   climit [1.37293]
                                   children [
                                     DEF Rankle Segment {
@@ -1173,28 +1171,10 @@ DEF KHR-3HV Humanoid {
                                       llimit [-0.785398]
                                       uvlimit [7.5]
                                       lvlimit [-7.5]
+									  rotorInertia 0.0003131
+								  	  gearRatio 312.4
                                       climit [1.37293]
                                       children [
-										DEF rfsensor1 ForceSensor {
-										  translation 0.046 0.009 -0.0415
-										  rotation 0 1 0 0
-										  sensorId 4
-										}
-										DEF rfsensor2 ForceSensor {
-										  translation -0.046 0.039 -0.0415
-										  rotation 0 1 0 0
-										  sensorId 5
-										}
-										DEF rfsensor3 ForceSensor {
-										  translation 0.046 -0.009 -0.0415
-										  rotation 0 1 0 0
-										  sensorId 6
-										}
-										DEF rfsensor4 ForceSensor {
-										  translation -0.046 -0.039 -0.0415
-										  rotation 0 1 0 0
-										  sensorId 7
-										}
                                         DEF Rfoot Segment {
                                           mass 0.03
                                           centerOfMass 0.0 -0.015 -0.0312
@@ -1226,6 +1206,23 @@ DEF KHR-3HV Humanoid {
                                           translation 0.0 -0.015 -0.0475
                                           rotation 0 1 0 0
                                           children [
+										    DEF rfsensor1 ForceSensor {
+									  		  translation 0.046 0.024 0
+											  rotation 0 3.14 0 0
+									  		  sensorId 4
+											}
+											DEF rfsensor2 ForceSensor {
+									  		  translation -0.046 0.024 0
+									  		  sensorId 5
+											}
+											DEF rfsensor3 ForceSensor {
+									  		  translation 0.046 -0.024 0
+									  		  sensorId 6
+											}
+											DEF rfsensor4 ForceSensor {
+									  		  translation -0.046 -0.024 0
+									  		  sensorId 7
+											}
                                             DEF Rfoot2 Segment {
                                               mass 0.05
                                               centerOfMass 0.0 0.0 0.0
@@ -1259,6 +1256,7 @@ DEF KHR-3HV Humanoid {
                                           translation 0.046 0.009 -0.0415
                                           rotation 0 1 0 0
                                           children [
+										    
                                             DEF Rfsensor1 Segment {
                                               mass 0.005
                                               centerOfMass 0.0 0.0 0.0
@@ -1279,6 +1277,7 @@ DEF KHR-3HV Humanoid {
                                                         size 0.02 0.02 0.01
                                                       }
                                                     }
+													
                                                   ]
                                                 }
                                               ]
@@ -1366,7 +1365,7 @@ DEF KHR-3HV Humanoid {
                                                 Transform {
                                                   scale 1.0 1.0 1.0
                                                   translation 0.0 0.0 0.0
-                                                  rotation 0 1 0 0
+                                                  rotation 0 1.5708 0 0
                                                   children [
                                                     Shape {
                                                       appearance Appearance {
@@ -1411,6 +1410,8 @@ DEF KHR-3HV Humanoid {
           llimit [-1.5708]
           uvlimit [7.5]
           lvlimit [-7.5]
+		  rotorInertia 0.000031
+		  gearRatio 312.4
           climit [1.37293]
           children [
             DEF head Segment {

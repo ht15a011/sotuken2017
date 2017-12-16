@@ -1,29 +1,26 @@
-modelFile: khr-3hv_revolute.wrl
+modelFile: khr-3hv_ver3.wrl
 
 linkGroup:
   - name: UPPER-BODY
     links:
       - name: HEAD
         links: [ base_link_to_head ]
-		
       - base_link
       - base_link_to_body_2
-      
       - name: ARMS
         links:
           - name: L-ARM
             links: [ base_link_to_Lshoulder, Lshoulder_to_Lupper_arm, Lupper_arm_to_Llower_arm ]
           - name: R-ARM
             links: [ base_link_to_Rshoulder, Rshoulder_to_Rupper_arm, Rupper_arm_to_Rlower_arm ]
-			
   - name: LEGS
     links:
       - name: L-LEG
-        links: [ body_2_to_Lhips, Lhips_to_Lthigh, Lthigh_to_Lknee, Lknee_to_Lhizakozo, Lhizakozo_to_Lshin, Lknee_to_Lshin, Lshin_to_Lankle, Lankle_to_Lfoot, Lfoot_to_Lfoot2 ]
+        links: [ body_2_to_Lhips, Lhips_to_Lthigh, Lthigh_to_Lknee, Lknee_to_Lhizakozo, Lhizakozo_to_Lshin, Lshin_to_Lankle, Lankle_to_Lfoot, Lfoot_to_Lfoot2 ]
       - name: L-FORCE-SENSOR
         links: [ Lfsensor1_joint, Lfsensor2_joint, Lfsensor3_joint, Lfsensor4_joint ]
       - name: R-LEG
-        links: [ body_2_to_Rhips, Rhips_to_Rthigh, Rthigh_to_Rknee, Rknee_to_Rhizakozo, Rhizakozo_to_Rshin,  Rknee_to_Rshin, Rshin_to_Rankle, Rankle_to_Rfoot, Rfoot_to_Rfoot2 ]
+        links: [ body_2_to_Rhips, Rhips_to_Rthigh, Rthigh_to_Rknee, Rknee_to_Rhizakozo, Rhizakozo_to_Rshin, Rshin_to_Rankle, Rankle_to_Rfoot, Rfoot_to_Rfoot2 ]
       - name: L-FORCE-SENSOR
         links: [ Rfsensor1_joint, Rfsensor2_joint, Rfsensor3_joint, Rfsensor4_joint ]
 
@@ -32,7 +29,7 @@ footLinks:
     soleCenter: [ 0.0, 0.015, -0.0485 ]
   - link: Rankle_to_Rfoot
     soleCenter: [ 0.0, -0.015, -0.0485 ]
-    
+
 possibleIkInterpolationLinks: [ base_link_to_body_2, Lankle_to_Lfoot, Rankle_to_Rfoot ]
 defaultIkInterpolationLinks: [ base_link_to_body_2, Lankle_to_Lfoot, Rankle_to_Rfoot ]
 possileSupportLinks: [ Lankle_to_Lfoot, Rankle_to_Rfoot ]
