@@ -3,7 +3,7 @@
 
 <xacro:include filename="$(find sotuken2017)/urdf/common.xacro"/>
 <xacro:include filename="$(find sotuken2017)/urdf/urdf_gazebo.xacro"/>
-<xacro:include filename="$(find sotuken2017)/urdf/sensor/khr-forcd_sensor-revolute.xacro"/>
+<xacro:include filename="$(find sotuken2017)/urdf/sensor/khr-force_sensor.xacro"/>
 
 	<property name="ef" value="1.37293"/>
     <property name="vel" value="7.5"/>
