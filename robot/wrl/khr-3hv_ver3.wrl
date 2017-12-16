@@ -1208,7 +1208,6 @@ DEF KHR-3HV Humanoid {
                                           children [
 										    DEF rfsensor1 ForceSensor {
 									  		  translation 0.046 0.024 0
-											  rotation 0 3.14 0 0
 									  		  sensorId 4
 											}
 											DEF rfsensor2 ForceSensor {
