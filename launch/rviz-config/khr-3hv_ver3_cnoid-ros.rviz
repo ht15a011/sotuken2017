@@ -45,7 +45,7 @@ Visualization Manager:
       Offset:
         X: 0
         Y: 0
-        Z: 0
+        Z: -0.38
       Plane: XY
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
@@ -302,58 +302,61 @@ Visualization Manager:
           Value: false
         head:
           Value: false
+        map:
+          Value: false
       Marker Scale: 0.5
       Name: TF
       Show Arrows: false
       Show Axes: true
       Show Names: true
       Tree:
-        base_link:
-          Lshoulder:
-            Lupper_arm:
-              Llower_arm:
-                {}
-          Rshoulder:
-            Rupper_arm:
-              Rlower_arm:
-                {}
-          body_2:
-            Lhips:
-              Lthigh:
-                Lknee:
-                  Lhizakozo:
-                    Lshin:
-                      Lankle:
-                        Lfoot:
-                          Lfoot2:
-                            {}
-                          Lfsensor1:
-                            {}
-                          Lfsensor2:
-                            {}
-                          Lfsensor3:
-                            {}
-                          Lfsensor4:
-                            {}
-            Rhips:
-              Rthigh:
-                Rknee:
-                  Rhizakozo:
-                    Rshin:
-                      Rankle:
-                        Rfoot:
-                          Rfoot2:
-                            {}
-                          Rfsensor1:
-                            {}
-                          Rfsensor2:
-                            {}
-                          Rfsensor3:
-                            {}
-                          Rfsensor4:
-                            {}
-          head:
-            {}
+        map:
+          base_link:
+            Lshoulder:
+              Lupper_arm:
+                Llower_arm:
+                  {}
+            Rshoulder:
+              Rupper_arm:
+                Rlower_arm:
+                  {}
+            body_2:
+              Lhips:
+                Lthigh:
+                  Lknee:
+                    Lhizakozo:
+                      Lshin:
+                        Lankle:
+                          Lfoot:
+                            Lfoot2:
+                              {}
+                            Lfsensor1:
+                              {}
+                            Lfsensor2:
+                              {}
+                            Lfsensor3:
+                              {}
+                            Lfsensor4:
+                              {}
+              Rhips:
+                Rthigh:
+                  Rknee:
+                    Rhizakozo:
+                      Rshin:
+                        Rankle:
+                          Rfoot:
+                            Rfoot2:
+                              {}
+                            Rfsensor1:
+                              {}
+                            Rfsensor2:
+                              {}
+                            Rfsensor3:
+                              {}
+                            Rfsensor4:
+                              {}
+            head:
+              {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -392,10 +395,10 @@ Visualization Manager:
         Z: -0.148711
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.290397
+      Pitch: 0.189797
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.143582
+      Yaw: 0.0535806
     Saved: ~
 Window Geometry:
   Displays:

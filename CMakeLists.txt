@@ -126,6 +126,12 @@ target_link_libraries(hello_world ${catkin_LIBRARIES})
 add_executable(konbanwa src/konbanwa.cpp)
 target_link_libraries(konbanwa ${catkin_LIBRARIES})
 
+add_executable(khr-3hv_suriasi src/khr-3hv_suriasi.cpp)
+target_link_libraries(khr-3hv_suriasi ${catkin_LIBRARIES})
+
+add_executable(heikou_suriasi src/heikou_suriasi.cpp)
+target_link_libraries(heikou_suriasi ${catkin_LIBRARIES})
+
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/sotuken2017.cpp
@@ -171,14 +177,14 @@ target_link_libraries(konbanwa ${catkin_LIBRARIES})
 # )
 
 ## Mark executables and/or libraries for installation
-install(TARGETS hello_world konbanwa
+install(TARGETS hello_world konbanwa khr-3hv_suriasi heikou_suriasi
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 install(
-  DIRECTORY choreonoid dae etc launch robot src urdf
+  DIRECTORY choreonoid dae etc launch robot src urdf bag action
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
   USE_SOURCE_PERMISSIONS
 )

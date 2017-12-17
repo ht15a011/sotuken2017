@@ -67,8 +67,8 @@ items:
             dynamicsMode: "Forward dynamics"
             integrationMode: "Runge Kutta"
             gravity: [ 0, 0, -9.80665 ]
-            staticFriction: 1
-            dynamicFriction: 1
+            staticFriction: 0.5
+            dynamicFriction: 0.3
             cullingThresh: 0.005
             contactCullingDepth: 0.05
             errorCriterion: 0.001
@@ -125,17 +125,6 @@ items:
               class: BodyRosTorqueControllerItem
               data: 
                 pdcParameterFilename: "/home/uemoto/catkin_ws/src/sotuken2017/robot/khr-PD-parameter/KHR-3HV_ver3-PD-parameter.yml"
-            - 
-              id: 8
-              name: "SensorVisualizer"
-              plugin: Body
-              class: SensorVisualizer
-              data: 
-                subItems: 
-                  - 
-                    class: ForceSensorVisualizer
-                    name: ForceSensor
-                    visualRatio: 0.002
 views: 
   - 
     id: 0
@@ -148,8 +137,8 @@ views:
     class: ItemTreeView
     mounted: true
     state: 
-      checked: [ 1, 2, 3, 4, 5, 6, 7, [ 8, "ForceSensor" ] ]
-      expanded: [ 1, 5, 8 ]
+      checked: [ 1, 2, 3, 4, 5, 6, 7 ]
+      expanded: [ 1, 5 ]
   - 
     id: 2
     plugin: Base
@@ -157,6 +146,30 @@ views:
     mounted: true
   - 
     id: 3
+    name: "Multi Value Seq"
+    plugin: Base
+    class: MultiValueSeqGraphView
+    state: 
+      mode: view
+      editMode: freeLine
+      original: true
+      velocity: false
+      acceleration: false
+      limits: true
+      grid: true
+      gridWidth: 0.2
+      gridHeight: 0.2
+      lineWidth: 1
+      rulers: false
+      sync: true
+      controlPointStep: 1
+      controlPointOffset: 0
+      controlPointHeighlight: false
+      scrollMode: continuous
+      lower: -10
+      upper: 10
+  - 
+    id: 4
     plugin: Base
     class: SceneView
     mounted: true
@@ -199,9 +212,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 100
-          eye: [ 0.866199074, 0.16717431, 0.362695292 ]
-          direction: [ -0.964449532, -0.229533449, -0.130963724 ]
-          up: [ -0.127405223, -0.0303217112, 0.991387161 ]
+          eye: [ 0.934742327, 0.14899888, 0.531044731 ]
+          direction: [ -0.917827705, -0.161000094, -0.362865365 ]
+          up: [ -0.357408269, -0.0626945171, 0.931841578 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -213,20 +226,44 @@ views:
       yzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
       dedicatedItemTreeViewChecks: false
   - 
-    id: 4
+    id: 5
     plugin: Body
     class: BodyLinkView
     mounted: true
     state: 
       showRotationMatrix: false
   - 
-    id: 5
+    id: 6
     name: "Body State"
     plugin: Body
     class: BodyStateView
     mounted: true
   - 
-    id: 6
+    id: 7
+    name: "Joint Trajectories"
+    plugin: Body
+    class: JointGraphView
+    state: 
+      mode: view
+      editMode: freeLine
+      original: true
+      velocity: true
+      acceleration: false
+      limits: true
+      grid: true
+      gridWidth: 0.2
+      gridHeight: 0.2
+      lineWidth: 1
+      rulers: false
+      sync: true
+      controlPointStep: 1
+      controlPointOffset: 0
+      controlPointHeighlight: false
+      scrollMode: continuous
+      lower: -10
+      upper: 10
+  - 
+    id: 8
     plugin: Body
     class: JointSliderView
     mounted: true
@@ -240,25 +277,45 @@ views:
       labelOnLeft: true
       currentBodyItem: 5
   - 
-    id: 7
+    id: 9
     name: "Joint State"
     plugin: Body
     class: JointStateView
   - 
-    id: 8
+    id: 10
+    name: "Link Trajectories"
+    plugin: Body
+    class: LinkGraphView
+    state: 
+      mode: view
+      editMode: freeLine
+      original: true
+      velocity: false
+      acceleration: false
+      limits: true
+      grid: true
+      gridWidth: 0.2
+      gridHeight: 0.2
+      lineWidth: 1
+      rulers: false
+      sync: true
+      controlPointStep: 1
+      controlPointOffset: 0
+      controlPointHeighlight: false
+      scrollMode: continuous
+      lower: -10
+      upper: 10
+      visibleElements: [ 0, 2 ]
+  - 
+    id: 11
     plugin: Body
     class: LinkSelectionView
     mounted: true
     state: 
       listingMode: "Link List"
       currentBodyItem: 5
-      bodyItems: 
-        - 
-          id: 5
-          selectedLinks: [ 22 ]
-          expandedParts: [ "L-FORCE-SENSOR", "L-LEG", "LEGS", "R-LEG", "UPPER-BODY", "Whole Body" ]
   - 
-    id: 9
+    id: 12
     name: "Pose Roll"
     plugin: PoseSeq
     class: PoseRollView
@@ -272,14 +329,14 @@ views:
       showLipSync: false
       gridInterval: 1
   - 
-    id: 10
+    id: 13
     plugin: Python
     class: PythonConsoleView
     mounted: true
 toolbars: 
   "TimeBar": 
     minTime: 0
-    maxTime: 111.428
+    maxTime: 133.167
     frameRate: 1000
     playbackFrameRate: 50
     idleLoopDrivenMode: false
@@ -295,8 +352,6 @@ toolbars:
     snapDistance: 0.025
     penetrationBlockDepth: 0.0005
     lazyCollisionDetectionMode: true
-  "BodyBar": 
-    current: 5
   "LeggedBodyBar": 
     stanceWidth: 0.15
   "BodyMotionGenerationBar": 
@@ -377,7 +432,7 @@ viewAreas:
               current: 1
             - 
               type: pane
-              views: [ 0, 8 ]
+              views: [ 0, 11 ]
               current: 0
         - 
           type: splitter
@@ -391,15 +446,15 @@ viewAreas:
               children: 
                 - 
                   type: pane
-                  views: [ 4, 6, 5 ]
-                  current: 5
+                  views: [ 5, 8, 6 ]
+                  current: 8
                 - 
                   type: pane
-                  views: [ 3 ]
-                  current: 3
+                  views: [ 4 ]
+                  current: 4
             - 
               type: pane
-              views: [ 2, 10 ]
+              views: [ 2, 13 ]
               current: 2
 layoutOfToolBars: 
   rows: 

@@ -2,76 +2,105 @@
 # coding: utf-8
 
 import sys
-import os
 import math
 import rospy 
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 
 #
 # Functions.
-# 並行摺足の動作を1回行う関数
+# 並行摺足を行う関数
 
-def publish_khr_3hv_jointtrajectory(khrdeg = 0):
-    oneDeg_rad = math.radians(1)		# 1度のラジアンを計算して，変数に格納
-    rad = math.radians(khrdeg)			# 関節を曲げる角度をラジアンに変更
-    pub = rospy.Publisher('/KHR_3HV/torque_control/set_joint_trajectory', JointTrajectory, latch=True, queue_size=10)
-    rospy.init_node('khr_3hv__choreonoid_ros', anonymous=True)
-    msg = JointTrajectory()
-    
-    Lhips = 'body_2_to_Lhips'
-    Rhips = 'body_2_to_Rhips'
+def publish_khr_3hv_jointtrajectory():
+	# ノードの名前を"khr_3hv_suriasi"にする
+	rospy.init_node('khr_3hv_suriasi', anonymous=True)
 	
-    msg.joint_names = [ Lhips ]
-    msg.points = []
-    p = JointTrajectoryPoint()
-    p.time_from_start = rospy.rostime.Duration(0)
+	# 関節角度を指定して，摺足移動をするトピックを配信するPublisherの設定
+	pub = rospy.Publisher('/KHR_3HV/torque_control/set_joint_trajectory', JointTrajectory, latch=True, queue_size=10)
     
-    bend = 0.0
-    while bend == khrdeg:
-		if khrdeg < 0:
-			p.positions = [ bend ]
-			bend -= oneDeg_rad
-		else:
-			p.positions = [ bend ]
-			bend += oneDeg_rad
-		msg.points.append(p)
-		rospy.loginfo(msg)
-		pub.publish(msg)
-		r = rospy.Rate(10)
-		r.sleep()
-
-def usage():
-    name = os.path.basename(sys.argv[0])
+	# 動かす関節のメッセージを初期化（hips,ankle,foot）
+	msgLhips = JointTrajectory()
+	msgRhips = JointTrajectory()
+	msgLankle = JointTrajectory()
+	msgRankle = JointTrajectory()
+	msgLfoot = JointTrajectory()
+	msgRfoot = JointTrajectory()
+	
+	msgLhips.joint_names = ['body_2_to_Lhips']
+	msgLhips.points = []
+	
+	msgRhips.joint_names = [ 'body_2_to_Rhips' ]
+	msgRhips.points = []
+	
+	msgLankle.joint_names = [ 'Lshin_to_Lankle' ]
+	msgLankle.points = []
+	
+	msgRankle.joint_names = [ 'Rshin_to_Rankle' ]
+	msgRankle.points = []
+	
+	msgLfoot.joint_names = [ 'Lankel_to_Lfoot' ]
+	msgLfoot.points = []
+	
+	msgRfoot.joint_names = [ 'Rankel_to_Rfoot' ]
+	msgRfoot.points = []
+	
+	# 関節角度の指令を出すメッセージの設定
+	ponePlus = JointTrajectoryPoint()
+	poneMinus = JointTrajectoryPoint()
+	phipsPlus = JointTrajectoryPoint()
+	phipsMinus = JointTrajectoryPoint()
+	
+	# 目標の関節角度までの時間を設定
+	ponePlus.time_from_start = rospy.rostime.Duration(0.5)
+	poneMinus.time_from_start = rospy.rostime.Duration(0.5)
+	phipsPlus.time_from_start = rospy.rostime.Duration(1.0)
+	phipsMinus.time_from_start = rospy.rostime.Duration(1.0)
     
-    print 'error: invalid parameter'
-    print ''
-    print 'Set joint angle for KHR-3HV robot.'
-    print 'usage: ' + name + ' [joint angle (degree)]'
-    print '[joint angle] setting is range from -30.0 to 30.0.'
+    # 関節を曲げる角度をラジアンに変更
+	hipsRad = math.radians(30)
+	Degone = math.radians(1)
     
-    return
+	rate = rospy.Rate(10)
+	
+	# Lankle と Lfoot の関節角度を設定
+	ponePlus.positions = [ Degone ]
+	msgLankle.points.append(ponePlus)
+	msgLfoot.points.append(ponePlus)
+	
+	# Rankle と Rfoot の関節角度を設定
+	poneMinus.positions = [ -Degone ]
+	msgRankle.points.append(poneMinus)
+	msgRfoot.points.append(poneMinus)
+	
+	# ankle と foot の関節角度を配信
+	pub.publish(msgLankle)
+	pub.publish(msgLfoot)
+	pub.publish(msgRankle)
+	pub.publish(msgRfoot)
+	rate.sleep()
+	
+	rospy.sleep(1)
+	
+	# Lhips と Rhips の関節角度を設定
+	phipsMinus.positions = [ -hipsRad ]
+	msgLhips.points.append(phipsMinus)
+		
+	phipsPlus.positions = [ hipsRad ]
+	msgRhips.points.append(phipsPlus)
+	
+	# Lhips と Rhips の関節角度を配信
+	pub.publish(msgLhips)
+	pub.publish(msgRhips)
+		
+	rate.sleep()
 
 # 
 # Main.  
 #
 
 if __name__ == '__main__':
-    is_error = True
 
     try:
-        if len(sys.argv) == 2:
-            jointDeg = float(sys.argv[1])  # set joint degree
-
-            if (-30.0 <= jointDeg and jointDeg <= 30.0):
-                publish_khr_3hv_jointtrajectory(khrdeg = jointDeg)
-                is_error = False
-    except ValueError:
-        pass
-    except rospy.ROSInterruptException:
-        pass
-
-    if (is_error):
-        usage()
-        sys.exit(1)
+		publish_khr_3hv_jointtrajectory()
+    except rospy.ROSInterruptException: pass
 
     sys.exit(0)
