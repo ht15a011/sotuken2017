@@ -1,0 +1,9 @@
+Choreonoidの動画レコーダを使用方法は以下のサイトを参照
+
+・連番画像から動画ファイルを作成する方法
+http://choreonoid.org/ja/manuals/latest/tips/howto-create-movingimage.html#ubuntu-linux
+
+ffmpegの使い方は以下のサイトを参照
+
+・ffmpegの基本的な使い方
+https://gnzo.com/labo/archives/100
