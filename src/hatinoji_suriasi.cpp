@@ -23,8 +23,8 @@ int main(int argc, char **argv) {
 	joint_state.joint_names[1] ="body_2_to_Rhips";
 	joint_state.joint_names[2] ="Lshin_to_Lankle";
 	joint_state.joint_names[3] ="Rshin_to_Rankle";
-	joint_state.joint_names[4] ="Lankel_to_Lfoot";
-	joint_state.joint_names[5] ="Rankel_to_Rfoot";
+	joint_state.joint_names[4] ="Lankle_to_Lfoot";
+	joint_state.joint_names[5] ="Rankle_to_Rfoot";
 	
 	ros::Rate r(rate);
 	joint_state.header.stamp = ros::Time::now() + ros::Duration(1.0);

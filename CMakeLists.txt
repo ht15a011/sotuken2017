@@ -144,9 +144,6 @@ target_link_libraries(frond-suriasi ${catkin_LIBRARIES})
 add_executable(hatinoji_suriasi src/hatinoji_suriasi.cpp)
 target_link_libraries(hatinoji_suriasi ${catkin_LIBRARIES})
 
-add_executable(feedback_hatinoji_suriasi src/feedback_hatinoji_suriasi.cpp)
-target_link_libraries(feedback_hatinoji_suriasi ${catkin_LIBRARIES})
-
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/sotuken2017.cpp
@@ -192,7 +189,7 @@ target_link_libraries(feedback_hatinoji_suriasi ${catkin_LIBRARIES})
 # )
 
 ## Mark executables and/or libraries for installation
-install(TARGETS hello_world konbanwa khr-3hv_suriasi heikou_suriasi get-force get-force-multi frond-suriasi hatinoji_suriasi feedback_hatinoji_suriasi
+install(TARGETS hello_world konbanwa khr-3hv_suriasi heikou_suriasi get-force get-force-multi frond-suriasi hatinoji_suriasi
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
